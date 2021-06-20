@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--primary-color: gold;
+	--secondary-color: #ccc;
+}
+
+::selection {
+	background-color: var(--primary-color);
+	color: white;
+}
+
 ::-webkit-scrollbar {
 	width: 0.6rem;
 }
