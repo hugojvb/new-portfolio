@@ -11,13 +11,13 @@ body {
 	overflow: overlay; /* Keep the scrollbar always visible */
 }
 
-/* Selection */
+/* SELECTION */
 
 ::selection {
 	color: var(--secondary-color);
 }
 
-/* Scrollbar */
+/* SCROLLBAR */
 
 ::-webkit-scrollbar {
 	width: 0.6rem;
@@ -36,6 +36,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
 	background: #aaa;
 }
+
+/* BUTTON ANIMATION ON HOVER */
 
 button {
 	overflow: hidden;

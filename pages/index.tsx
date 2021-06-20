@@ -37,35 +37,56 @@ const IndexPage: FC = () => (
 				</button>
 			</Fade>
 		</div>
-		<div className="min-h-screen flex flex-col items-center justify-evenly bg-primary">
-			<div className="container">
+		<div className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
+			<div className="container mb-64">
 				<Fade top>
 					<h1 className="text-6xl font-thin text-white">About Me</h1>
 				</Fade>
-				<Slide bottom delay={500}>
-					<ul className="list-inside text-2xl text-white mt-12 ml-12">
+				<ul className="list-inside text-2xl text-white mt-12 ml-12">
+					<Fade bottom delay={1000}>
 						<li className="py-4 flex">
-							<Slide left delay={1000}>
+							<Fade left delay={1500}>
 								<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" />
-							</Slide>
+							</Fade>
 							I am a Software Developer who loves to learn.
 						</li>
+					</Fade>
 
+					<Fade bottom delay={1500}>
 						<li className="py-4 flex">
-							<Slide left delay={1500}>
+							<Fade left delay={2000}>
 								<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" />
-							</Slide>
-							My favorite language is Javascript, working with React, Node and Typescript.
-						</li>
-						<li className="py-4 flex">
-							<Slide left delay={2000}>
-								<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" />
-							</Slide>
+							</Fade>
 							My strength is in the Front End.
 						</li>
-					</ul>
-				</Slide>
+					</Fade>
+					<Fade bottom delay={2000}>
+						<li className="py-4 flex">
+							<Fade left delay={2500}>
+								<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" />
+							</Fade>
+							My favorite language is Javascript, working with React, Node and Typescript.
+						</li>
+					</Fade>
+				</ul>
 			</div>
+			<div className="absolute w-full bottom-0">
+				<svg className="h-168px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+					<path
+						d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+						className="fill-current text-white"
+					></path>
+				</svg>
+			</div>
+		</div>
+
+		<div className="min-h-screen flex flex-col items-center justify-around bg-white">
+			<Fade top>
+				<h1 className="text-6xl font-thin text-primary">Technologies</h1>
+			</Fade>
+			<Fade top>
+				<img src="/react.svg" alt="react" />
+			</Fade>
 		</div>
 	</Fragment>
 );
