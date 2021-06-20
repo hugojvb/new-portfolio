@@ -38,7 +38,7 @@ const IndexPage: FC = () => (
 			</Fade>
 		</div>
 		<div className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
-			<div className="container mb-64">
+			<div className="container mb-60">
 				<Fade top>
 					<h1 className="text-6xl font-thin text-white">About Me</h1>
 				</Fade>
@@ -85,7 +85,7 @@ const IndexPage: FC = () => (
 				<h1 className="text-6xl font-thin text-primary">Technologies</h1>
 			</Fade>
 			<Fade top>
-				<img src="/react.svg" alt="react" />
+				<img src="/react.svg" alt="react" height="200" width="200" />
 			</Fade>
 		</div>
 	</Fragment>
