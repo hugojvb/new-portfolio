@@ -8,12 +8,16 @@
 }
 
 body {
-	overflow: overlay;
+	overflow: overlay; /* Keep the scrollbar always visible */
 }
+
+/* Selection */
 
 ::selection {
 	color: var(--secondary-color);
 }
+
+/* Scrollbar */
 
 ::-webkit-scrollbar {
 	width: 0.6rem;
@@ -31,4 +35,32 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
 	background: #aaa;
+}
+
+button {
+	overflow: hidden;
+	position: relative;
+}
+
+button:hover {
+	color: #fff;
+}
+
+button:after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+	width: 100%;
+	height: 0;
+	top: 0;
+	left: 0;
+	background: var(--primary-color);
+}
+
+button:hover:after,
+button:active:after {
+	height: 100%;
 }
