@@ -37,16 +37,23 @@ const IndexPage: FC = () => (
 				</button>
 			</Fade>
 		</div>
-		<div className="min-h-screen flex flex-col items-center justify-center bg-primary">
+		<div className="min-h-screen flex flex-col items-center justify-evenly bg-primary">
 			<div className="container">
 				<Slide top>
 					<h1 className="text-6xl font-thin text-white">About Me</h1>
 				</Slide>
-				<Slide top delay={500}>
-					<ul className="list-inside text-2xl text-white mt-10">
-						<li className="py-4">I am a Software Developer who loves to learn.</li>
-						<li className="py-4">My favorite language is Javascript, working with React, Node and Typescript.</li>
-						<li className="py-4">My strength is in the Front End.</li>
+				<Slide bottom delay={500}>
+					<ul className="list-inside text-2xl text-white mt-12 ml-12">
+						<li className="py-4 flex">
+							<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" /> I am a Software Developer who loves to learn.
+						</li>
+						<li className="py-4 flex">
+							<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" /> My favorite language is Javascript, working
+							with React, Node and Typescript.
+						</li>
+						<li className="py-4 flex">
+							<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" /> My strength is in the Front End.
+						</li>
 					</ul>
 				</Slide>
 			</div>
