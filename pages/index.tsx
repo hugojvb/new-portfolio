@@ -1,24 +1,12 @@
 import Head from "next/head";
-import dynamic from "next/dynamic";
 import { Fragment, FC, useEffect, useState } from "react";
-import { Fade } from "react-reveal";
-
-const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), { ssr: false });
-import { autoplayPlugin } from "@brainhubeu/react-carousel";
-import { slidesToShowPlugin } from "@brainhubeu/react-carousel";
-
-import "@brainhubeu/react-carousel/lib/style.css";
 
 // COMPONENTS
 import Hero from "../components/Hero";
+import About from "../components/About";
+import Technologies from "../components/Technologies";
 
 const IndexPage: FC = () => {
-	const [mounted, setMounted] = useState(false);
-
-	useEffect(() => {
-		setMounted(true);
-	}, []);
-
 	return (
 		<Fragment>
 			<Head>
@@ -43,53 +31,8 @@ const IndexPage: FC = () => {
 			</Head>
 
 			<Hero />
-
-			<div className="min-h-50 flex flex-col items-center justify-start bg-white">
-				<Fade top>
-					<h1 className="text-6xl font-thin text-primary mb-40">Technologies</h1>
-				</Fade>
-				{mounted && (
-					<Carousel
-						plugins={[
-							"infinite",
-							{
-								resolve: autoplayPlugin,
-								options: {
-									interval: 2000,
-								},
-							},
-							{
-								resolve: slidesToShowPlugin,
-								options: {
-									numberOfSlides: 5,
-								},
-							},
-						]}
-					>
-						<div>
-							<img src="/html.svg" height="100" width="100" />
-						</div>
-						<div>
-							<img src="/css.svg" height="100" width="100" />
-						</div>
-						<div>
-							<img src="/javascript.svg" height="100" width="100" />
-						</div>
-						<div>
-							<img src="/typescript.svg" height="100" width="100" />
-						</div>
-						<div>
-							<img src="/react.svg" height="100" width="100" />
-						</div>
-						<div>
-							<img src="/node.svg" height="100" width="100" />
-						</div>
-						<div>
-							<img src="/next.svg" height="100" width="100" />
-						</div>
-					</Carousel>
-				)}
-			</div>
+			<About />
+			<Technologies />
 		</Fragment>
 	);
 };
