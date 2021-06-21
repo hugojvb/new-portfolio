@@ -17,14 +17,16 @@ const Technologies: FC = () => {
 	}, []);
 
 	return (
-		<div className="min-h-50 flex flex-col items-center justify-start bg-white">
+		<div className="flex flex-col items-center my-20 bg-white">
 			<Fade top>
-				<h1 className="text-6xl font-thin text-primary mb-40">Technologies</h1>
+				<h1 className="text-5xl font-thin text-primary  mb-40 ">My Favorite Technologies</h1>
 			</Fade>
+
 			{mounted && (
 				<Carousel
 					plugins={[
 						"infinite",
+						"centered",
 						{
 							resolve: autoplayPlugin,
 							options: {
@@ -38,6 +40,8 @@ const Technologies: FC = () => {
 							},
 						},
 					]}
+					animationSpeed={5000}
+					draggable={false}
 				>
 					<div>
 						<img src="/html.svg" height="100" width="100" />

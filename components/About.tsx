@@ -26,12 +26,13 @@ const About: FC = () => {
 							My strength is in the Front End.
 						</li>
 					</Fade>
-					<Fade bottom delay={2000}>
+
+					<Fade bottom delay={2500}>
 						<li className="py-4 flex">
-							<Fade left delay={2500}>
+							<Fade left delay={3000}>
 								<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" />
 							</Fade>
-							My favorite language is Javascript, working with React, Node and Typescript.
+							+1 year experience in Full Stack Development
 						</li>
 					</Fade>
 				</ul>
