@@ -45,7 +45,7 @@ const IndexPage: FC = () => {
 				<Fade top delay={500}>
 					<button
 						onClick={(e) => window.scrollBy({ top: window.innerHeight, left: 0, behavior: "smooth" })}
-						className="text-3xl rounded-full border-solid border-2 border-primary p-3 font-thin text-primary mt-10 focus:outline-none hover:bg-gray-100"
+						className="text-3xl rounded-full border-solid border-2 border-primary p-3 font-thin text-primary mt-10 focus:outline-none"
 					>
 						More About Me
 					</button>
@@ -94,9 +94,9 @@ const IndexPage: FC = () => {
 				</div>
 			</div>
 
-			<div className="min-h-screen flex flex-col items-center justify-around bg-white">
+			<div className="min-h-50 flex flex-col items-center justify-start bg-white">
 				<Fade top>
-					<h1 className="text-6xl font-thin text-primary">Technologies</h1>
+					<h1 className="text-6xl font-thin text-primary mb-40">Technologies</h1>
 				</Fade>
 				{mounted && (
 					<Carousel
