@@ -9,6 +9,8 @@ import { slidesToShowPlugin } from "@brainhubeu/react-carousel";
 
 import "@brainhubeu/react-carousel/lib/style.css";
 
+import Hero from "../components/Hero";
+
 const IndexPage: FC = () => {
 	const [mounted, setMounted] = useState(false);
 
@@ -38,19 +40,7 @@ const IndexPage: FC = () => {
 				<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png" />
 				<meta name="theme-color" content="#ffffff" />
 			</Head>
-			<div className="min-h-screen flex flex-col items-center justify-center">
-				<Fade top>
-					<h1 className="text-7xl text-primary antialiased font-thin">I am Hugo and I love what I do</h1>
-				</Fade>
-				<Fade top delay={500}>
-					<button
-						onClick={(e) => window.scrollBy({ top: window.innerHeight, left: 0, behavior: "smooth" })}
-						className="text-3xl rounded-full border-solid border-2 border-primary p-3 font-thin text-primary mt-10 focus:outline-none"
-					>
-						More About Me
-					</button>
-				</Fade>
-			</div>
+			<Hero />
 			<div className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
 				<div className="container mb-60">
 					<Fade top>
