@@ -8,34 +8,34 @@ const About: FC = () => {
 				<Fade top>
 					<h1 className="text-6xl font-thin text-white">About Me</h1>
 				</Fade>
-				<ul className="list-inside text-2xl text-white mt-12 ml-12">
+				<div className="text-2xl text-white mt-12 ml-12 flex justify-around">
 					<Fade bottom delay={1000}>
-						<li className="py-4 flex">
+						<li className="py-4 flex flex-col">
 							<Fade left delay={1500}>
-								<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" />
+								<img src="/checkmark.svg" alt="checkmark" className="filter invert" />
 							</Fade>
 							I am a Software Developer who loves to learn.
 						</li>
 					</Fade>
 
 					<Fade bottom delay={1500}>
-						<li className="py-4 flex">
+						<li className="py-4 flex flex-col">
 							<Fade left delay={2000}>
-								<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" />
+								<img src="/checkmark.svg" alt="checkmark" className="filter invert" />
 							</Fade>
 							My strength is in the Front End.
 						</li>
 					</Fade>
 
 					<Fade bottom delay={2500}>
-						<li className="py-4 flex">
+						<li className="py-4 flex flex-col">
 							<Fade left delay={3000}>
-								<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" />
+								<img src="/checkmark.svg" alt="checkmark" className="filter invert" />
 							</Fade>
-							+1 year experience in Full Stack Development
+							+1 year experience in Fdivl Stack Development
 						</li>
 					</Fade>
-				</ul>
+				</div>
 			</div>
 			<div className="absolute w-full bottom-0">
 				<svg className="h-168px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
