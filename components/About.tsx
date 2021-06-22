@@ -6,35 +6,37 @@ const About: FC = () => {
 		<div className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
 			<div className="container mb-60">
 				<Fade top>
-					<h1 className="text-6xl font-thin text-white">About Me</h1>
+					<h1 className="text-6xl font-thin text-white text-center">About Me</h1>
 				</Fade>
-				<div className="text-2xl text-white mt-12 ml-12 flex justify-around">
+				<div className="text-2xl text-white mt-20 flex justify-evenly">
 					<Fade bottom delay={1000}>
-						<li className="py-4 flex flex-col">
+						<li className="py-4 flex flex-col items-center text-center text-xl mx-8 w-56">
 							<Fade left delay={1500}>
-								<img src="/checkmark.svg" alt="checkmark" className="filter invert" />
+								<img src="/e-learning.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8"  />
 							</Fade>
-							I am a Software Developer who loves to learn.
+							+250 Hours in Targeted Courses
+						</li>
+					</Fade>
+
+					<Fade bottom delay={2500}>
+						<li className="py-4 flex flex-col items-center text-center text-xl mx-8 w-56">
+							<Fade left delay={3000}>
+								<img src="/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
+							</Fade>
+							+1 year experience in Full Stack Development
 						</li>
 					</Fade>
 
 					<Fade bottom delay={1500}>
-						<li className="py-4 flex flex-col">
+						<li className="py-4 flex flex-col items-center text-center text-xl mx-8 w-56">
 							<Fade left delay={2000}>
-								<img src="/checkmark.svg" alt="checkmark" className="filter invert" />
+								<img src="/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8 " />
 							</Fade>
 							My strength is in the Front End.
 						</li>
 					</Fade>
 
-					<Fade bottom delay={2500}>
-						<li className="py-4 flex flex-col">
-							<Fade left delay={3000}>
-								<img src="/checkmark.svg" alt="checkmark" className="filter invert" />
-							</Fade>
-							+1 year experience in Fdivl Stack Development
-						</li>
-					</Fade>
+					
 				</div>
 			</div>
 			<div className="absolute w-full bottom-0">
