@@ -12,28 +12,28 @@ const About: FC = () => {
 					<h1 className="text-6xl font-thin text-white text-center">About Me</h1>
 				</Fade>
 				<div className="text-2xl text-white mt-20 flex justify-evenly">
-					<Fade bottom delay={1000}>
+					<Fade bottom>
 						<li className="py-4 flex flex-col items-center text-center text-xl mx-8 w-56">
-							<Fade left delay={1500}>
+							<Fade top>
 								<img src="/e-learning.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 							</Fade>
 							+250 Hours in Targeted Courses
 						</li>
 					</Fade>
 
-					<Fade bottom delay={2500}>
+					<Fade bottom delay={500}>
 						<li className="py-4 flex flex-col items-center text-center text-xl mx-8 w-56">
-							<Fade left delay={3000}>
+							<Fade top delay={500}>
 								<img src="/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 							</Fade>
 							+{fullStackExpTime} months experience in Full Stack Development
 						</li>
 					</Fade>
 
-					<Fade bottom delay={1500}>
+					<Fade bottom delay={1000}>
 						<li className="py-4 flex flex-col items-center text-center text-xl mx-8 w-56">
-							<Fade left delay={2000}>
-								<img src="/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8 " />
+							<Fade top delay={1000}>
+								<img src="/nearshore.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8 " />
 							</Fade>
 							+{nearshoreExpTime} months experience working Nearshore
 						</li>
