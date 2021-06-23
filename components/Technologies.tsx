@@ -44,25 +44,25 @@ const Technologies: FC = () => {
 					draggable={false}
 				>
 					<div>
-						<img src="/html.svg" height="100" width="100" />
+						<img src="/html.svg" className="w-40 h-40" />
 					</div>
 					<div>
-						<img src="/css.svg" height="100" width="100" />
+						<img src="/css.svg" className="w-40 h-40" />
 					</div>
 					<div>
-						<img src="/javascript.svg" height="100" width="100" />
+						<img src="/javascript.svg" className="w-40 h-40" />
 					</div>
 					<div>
-						<img src="/typescript.svg" height="100" width="100" />
+						<img src="/typescript.svg" className="w-40 h-40" />
 					</div>
 					<div>
-						<img src="/react.svg" height="100" width="100" />
+						<img src="/react.svg" className="w-60 h-60" />
 					</div>
 					<div>
-						<img src="/node.svg" height="100" width="100" />
+						<img src="/node.svg" className="w-40 h-40" />
 					</div>
 					<div>
-						<img src="/next.svg" height="100" width="100" />
+						<img src="/next.svg" className="w-40 h-40" />
 					</div>
 				</Carousel>
 			)}
