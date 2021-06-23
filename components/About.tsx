@@ -2,7 +2,8 @@ import { FC } from "react";
 import { Fade } from "react-reveal";
 
 const About: FC = () => {
-	const fullStackExpTime = Math.floor((Date.now() - new Date("4/1/2020").getTime()) / 1000 / 60 / 60 / 24 / 30);
+	const fullStackExpTime = Math.floor((Date.now() - new Date("8/25/2020").getTime()) / 1000 / 60 / 60 / 24 / 30);
+	const nearshoreExpTime = Math.floor((Date.now() - new Date("12/1/2020").getTime()) / 1000 / 60 / 60 / 24 / 30);
 
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
@@ -34,7 +35,7 @@ const About: FC = () => {
 							<Fade left delay={2000}>
 								<img src="/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8 " />
 							</Fade>
-							+7 months experience working Nearshore
+							+{nearshoreExpTime} months experience working Nearshore
 						</li>
 					</Fade>
 				</div>
