@@ -35,38 +35,11 @@ const IndexPage: FC = () => {
 			<Hero />
 			<About />
 			<Technologies />
-			<div className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
-				<div className="container mb-60">
-					<Fade top>
-						<h1 className="text-6xl font-thin text-white">About Me</h1>
-					</Fade>
-					<ul className="list-inside text-2xl text-white mt-12 ml-12">
-						<Fade bottom delay={1000}>
-							<li className="py-4 flex">
-								<Fade left delay={1500}>
-									<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" />
-								</Fade>
-								I am a Software Developer who loves to learn.
-							</li>
-						</Fade>
+			<div className="min-h-screen flex flex-col items-center bg-primary relative">
+				<Fade top>
+					<h1 className="text-6xl font-thin text-white mt-40">My Certificates</h1>
+				</Fade>
 
-						<Fade bottom delay={1500}>
-							<li className="py-4 flex">
-								<Fade left delay={2000}>
-									<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" />
-								</Fade>
-								My strength is in the Front End.
-							</li>
-						</Fade>
-						<Fade bottom delay={2000}>
-							<li className="py-4 flex">
-								<Fade left delay={2500}>
-									<img src="/checkmark.svg" alt="checkmark" className="mr-6 filter invert" />
-								</Fade>
-							</li>
-						</Fade>
-					</ul>
-				</div>
 				<div className="absolute w-full bottom-0">
 					<svg className="h-168px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
 						<path

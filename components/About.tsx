@@ -17,7 +17,7 @@ const About: FC = () => {
 							<img src="/e-learning.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 						</Fade>
 						<Fade bottom>
-							<p className="font-light">+250 Hours in Targeted Courses</p>
+							<p className="font-normal">+250 Hours in Targeted Courses</p>
 						</Fade>
 					</li>
 
@@ -26,7 +26,7 @@ const About: FC = () => {
 							<img src="/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 						</Fade>
 						<Fade bottom delay={200}>
-							<p className="font-light">+{fullStackExpTime} months experience in Full Stack Development</p>
+							<p className="font-normal">+{fullStackExpTime} months experience in Full Stack Development</p>
 						</Fade>
 					</li>
 
@@ -35,7 +35,7 @@ const About: FC = () => {
 							<img src="/nearshore.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8 " />
 						</Fade>
 						<Fade bottom delay={400}>
-							<p className="font-light">+{nearshoreExpTime} months experience working Nearshore</p>
+							<p className="font-normal">+{nearshoreExpTime} months experience working Nearshore</p>
 						</Fade>
 					</li>
 				</div>
