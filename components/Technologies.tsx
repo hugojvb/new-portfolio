@@ -18,10 +18,6 @@ const Technologies: FC = () => {
 
 	return (
 		<div className="flex flex-col items-center my-20 bg-white">
-			<Fade top>
-				<h1 className="text-5xl font-thin text-primary  mb-40 ">My Favorite Technologies</h1>
-			</Fade>
-
 			{mounted && (
 				<Carousel
 					plugins={[
