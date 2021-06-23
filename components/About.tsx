@@ -2,6 +2,8 @@ import { FC } from "react";
 import { Fade } from "react-reveal";
 
 const About: FC = () => {
+	const fullStackExpTime = Math.floor((Date.now() - new Date("4/1/2020").getTime()) / 1000 / 60 / 60 / 24 / 30);
+
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
 			<div className="container mb-60">
@@ -12,7 +14,7 @@ const About: FC = () => {
 					<Fade bottom delay={1000}>
 						<li className="py-4 flex flex-col items-center text-center text-xl mx-8 w-56">
 							<Fade left delay={1500}>
-								<img src="/e-learning.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8"  />
+								<img src="/e-learning.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 							</Fade>
 							+250 Hours in Targeted Courses
 						</li>
@@ -23,7 +25,7 @@ const About: FC = () => {
 							<Fade left delay={3000}>
 								<img src="/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 							</Fade>
-							+1 year experience in Full Stack Development
+							+{fullStackExpTime} months experience in Full Stack Development
 						</li>
 					</Fade>
 
@@ -32,11 +34,9 @@ const About: FC = () => {
 							<Fade left delay={2000}>
 								<img src="/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8 " />
 							</Fade>
-							My strength is in the Front End.
+							+7 months experience working Nearshore
 						</li>
 					</Fade>
-
-					
 				</div>
 			</div>
 			<div className="absolute w-full bottom-0">
