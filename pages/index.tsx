@@ -43,7 +43,7 @@ const IndexPage: FC = () => {
 			<Technologies />
 			<div className="min-h-screen flex flex-col items-center bg-white relative ">
 				<Fade top>{/* <h1 className="text-6xl font-thin text-primary my-24">My Certificates</h1> */}</Fade>
-				<div className="w-2/3 ">
+				<div className="w-3/4 flex justify-around">
 					<Carousel
 						plugins={[
 							"infinite",
@@ -145,6 +145,15 @@ const IndexPage: FC = () => {
 							/>
 						</div>
 					</Carousel>
+					<div className="w-1/2 flex items-center">
+						<p className="font-thin p-12 text-lg text-secondary">
+							Sit eu laborum esse officia voluptate consectetur voluptate adipisicing eu. Ut elit sit ex pariatur laborum nulla qui
+							excepteur in do quis pariatur duis. Reprehenderit amet exercitation fugiat dolore nostrud non irure occaecat sunt eiusmod
+							anim id elit. Esse nulla aute dolore proident duis ad duis ullamco. Ex consequat dolor duis ea ex enim. Aliqua ex nulla ut
+							labore sit id ea consequat adipisicing proident sunt et nulla. Est nisi ullamco duis officia elit sint in cupidatat
+							occaecat.
+						</p>
+					</div>
 				</div>
 			</div>
 		</Fragment>
