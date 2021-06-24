@@ -54,22 +54,22 @@ const IndexPage: FC = () => {
 								resolve: arrowsPlugin,
 								options: {
 									arrowLeft: (
-										<button className="w-8">
+										<button className="w-8 hover:-translate-x-0.5 hover:duration-300">
 											<img src="/left-arrow.svg" alt="left-arrow" />
 										</button>
 									),
 									arrowLeftDisabled: (
-										<button className="w-8">
+										<button className="w-8 hover:-translate-x-0.5 hover:duration-300">
 											<img src="/left-arrow.svg" alt="left-arrow" />
 										</button>
 									),
 									arrowRight: (
-										<button className="w-8">
+										<button className="w-8 hover:translate-x-0.5 hover:duration-300">
 											<img src="/right-arrow.svg" alt="right-arrow" />
 										</button>
 									),
 									arrowRightDisabled: (
-										<button className="w-8">
+										<button className="w-8 hover:translate-x-0.5 hover:duration-300">
 											<img src="/right-arrow.svg" alt="right-arrow" />
 										</button>
 									),

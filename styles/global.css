@@ -39,16 +39,16 @@ body {
 
 /* BUTTON ANIMATION ON HOVER */
 
-button {
+button.custom-fill {
 	overflow: hidden;
 	position: relative;
 }
 
-button:hover {
+button.custom-fill:hover {
 	color: #fff;
 }
 
-button:after {
+button.custom-fill:after {
 	content: "";
 	position: absolute;
 	z-index: -1;
@@ -62,7 +62,7 @@ button:after {
 	background: var(--primary-color);
 }
 
-button:hover:after,
-button:active:after {
+button.custom-fill:hover:after,
+button.custom-fill:active:after {
 	height: 100%;
 }
