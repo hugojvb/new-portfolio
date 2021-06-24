@@ -3,8 +3,7 @@ import { FC, useEffect } from "react";
 import dynamic from "next/dynamic";
 
 const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), { ssr: false });
-import { autoplayPlugin } from "@brainhubeu/react-carousel";
-import { slidesToShowPlugin } from "@brainhubeu/react-carousel";
+import { autoplayPlugin, slidesToShowPlugin, arrowsPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
 import { Fade } from "react-reveal";
@@ -13,17 +12,44 @@ const Technologies: FC = () => {
 	useEffect(() => {}, []);
 
 	return (
-		<div className="flex flex-col items-center my-20">
+		<div className="flex-col items-center justify-center my-20 mx-8">
 			<Fade top>{/* <h1 className="text-6xl font-thin mb-24 mt-8">Favorite Technologies</h1> */}</Fade>
 
 			<Carousel
 				plugins={[
 					"infinite",
 					"centered",
+					"fastSwipe",
+					{
+						resolve: arrowsPlugin,
+						options: {
+							arrowLeft: (
+								<button className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
+									<img src="/left-arrow.svg" alt="left-arrow" />
+								</button>
+							),
+							arrowLeftDisabled: (
+								<button className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
+									<img src="/left-arrow.svg" alt="left-arrow" />
+								</button>
+							),
+							arrowRight: (
+								<button className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
+									<img src="/right-arrow.svg" alt="right-arrow" />
+								</button>
+							),
+							arrowRightDisabled: (
+								<button className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
+									<img src="/right-arrow.svg" alt="right-arrow" />
+								</button>
+							),
+							addArrowClickHandler: true,
+						},
+					},
 					{
 						resolve: autoplayPlugin,
 						options: {
-							interval: 2000,
+							interval: 1000,
 						},
 					},
 					{
@@ -33,7 +59,7 @@ const Technologies: FC = () => {
 						},
 					},
 				]}
-				animationSpeed={5000}
+				animationSpeed={1000}
 			>
 				<div>
 					<img src="/html.svg" className="w-40 h-40" />
