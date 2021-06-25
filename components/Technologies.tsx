@@ -18,7 +18,6 @@ const Technologies: FC = () => {
 			<Carousel
 				plugins={[
 					"infinite",
-					"centered",
 					"fastSwipe",
 					{
 						resolve: arrowsPlugin,

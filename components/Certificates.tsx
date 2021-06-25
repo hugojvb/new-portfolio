@@ -116,8 +116,8 @@ const Certificates: FC = () => {
 				</Carousel>
 				<Fade delay={500}>
 					<div className="w-1/2 flex flex-col justify-center items-center bg-secondary rounded-xl ml-8">
-						<img src="/e-learning.svg" alt="checkmark" className="filter invert h-20 w-20 mb-8" />
-						<p className="font-thin p-12 text-xl text-white">
+						<img src="/e-learning.svg" alt="checkmark" className="filter invert h-20 w-20 border-b-2 border-current mb-2.5" />
+						<p className="font-thin p-12 text-xl text-white max-h-60 overflow-auto">
 							Sit eu laborum esse officia voluptate consectetur voluptate adipisicing eu. Ut elit sit ex pariatur laborum nulla qui
 							excepteur in do quis pariatur duis. Reprehenderit amet exercitation fugiat dolore nostrud non irure occaecat sunt eiusmod
 							anim id elit. Esse nulla aute dolore proident duis ad duis ullamco. Ex consequat dolor duis ea ex enim. Aliqua ex nulla ut
