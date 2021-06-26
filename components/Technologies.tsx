@@ -12,7 +12,7 @@ const Technologies: FC = () => {
 	useEffect(() => {}, []);
 
 	return (
-		<div className="flex-col items-center justify-center my-20 mx-8">
+		<div className="flex-col items-center justify-center my-20">
 			<Fade top>{/* <h1 className="text-6xl font-thin mb-24 mt-8">Favorite Technologies</h1> */}</Fade>
 
 			<Carousel
@@ -20,35 +20,9 @@ const Technologies: FC = () => {
 					"infinite",
 					"fastSwipe",
 					{
-						resolve: arrowsPlugin,
-						options: {
-							arrowLeft: (
-								<button className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
-									<img src="/left-arrow.svg" alt="left-arrow" />
-								</button>
-							),
-							arrowLeftDisabled: (
-								<button className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
-									<img src="/left-arrow.svg" alt="left-arrow" />
-								</button>
-							),
-							arrowRight: (
-								<button className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
-									<img src="/right-arrow.svg" alt="right-arrow" />
-								</button>
-							),
-							arrowRightDisabled: (
-								<button className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
-									<img src="/right-arrow.svg" alt="right-arrow" />
-								</button>
-							),
-							addArrowClickHandler: true,
-						},
-					},
-					{
 						resolve: autoplayPlugin,
 						options: {
-							interval: 1000,
+							interval: 1500,
 							stopAutoPlayOnHover: false,
 						},
 					},
@@ -59,7 +33,7 @@ const Technologies: FC = () => {
 						},
 					},
 				]}
-				animationSpeed={1000}
+				animationSpeed={1500}
 			>
 				<div>
 					<img src="/html.svg" className="w-40 h-40" />

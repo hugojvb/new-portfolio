@@ -62,13 +62,6 @@ const Certificates: FC = () => {
 											<img src="/right-arrow.svg" alt="right-arrow" />
 										</button>
 									),
-									// addArrowClickHandler: true,
-								},
-							},
-							{
-								resolve: autoplayPlugin,
-								options: {
-									interval: 4000,
 								},
 							},
 							{
