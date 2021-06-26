@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 
 import { Fade } from "react-reveal";
 
@@ -23,6 +23,16 @@ const Certificates: FC = () => {
 		<img src="https://udemy-certificate.s3.amazonaws.com/image/UC-939706bd-171a-4b09-856c-6d13a32e231d.jpg?v=1623284648000" alt="certificate" />,
 		<img src="https://udemy-certificate.s3.amazonaws.com/image/UC-e3df1811-664d-4fe1-b1be-31e7aac9332b.jpg?v=1622397467000" alt="certificate" />,
 	]);
+
+	useEffect(() => {
+		let interval = setInterval(() => {
+			setDotValue(dotValue + 1);
+		}, 7500);
+
+		return () => {
+			clearInterval(interval);
+		};
+	});
 
 	return (
 		<div className="min-h-screen flex flex-col items-center bg-white relative mt-40">
