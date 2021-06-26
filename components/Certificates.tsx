@@ -37,7 +37,10 @@ const Certificates: FC = () => {
 								resolve: arrowsPlugin,
 								options: {
 									arrowLeft: (
-										<button className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
+										<button
+											onClick={() => setDotValue(dotValue - 1)}
+											className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none"
+										>
 											<img src="/left-arrow.svg" alt="left-arrow" />
 										</button>
 									),
@@ -47,7 +50,10 @@ const Certificates: FC = () => {
 										</button>
 									),
 									arrowRight: (
-										<button className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
+										<button
+											onClick={() => setDotValue(dotValue + 1)}
+											className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none"
+										>
 											<img src="/right-arrow.svg" alt="right-arrow" />
 										</button>
 									),
@@ -56,7 +62,7 @@ const Certificates: FC = () => {
 											<img src="/right-arrow.svg" alt="right-arrow" />
 										</button>
 									),
-									addArrowClickHandler: true,
+									// addArrowClickHandler: true,
 								},
 							},
 							{
