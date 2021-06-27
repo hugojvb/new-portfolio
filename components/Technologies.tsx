@@ -51,10 +51,28 @@ const Technologies: FC = () => {
 					<img src="/react.svg" className="w-60 h-60" />
 				</div>
 				<div>
-					<img src="/node.svg" className="w-40 h-40" />
+					<img src="/node.svg" className="w-44 h-44" />
 				</div>
 				<div>
 					<img src="/next.svg" className="w-40 h-40" />
+				</div>
+				<div>
+					<img src="/php.svg" className="w-48 h-48" />
+				</div>
+				<div>
+					<img src="/java.svg" className="w-44 h-44" />
+				</div>
+				<div>
+					<img src="/angular.svg" className="w-40 h-40" />
+				</div>
+				<div>
+					<img src="/sass.svg" className="w-40 h-40" />
+				</div>
+				<div>
+					<img src="/mysql.svg" className="w-52 h-52" />
+				</div>
+				<div>
+					<img src="/mongoDB.svg" className="h-44" />
 				</div>
 			</Carousel>
 		</div>
