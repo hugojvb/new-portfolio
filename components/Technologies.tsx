@@ -69,7 +69,7 @@ const Technologies: FC = () => {
 					<img src="/bootstrap.svg" className="h-40 w-40" />
 				</div>
 				<div>
-					<img src="/jquery.svg" className="h-40 mr-10" />
+					<img src="/jquery.svg" className="h-20" />
 				</div>
 				<div>
 					<img src="/php.svg" className="w-48 h-48" />

@@ -81,7 +81,7 @@ const Certificates: FC = () => {
 								},
 							},
 						]}
-						animationSpeed={5000}
+						animationSpeed={1500}
 						draggable={false}
 						slides={slides}
 						value={dotValue}
