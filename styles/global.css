@@ -15,6 +15,7 @@ body {
 
 ::selection {
 	color: var(--secondary-color);
+	background-color: #eee;
 }
 
 /* SCROLLBAR */
