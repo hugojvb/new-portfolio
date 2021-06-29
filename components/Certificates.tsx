@@ -94,16 +94,52 @@ const Certificates: FC = () => {
 					</div>
 				</Fade>
 				<Fade right>
-					<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
-						<img src="/e-learning.svg" alt="checkmark" className="filter invert h-20 w-20 border-b-2 border-current mb-2.5" />
-						<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">
-							Sit eu laborum esse officia voluptate consectetur voluptate adipisicing eu. Ut elit sit ex pariatur laborum nulla qui
-							excepteur in do quis pariatur duis. Reprehenderit amet exercitation fugiat dolore nostrud non irure occaecat sunt eiusmod
-							anim id elit. Esse nulla aute dolore proident duis ad duis ullamco. Ex consequat dolor duis ea ex enim. Aliqua ex nulla ut
-							labore sit id ea consequat adipisicing proident sunt et nulla. Est nisi ullamco duis officia elit sint in cupidatat
-							occaecat.
-						</p>
-					</div>
+					{dotValue === 0 ? (
+						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
+							<img src="/react.svg" alt="react" className="h-20 w-20 mb-2.5" />
+							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Course for learning the MERN stack</p>
+						</div>
+					) : dotValue === 1 ? (
+						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
+							<img src="/java.svg" alt="java" className="h-20 w-20 mb-2.5" />
+							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Java course of 80 hours</p>
+						</div>
+					) : dotValue === 2 ? (
+						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
+							<img src="/angular.svg" alt="angular" className="h-20 w-20 mb-2.5" />
+							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Angular course</p>
+						</div>
+					) : dotValue === 3 ? (
+						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
+							<img src="/html.svg" alt="html" className="h-20 w-20 mb-2.5" />
+							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">HTML and CSS course</p>
+						</div>
+					) : dotValue === 4 ? (
+						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
+							<img src="/javascript.svg" alt="javascript" className="h-20 w-20 mb-2.5" />
+							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Javascript course</p>
+						</div>
+					) : dotValue === 5 ? (
+						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
+							<img src="/node.svg" alt="node" className="h-20 w-20 mb-2.5" />
+							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Node course</p>
+						</div>
+					) : dotValue === 6 ? (
+						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
+							<img src="/react.svg" alt="react" className="h-20 w-20 mb-2.5" />
+							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">React course</p>
+						</div>
+					) : dotValue === 7 ? (
+						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
+							<img src="/react.svg" alt="react" className="h-20 w-20 mb-2.5" />
+							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Advanced react course</p>
+						</div>
+					) : (
+						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
+							<img src="/node.svg" alt="node" className="h-20 w-20 mb-2.5" />
+							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Advanced node course</p>
+						</div>
+					)}
 				</Fade>
 			</div>
 		</div>
