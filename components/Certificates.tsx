@@ -26,13 +26,37 @@ const Certificates: FC = () => {
 
 	useEffect(() => {
 		let interval = setInterval(() => {
-			setDotValue(dotValue + 1);
+			if (dotValue < slides.length) {
+				setDotValue(dotValue + 1);
+			} else {
+				setDotValue(dotValue - slides.length + 1);
+			}
 		}, 7500);
 
 		return () => {
 			clearInterval(interval);
 		};
 	});
+
+	// Button Clicks
+
+	const leftArrowClick = () => {
+		if (dotValue + 1 < slides.length) {
+			setDotValue(dotValue - 1);
+		} else {
+			setDotValue(dotValue + slides.length - 1);
+		}
+	};
+
+	const rightArrowClick = () => {
+		if (dotValue + 1 < slides.length) {
+			setDotValue(dotValue + 1);
+		} else {
+			setDotValue(dotValue - slides.length + 1);
+		}
+	};
+
+	console.log(dotValue);
 
 	return (
 		<div className="min-h-screen flex flex-col items-center bg-white relative mt-20">
@@ -52,7 +76,7 @@ const Certificates: FC = () => {
 									options: {
 										arrowLeft: (
 											<button
-												onClick={() => setDotValue(dotValue - 1)}
+												onClick={leftArrowClick}
 												className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none"
 											>
 												<img src="/left-arrow.svg" alt="left-arrow" />
@@ -65,7 +89,7 @@ const Certificates: FC = () => {
 										),
 										arrowRight: (
 											<button
-												onClick={() => setDotValue(dotValue + 1)}
+												onClick={rightArrowClick}
 												className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none"
 											>
 												<img src="/right-arrow.svg" alt="right-arrow" />
