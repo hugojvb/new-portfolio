@@ -33,8 +33,8 @@ const IndexPage: FC = () => {
 
 			<Hero />
 			<About />
-			<Technologies />
 			<Certificates />
+			<Technologies />
 		</Fragment>
 	);
 };

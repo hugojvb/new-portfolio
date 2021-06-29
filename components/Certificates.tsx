@@ -35,61 +35,65 @@ const Certificates: FC = () => {
 	});
 
 	return (
-		<div className="min-h-screen flex flex-col items-center bg-white relative mt-40">
-			<Fade top>{/* <h1 className="text-6xl font-thin text-primary mb-24 mt-8">My Certificates</h1> */}</Fade>
-			<div className="w-3/4 flex justify-around">
-				<div className="w-8/12 flex flex-col">
-					<Carousel
-						plugins={[
-							"infinite",
-							"centered",
-							{
-								resolve: arrowsPlugin,
-								options: {
-									arrowLeft: (
-										<button
-											onClick={() => setDotValue(dotValue - 1)}
-											className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none"
-										>
-											<img src="/left-arrow.svg" alt="left-arrow" />
-										</button>
-									),
-									arrowLeftDisabled: (
-										<button className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
-											<img src="/left-arrow.svg" alt="left-arrow" />
-										</button>
-									),
-									arrowRight: (
-										<button
-											onClick={() => setDotValue(dotValue + 1)}
-											className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none"
-										>
-											<img src="/right-arrow.svg" alt="right-arrow" />
-										</button>
-									),
-									arrowRightDisabled: (
-										<button className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
-											<img src="/right-arrow.svg" alt="right-arrow" />
-										</button>
-									),
-								},
-							},
-							{
-								resolve: slidesToShowPlugin,
-								options: {
-									numberOfSlides: 1,
-								},
-							},
-						]}
-						animationSpeed={1500}
-						draggable={false}
-						slides={slides}
-						value={dotValue}
-					></Carousel>
-					<Dots value={dotValue} onChange={(value) => setDotValue(value)} number={slides.length} />
-				</div>
+		<div className="min-h-screen flex flex-col items-center bg-white relative mt-20">
+			<Fade top>
+				<h1 className="text-6xl font-thin text-secondary mb-24 mt-8">My Certificates</h1>
+			</Fade>
 
-				<Fade delay={500}>
+			<div className="w-3/4 flex justify-around">
+				<Fade left>
+					<div className="w-8/12 flex flex-col">
+						<Carousel
+							plugins={[
+								"infinite",
+								"centered",
+								{
+									resolve: arrowsPlugin,
+									options: {
+										arrowLeft: (
+											<button
+												onClick={() => setDotValue(dotValue - 1)}
+												className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none"
+											>
+												<img src="/left-arrow.svg" alt="left-arrow" />
+											</button>
+										),
+										arrowLeftDisabled: (
+											<button className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
+												<img src="/left-arrow.svg" alt="left-arrow" />
+											</button>
+										),
+										arrowRight: (
+											<button
+												onClick={() => setDotValue(dotValue + 1)}
+												className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none"
+											>
+												<img src="/right-arrow.svg" alt="right-arrow" />
+											</button>
+										),
+										arrowRightDisabled: (
+											<button className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
+												<img src="/right-arrow.svg" alt="right-arrow" />
+											</button>
+										),
+									},
+								},
+								{
+									resolve: slidesToShowPlugin,
+									options: {
+										numberOfSlides: 1,
+									},
+								},
+							]}
+							animationSpeed={1500}
+							draggable={false}
+							slides={slides}
+							value={dotValue}
+						></Carousel>
+						<Dots value={dotValue} onChange={(value) => setDotValue(value)} number={slides.length} />
+					</div>
+				</Fade>
+				<Fade right>
 					<div className="w-1/2 flex flex-col justify-center items-center bg-secondary rounded-xl ml-8">
 						<img src="/e-learning.svg" alt="checkmark" className="filter invert h-20 w-20 border-b-2 border-current mb-2.5" />
 						<p className="font-thin p-12 text-xl text-white max-h-60 overflow-auto">
