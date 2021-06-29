@@ -26,7 +26,7 @@ const Certificates: FC = () => {
 
 	useEffect(() => {
 		let interval = setInterval(() => {
-			if (dotValue < slides.length) {
+			if (dotValue + 1 < slides.length) {
 				setDotValue(dotValue + 1);
 			} else {
 				setDotValue(dotValue - slides.length + 1);
