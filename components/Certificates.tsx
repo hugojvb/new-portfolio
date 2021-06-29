@@ -56,8 +56,6 @@ const Certificates: FC = () => {
 		}
 	};
 
-	console.log(dotValue);
-
 	return (
 		<div className="min-h-screen flex flex-col items-center bg-white relative mt-20">
 			<Fade top>
@@ -120,7 +118,7 @@ const Certificates: FC = () => {
 				<Fade right>
 					{dotValue === 0 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
-							<img src="/react.svg" alt="react" className="h-20 w-20 mb-2.5" />
+							<img src="/react.svg" alt="react" className="h-28 w-28 mb-2.5" />
 							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Course for learning the MERN stack</p>
 						</div>
 					) : dotValue === 1 ? (
