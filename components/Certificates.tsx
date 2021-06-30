@@ -35,7 +35,7 @@ const Certificates: FC = () => {
 				} else {
 					setDotValue(dotValue - slides.length + 1);
 				}
-			}, 7500);
+			}, 3000);
 		}
 
 		return () => {
