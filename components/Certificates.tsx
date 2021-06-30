@@ -128,12 +128,14 @@ const Certificates: FC = () => {
 					{dotValue === 0 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/react.svg" alt="react" className="h-28 w-28 mb-2.5" />
-							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Course for learning the MERN stack</p>
+							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">
+								Learned the Basics of Javascript fullstack with the MERN stack, applying the most modern methods in development.
+							</p>
 						</div>
 					) : dotValue === 1 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/java.svg" alt="java" className="h-20 w-20 mb-2.5" />
-							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Java course of 80 hours</p>
+							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Learned all the </p>
 						</div>
 					) : dotValue === 2 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
