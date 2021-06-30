@@ -11,6 +11,7 @@ import "@brainhubeu/react-carousel/lib/style.css";
 
 const Certificates: FC = () => {
 	const [dotValue, setDotValue] = useState(0);
+	const [certificateHovered, setCertificateHovered] = useState(false);
 
 	const [slides, setSlides] = useState([
 		<img src="https://udemy-certificate.s3.amazonaws.com/image/UC-32f95c24-b57c-448d-80ec-9458171ed3ee.jpg?v=1585645681000" alt="certificate" />,
@@ -25,13 +26,17 @@ const Certificates: FC = () => {
 	]);
 
 	useEffect(() => {
-		let interval = setInterval(() => {
-			if (dotValue + 1 < slides.length) {
-				setDotValue(dotValue + 1);
-			} else {
-				setDotValue(dotValue - slides.length + 1);
-			}
-		}, 7500);
+		let interval;
+
+		if (!certificateHovered) {
+			interval = setInterval(() => {
+				if (dotValue + 1 < slides.length) {
+					setDotValue(dotValue + 1);
+				} else {
+					setDotValue(dotValue - slides.length + 1);
+				}
+			}, 7500);
+		}
 
 		return () => {
 			clearInterval(interval);
@@ -62,7 +67,11 @@ const Certificates: FC = () => {
 				<h1 className="text-6xl font-thin text-secondary mb-24 mt-8">My Certificates</h1>
 			</Fade>
 
-			<div className="w-3/4 flex justify-around">
+			<div
+				className="w-3/4 flex justify-around"
+				onMouseEnter={() => setCertificateHovered(true)}
+				onMouseLeave={() => setCertificateHovered(false)}
+			>
 				<Fade left>
 					<div className="w-8/12 flex flex-col">
 						<Carousel
