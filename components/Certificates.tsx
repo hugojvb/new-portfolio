@@ -135,7 +135,9 @@ const Certificates: FC = () => {
 					) : dotValue === 1 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/java.svg" alt="java" className="h-20 w-20 mb-2.5" />
-							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Learned all the </p>
+							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">
+								Java is statically typed and object oriented. In this 80 hour course I learned a lot in development with vanilla Java.
+							</p>
 						</div>
 					) : dotValue === 2 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
