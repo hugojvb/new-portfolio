@@ -53,8 +53,6 @@ const Certificates: FC = () => {
 		}
 	};
 
-	console.log(dotValue);
-
 	const rightArrowClick = () => {
 		if (dotValue + 1 < slides.length) {
 			setDotValue(dotValue + 1);
@@ -70,7 +68,7 @@ const Certificates: FC = () => {
 			</Fade>
 
 			<div
-				className="w-3/4 flex justify-around"
+				className="w-full flex justify-around container"
 				onMouseEnter={() => setCertificateHovered(true)}
 				onMouseLeave={() => setCertificateHovered(false)}
 			>
@@ -169,17 +167,16 @@ const Certificates: FC = () => {
 					) : dotValue === 7 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/react.svg" alt="react" className="h-20 w-20 mb-2.5" />
-							<p className="font-thin text-left p-8 text-xl text-secondary max-h-60 overflow-auto">This course taught me how to:</p>
-							<ol className="font-thin p-8 text-base text-secondary max-h-68 overflow-auto list-inside list-decimal">
-								<li>Use microfrontends to architect an app that dozens of teams can work on at the same time </li>
-								<li>Structure apps to scale to millions of users</li>
-								<li>Understand how to divide a monolithic app into multiple sub-apps</li>
-								<li>Coordinate data exchanged between microfrontends</li>
-								<li>Apply a production-style workflow with a full CI/CD pipeline</li>
-								<li>Deploy microfrontends to Amazon Web Services with CloudFront</li>
-								<li>Isolate rules styling by applying CSS-scoping techniques</li>
-								<li>Judge whether microfrontends are an appropriate choice for your application</li>
-							</ol>
+							<ul className="font-thin p-8 text-base text-secondary max-h-68 overflow-auto list-inside list-disc">
+								<li className="my-1">Use microfrontends to architect an app that dozens of teams can work on at the same time </li>
+								<li className="my-1">Structure apps to scale to millions of users</li>
+								<li className="my-1">Understand how to divide a monolithic app into multiple sub-apps</li>
+								<li className="my-1">Coordinate data exchanged between microfrontends</li>
+								<li className="my-1">Apply a production-style workflow with a full CI/CD pipeline</li>
+								<li className="my-1">Deploy microfrontends to Amazon Web Services with CloudFront</li>
+								<li className="my-1">Isolate rules styling by applying CSS-scoping techniques</li>
+								<li className="my-1">Judge whether microfrontends are an appropriate choice for your application</li>
+							</ul>
 						</div>
 					) : (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
