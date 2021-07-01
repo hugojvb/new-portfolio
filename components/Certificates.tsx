@@ -166,8 +166,8 @@ const Certificates: FC = () => {
 						</div>
 					) : dotValue === 7 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
-							<img src="/react.svg" alt="react" className="h-20 w-20 mb-2.5" />
-							<ul className="font-thin p-8 text-base text-secondary max-h-68 overflow-auto list-inside list-disc">
+							<img src="/react.svg" alt="react" className="h-40 w-40 mb-2.5" />
+							<ul className="font-thin p-8 text-base text-secondary max-h-68 overflow-auto list-inside list-disc max-h-80">
 								<li className="my-1">Use microfrontends to architect an app that dozens of teams can work on at the same time </li>
 								<li className="my-1">Structure apps to scale to millions of users</li>
 								<li className="my-1">Understand how to divide a monolithic app into multiple sub-apps</li>
