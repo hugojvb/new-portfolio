@@ -46,12 +46,14 @@ const Certificates: FC = () => {
 	// Button Clicks
 
 	const leftArrowClick = () => {
-		if (dotValue + 1 < slides.length) {
+		if (dotValue > 0) {
 			setDotValue(dotValue - 1);
 		} else {
 			setDotValue(dotValue + slides.length - 1);
 		}
 	};
+
+	console.log(dotValue);
 
 	const rightArrowClick = () => {
 		if (dotValue + 1 < slides.length) {
