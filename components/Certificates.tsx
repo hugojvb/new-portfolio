@@ -128,51 +128,61 @@ const Certificates: FC = () => {
 					{dotValue === 0 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/react.svg" alt="react" className="h-28 w-28 mb-2.5" />
-							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">
+							<p className="font-thin p-8 text-xl text-secondary max-h-60 overflow-auto">
 								Learned the Basics of Javascript fullstack with the MERN stack, applying the most modern methods in development.
 							</p>
 						</div>
 					) : dotValue === 1 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/java.svg" alt="java" className="h-20 w-20 mb-2.5" />
-							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">
+							<p className="font-thin p-8 text-xl text-secondary max-h-60 overflow-auto">
 								Java is statically typed and object oriented. In this 80 hour course I learned a lot in development with vanilla Java.
 							</p>
 						</div>
 					) : dotValue === 2 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/angular.svg" alt="angular" className="h-20 w-20 mb-2.5" />
-							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Angular course</p>
+							<p className="font-thin p-8 text-xl text-secondary max-h-60 overflow-auto">Angular course</p>
 						</div>
 					) : dotValue === 3 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/html.svg" alt="html" className="h-20 w-20 mb-2.5" />
-							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">HTML and CSS course</p>
+							<p className="font-thin p-8 text-xl text-secondary max-h-60 overflow-auto">HTML and CSS course</p>
 						</div>
 					) : dotValue === 4 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/javascript.svg" alt="javascript" className="h-20 w-20 mb-2.5" />
-							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Javascript course</p>
+							<p className="font-thin p-8 text-xl text-secondary max-h-60 overflow-auto">Javascript course</p>
 						</div>
 					) : dotValue === 5 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/node.svg" alt="node" className="h-20 w-20 mb-2.5" />
-							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Node course</p>
+							<p className="font-thin p-8 text-xl text-secondary max-h-60 overflow-auto">Node course</p>
 						</div>
 					) : dotValue === 6 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/react.svg" alt="react" className="h-20 w-20 mb-2.5" />
-							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">React course</p>
+							<p className="font-thin p-8 text-xl text-secondary max-h-60 overflow-auto">React course</p>
 						</div>
 					) : dotValue === 7 ? (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/react.svg" alt="react" className="h-20 w-20 mb-2.5" />
-							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Advanced react course</p>
+							<p className="font-thin text-left p-8 text-xl text-secondary max-h-60 overflow-auto">This course taught me how to:</p>
+							<ol className="font-thin p-8 text-base text-secondary max-h-68 overflow-auto list-inside list-decimal">
+								<li>Use microfrontends to architect an app that dozens of teams can work on at the same time </li>
+								<li>Structure apps to scale to millions of users</li>
+								<li>Understand how to divide a monolithic app into multiple sub-apps</li>
+								<li>Coordinate data exchanged between microfrontends</li>
+								<li>Apply a production-style workflow with a full CI/CD pipeline</li>
+								<li>Deploy microfrontends to Amazon Web Services with CloudFront</li>
+								<li>Isolate rules styling by applying CSS-scoping techniques</li>
+								<li>Judge whether microfrontends are an appropriate choice for your application</li>
+							</ol>
 						</div>
 					) : (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/node.svg" alt="node" className="h-20 w-20 mb-2.5" />
-							<p className="font-thin p-12 text-xl text-secondary max-h-60 overflow-auto">Advanced node course</p>
+							<p className="font-thin p-8 text-xl text-secondary max-h-60 overflow-auto">Advanced node course</p>
 						</div>
 					)}
 				</Fade>
