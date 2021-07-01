@@ -47,7 +47,7 @@ button.custom-fill {
 }
 
 button.custom-fill:hover {
-	color: #fff;
+	color: var(--secondary-color);
 }
 
 button.custom-fill:after {
