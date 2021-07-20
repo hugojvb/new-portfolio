@@ -5,8 +5,7 @@ import { Fade } from "react-reveal";
 import dynamic from "next/dynamic";
 
 const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), { ssr: false });
-const Dots = dynamic(() => import("@brainhubeu/react-carousel").then((mod) => mod.Dots), { ssr: false });
-import { autoplayPlugin, arrowsPlugin, slidesToShowPlugin } from "@brainhubeu/react-carousel";
+import { autoplayPlugin, arrowsPlugin, slidesToShowPlugin, Dots } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
 const Certificates: FC = () => {
