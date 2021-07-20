@@ -6,6 +6,7 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import Technologies from "../components/Technologies";
 import Certificates from "../components/Certificates";
+import Projects from "../components/Projects";
 
 const IndexPage: FC = () => {
 	return (
@@ -34,6 +35,7 @@ const IndexPage: FC = () => {
 			<Hero />
 			<About />
 			<Certificates />
+			<Projects />
 			<Technologies />
 		</Fragment>
 	);

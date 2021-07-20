@@ -62,7 +62,7 @@ const Certificates: FC = () => {
 	return (
 		<div className="min-h-screen flex flex-col items-center bg-white relative mt-20">
 			<Fade top>
-				<h1 className="text-6xl font-thin text-secondary mb-24 mt-8">My Certificates</h1>
+				<h2 className="text-6xl font-thin text-secondary mb-24 mt-8">My Certificates</h2>
 			</Fade>
 
 			<div
@@ -179,7 +179,7 @@ const Certificates: FC = () => {
 					) : (
 						<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 							<img src="/node.svg" alt="node" className="h-20 w-20 mb-2.5" />
-							<p className="font-thin m-8 text-xl text-secondary max-h-full overflow-auto">Advanced node course</p>
+							<p className="font-thin m-16 text-xl text-secondary max-h-full overflow-auto">Advanced node course</p>
 						</div>
 					)}
 				</Fade>
