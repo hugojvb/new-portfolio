@@ -10,7 +10,7 @@ const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), { ssr: fals
 import { arrowsPlugin, slidesToShowPlugin, Dots } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
-// TYPE OF CERTS PROPS
+// TYPE OF CERTIFICATES PROPS
 interface Certs {
 	name: string;
 	description: string;
@@ -21,14 +21,14 @@ interface Certs {
 
 // FUNCTIONAL COMPONENT
 const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
-	const [dotValue, setDotValue] = useState(0);
+	const [currentSlide, setCurrentSlide] = useState(0);
 	const [certificateHovered, setCertificateHovered] = useState(false);
 
 	let slides = [];
 
 	// ADD SLIDES FOR CAROUSEL
 	for (let certificate of certificates) {
-		slides.push(<img src={certificate.url} alt={certificate.name} />);
+		slides.push(<img src={certificate.url} alt={certificate.name} loading="lazy" />);
 	}
 
 	useEffect(() => {
@@ -37,10 +37,10 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
 		// CAROUSEL AUTOPLAY ONLY WHEN NOT HOVERED
 		if (!certificateHovered) {
 			interval = setInterval(() => {
-				if (dotValue + 1 < slides.length) {
-					setDotValue(dotValue + 1);
+				if (currentSlide + 1 < slides.length) {
+					setCurrentSlide(currentSlide + 1);
 				} else {
-					setDotValue(dotValue - slides.length + 1);
+					setCurrentSlide(currentSlide - slides.length + 1);
 				}
 			}, 2000);
 		}
@@ -52,19 +52,19 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
 
 	// CAROUSEL LEFT ARROW CLICK
 	const leftArrowClick = () => {
-		if (dotValue > 0) {
-			setDotValue(dotValue - 1);
+		if (currentSlide > 0) {
+			setCurrentSlide(currentSlide - 1);
 		} else {
-			setDotValue(dotValue + slides.length - 1);
+			setCurrentSlide(currentSlide + slides.length - 1);
 		}
 	};
 
 	// CAROUSEL RIGHT ARROW CLICK
 	const rightArrowClick = () => {
-		if (dotValue + 1 < slides.length) {
-			setDotValue(dotValue + 1);
+		if (currentSlide + 1 < slides.length) {
+			setCurrentSlide(currentSlide + 1);
 		} else {
-			setDotValue(dotValue - slides.length + 1);
+			setCurrentSlide(currentSlide - slides.length + 1);
 		}
 	};
 
@@ -83,8 +83,6 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
 					<div className="w-8/12 flex flex-col">
 						<Carousel
 							plugins={[
-								"infinite",
-								"centered",
 								{
 									resolve: arrowsPlugin,
 									options: {
@@ -123,22 +121,19 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
 									},
 								},
 							]}
-							animationSpeed={1500}
 							draggable={false}
 							slides={slides}
-							value={dotValue}
+							value={currentSlide}
 						></Carousel>
-						<Dots value={dotValue} onChange={(value) => setDotValue(value)} number={slides.length} />
+						<Dots value={currentSlide} onChange={(value) => setCurrentSlide(value)} number={slides.length} />
 					</div>
 				</Fade>
 				<Fade right>
 					<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
-						<Fragment>
-							<img src={certificates[dotValue].icon} alt={certificates[dotValue].icon} className="h-28 w-28 mb-2.5" />
-							<p className="font-thin m-16 text-center text-xl text-secondary max-h-full overflow-auto">
-								{certificates[dotValue].name}
-							</p>
-						</Fragment>
+						<img src={certificates[currentSlide].icon} alt={certificates[currentSlide].icon} className="h-28 w-28 mb-2.5" />
+						<p className="font-thin m-16 text-center text-xl text-secondary max-h-full overflow-auto">
+							{certificates[currentSlide].name}
+						</p>
 					</div>
 				</Fade>
 			</div>
