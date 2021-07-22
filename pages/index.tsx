@@ -76,7 +76,7 @@ const certificates = [
 	},
 ];
 
-const courseHours = Math.round(certificates.reduce((sum, cur) => sum + cur.duration, 0) / 10) * 10;
+const courseHours = Math.floor(certificates.reduce((sum, cur) => sum + cur.duration, 0) / 10) * 10;
 
 const IndexPage: FC = () => {
 	return (
