@@ -1,7 +1,8 @@
 import React from "react";
 import { Fade } from "react-reveal";
 
-function Hero() {
+// FUNCTIONAL COMPONENT
+const Hero = () => {
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-center">
 			<Fade top>
@@ -17,6 +18,6 @@ function Hero() {
 			</Fade>
 		</div>
 	);
-}
+};
 
 export default Hero;

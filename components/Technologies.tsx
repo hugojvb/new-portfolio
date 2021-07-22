@@ -1,13 +1,15 @@
 import { FC, useEffect } from "react";
-
 import dynamic from "next/dynamic";
 
+// CAROUSEL IMPORTS
 const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), { ssr: false });
 import { autoplayPlugin, slidesToShowPlugin, arrowsPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
+// ANIMATE ON SCROLL
 import { Fade } from "react-reveal";
 
+// FUNCTIONAL COMPONENT
 const Technologies: FC = () => {
 	useEffect(() => {}, []);
 

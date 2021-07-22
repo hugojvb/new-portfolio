@@ -1,5 +1,6 @@
 import { FC, Fragment } from "react";
 
+// FUNCTIONAL COMPONENT
 const Projects: FC = () => {
 	return (
 		<div className="min-h-screen flex flex-col items-center bg-secondary mt-20">
