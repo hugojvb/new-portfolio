@@ -7,6 +7,7 @@ import About from "../components/About";
 import Technologies from "../components/Technologies";
 import Certificates from "../components/Certificates";
 import Projects from "../components/Projects";
+import { cursorTo } from "readline";
 
 // CERTIFICATES
 const certificates = [
@@ -75,6 +76,8 @@ const certificates = [
 	},
 ];
 
+const courseHours = certificates.reduce((sum, cur) => sum + cur.duration, 0);
+
 const IndexPage: FC = () => {
 	return (
 		<Fragment>
@@ -100,7 +103,7 @@ const IndexPage: FC = () => {
 			</Head>
 
 			<Hero />
-			<About />
+			<About courseHours={courseHours} />
 			<Certificates certificates={certificates} />
 			<Projects />
 			<Technologies />

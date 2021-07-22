@@ -3,6 +3,7 @@ import { FC, useState, useEffect, Fragment } from "react";
 import { Fade } from "react-reveal";
 
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), { ssr: false });
 import { arrowsPlugin, slidesToShowPlugin, Dots } from "@brainhubeu/react-carousel";
@@ -23,7 +24,7 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
 	let slides = [];
 
 	for (let certificate of certificates) {
-		slides.push(certificate.url);
+		slides.push(<img />);
 	}
 
 	useEffect(() => {

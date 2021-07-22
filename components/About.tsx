@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Fade } from "react-reveal";
 
-const About: FC = () => {
+const About: FC<{ courseHours: number }> = ({ courseHours }) => {
 	const fullStackExpTime = Math.floor((Date.now() - new Date("8/25/2020").getTime()) / 1000 / 60 / 60 / 24 / 30);
 	const nearshoreExpTime = Math.floor((Date.now() - new Date("12/1/2020").getTime()) / 1000 / 60 / 60 / 24 / 30);
 
@@ -17,7 +17,7 @@ const About: FC = () => {
 							<img src="/e-learning.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 						</Fade>
 						<Fade bottom>
-							<p className="font-normal">+250 Hours in Targeted Courses</p>
+							<p className="font-normal">+{courseHours} Hours in Targeted Courses</p>
 						</Fade>
 					</li>
 
@@ -26,7 +26,7 @@ const About: FC = () => {
 							<img src="/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 						</Fade>
 						<Fade bottom delay={200}>
-							<p className="font-normal">+{fullStackExpTime} months experience in Full Stack Development</p>
+							<p className="font-normal">+{fullStackExpTime} months experience in Frontend/Full Stack Development</p>
 						</Fade>
 					</li>
 
