@@ -8,7 +8,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }) => {
 	let nearshoreExpTime: number = Math.floor((Date.now() - new Date("12/1/2020").getTime()) / 1000 / 60 / 60 / 24 / 30.4);
 
 	// TIME PARSER
-	const timeParser = (months: number) => {
+	const timeParser = (months: number): string => {
 		if (months < 12) {
 			return months + " months ";
 		} else if (months % 12 === 0) {

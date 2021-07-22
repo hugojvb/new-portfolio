@@ -3,7 +3,7 @@ import { FC, Fragment } from "react";
 // FUNCTIONAL COMPONENT
 const Projects: FC = () => {
 	return (
-		<div className="min-h-screen flex flex-col items-center bg-secondary mt-20">
+		<div className="min-h-screen flex flex-col items-center bg-secondary mt-40">
 			<h2 className="text-6xl text-white mb-24 mt-32 font-thin">My Projects</h2>
 			<div className="flex justify-around items-center h-96">
 				<div className="w-1/2 p-20">
