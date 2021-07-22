@@ -7,7 +7,6 @@ import About from "../components/About";
 import Technologies from "../components/Technologies";
 import Certificates from "../components/Certificates";
 import Projects from "../components/Projects";
-import { cursorTo } from "readline";
 
 // CERTIFICATES
 const certificates = [
@@ -76,8 +75,10 @@ const certificates = [
 	},
 ];
 
-const courseHours = Math.floor(certificates.reduce((sum, cur) => sum + cur.duration, 0) / 10) * 10;
+// TOTAL OF COURSE HOURS
+const courseHours: number = Math.floor(certificates.reduce((sum, cur) => sum + cur.duration, 0) / 10) * 10;
 
+// FUNCTIONAL COMPONENT
 const IndexPage: FC = () => {
 	return (
 		<Fragment>

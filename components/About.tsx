@@ -2,38 +2,26 @@ import { FC } from "react";
 import { Fade } from "react-reveal";
 
 const About: FC<{ courseHours: number }> = ({ courseHours }) => {
+	// EXPERIENCE TIME
 	let fullStackExpTime: number = Math.floor((Date.now() - new Date("8/25/2020").getTime()) / 1000 / 60 / 60 / 24 / 30.4);
 	let nearshoreExpTime: number = Math.floor((Date.now() - new Date("12/1/2020").getTime()) / 1000 / 60 / 60 / 24 / 30.4);
-	let fullStackExpParsed: string;
-	let nearshoreExpParsed: string;
 
-	// FULLSTACK EXPERIENCE TIME PARSER
-	if (fullStackExpTime < 12) {
-		fullStackExpParsed = fullStackExpTime + " months ";
-	} else if (fullStackExpTime % 12 === 0) {
-		fullStackExpParsed = Math.floor(fullStackExpTime / 12) + (Math.floor(fullStackExpTime / 12) === 1 ? " year " : " years ");
-	} else if (fullStackExpTime > 12) {
-		fullStackExpParsed =
-			Math.floor(fullStackExpTime / 12) +
-			(Math.floor(fullStackExpTime / 12) === 1 ? " year" : " years") +
-			" and " +
-			(fullStackExpTime % 12) +
-			(fullStackExpTime % 12 === 1 ? " month " : " months ");
-	}
-
-	// NEARSHORE EXPERIENCE TIME PARSER
-	if (nearshoreExpTime < 12) {
-		nearshoreExpParsed = nearshoreExpTime + " months ";
-	} else if (nearshoreExpTime % 12 === 0) {
-		nearshoreExpParsed = Math.floor(nearshoreExpTime / 12) + (Math.floor(nearshoreExpTime / 12) === 1 ? " year " : " years ");
-	} else if (nearshoreExpTime > 12) {
-		nearshoreExpParsed =
-			Math.floor(nearshoreExpTime / 12) +
-			(Math.floor(nearshoreExpTime / 12) === 1 ? " year" : " years") +
-			" and " +
-			(nearshoreExpTime % 12) +
-			(nearshoreExpTime % 12 === 1 ? " month " : " months ");
-	}
+	// TIME PARSER
+	const timeParser = (months: number) => {
+		if (months < 12) {
+			return months + " months ";
+		} else if (months % 12 === 0) {
+			return Math.floor(months / 12) + (Math.floor(months / 12) === 1 ? " year " : " years ");
+		} else if (months > 12) {
+			return (
+				Math.floor(months / 12) +
+				(Math.floor(months / 12) === 1 ? " year" : " years") +
+				" and " +
+				(months % 12) +
+				(months % 12 === 1 ? " month " : " months ")
+			);
+		}
+	};
 
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
@@ -56,7 +44,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }) => {
 							<img src="/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 						</Fade>
 						<Fade bottom delay={200}>
-							<p className="font-normal">+{fullStackExpParsed} experience in Frontend/Full Stack Development</p>
+							<p className="font-normal">+{timeParser(fullStackExpTime)} experience in Frontend/Full Stack Development</p>
 						</Fade>
 					</li>
 
@@ -65,7 +53,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }) => {
 							<img src="/nearshore.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8 " />
 						</Fade>
 						<Fade bottom delay={400}>
-							<p className="font-normal">+{nearshoreExpParsed} experience working Nearshore</p>
+							<p className="font-normal">+{timeParser(nearshoreExpTime)} experience working Nearshore</p>
 						</Fade>
 					</li>
 				</div>
