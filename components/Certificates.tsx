@@ -5,10 +5,12 @@ import { Fade } from "react-reveal";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
+// CAROUSEL IMPORTS
 const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), { ssr: false });
 import { arrowsPlugin, slidesToShowPlugin, Dots } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
+// TYPE OF CERTS PROPS
 interface Certs {
 	name: string;
 	description: string;
@@ -17,19 +19,22 @@ interface Certs {
 	duration: number;
 }
 
+// FUNCTIONAL COMPONENT
 const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
 	const [dotValue, setDotValue] = useState(0);
 	const [certificateHovered, setCertificateHovered] = useState(false);
 
 	let slides = [];
 
+	// ADD SLIDES FOR CAROUSEL
 	for (let certificate of certificates) {
-		slides.push(<img />);
+		slides.push(<img src={certificate.url} alt={certificate.name} />);
 	}
 
 	useEffect(() => {
 		let interval;
 
+		// CAROUSEL AUTOPLAY ONLY WHEN NOT HOVERED
 		if (!certificateHovered) {
 			interval = setInterval(() => {
 				if (dotValue + 1 < slides.length) {
@@ -45,7 +50,7 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
 		};
 	});
 
-	// Button Clicks
+	// CAROUSEL LEFT ARROW CLICK
 	const leftArrowClick = () => {
 		if (dotValue > 0) {
 			setDotValue(dotValue - 1);
@@ -54,6 +59,7 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
 		}
 	};
 
+	// CAROUSEL RIGHT ARROW CLICK
 	const rightArrowClick = () => {
 		if (dotValue + 1 < slides.length) {
 			setDotValue(dotValue + 1);
@@ -127,14 +133,13 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
 				</Fade>
 				<Fade right>
 					<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
-						{certificates.map((c) => {
-							<Fragment>
-								<img src={c.icon} alt={c.icon} className="h-28 w-28 mb-2.5" />
-								<p className="font-thin m-16 text-center text-xl text-secondary max-h-full overflow-auto">{c.name}</p>
-							</Fragment>;
-						})}
+						<Fragment>
+							<img src={certificates[dotValue].icon} alt={certificates[dotValue].icon} className="h-28 w-28 mb-2.5" />
+							<p className="font-thin m-16 text-center text-xl text-secondary max-h-full overflow-auto">
+								{certificates[dotValue].name}
+							</p>
+						</Fragment>
 					</div>
-					;
 				</Fade>
 			</div>
 		</div>

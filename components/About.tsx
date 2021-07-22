@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Fade } from "react-reveal";
 
+// FUNCTIONAL COMPONENT
 const About: FC<{ courseHours: number }> = ({ courseHours }) => {
 	// EXPERIENCE TIME
 	let fullStackExpTime: number = Math.floor((Date.now() - new Date("8/25/2020").getTime()) / 1000 / 60 / 60 / 24 / 30.4);
