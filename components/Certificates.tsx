@@ -69,7 +69,7 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
 	};
 
 	return (
-		<div className="min-h-screen flex flex-col items-center bg-white relative mt-12">
+		<div className="min-h-screen flex flex-col items-center bg-white mt-12">
 			<Fade top>
 				<h2 className="text-6xl font-thin text-secondary mb-24 mt-8">My Certificates</h2>
 			</Fade>
