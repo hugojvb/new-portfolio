@@ -1,19 +1,15 @@
 import { FC, Fragment } from "react";
+import { Fade } from "react-reveal";
 
-const projects: { name: string; description: string; videoURL: string }[] = [
-	{
-		name: "Fitbit Workout Tracker",
-		description:
-			"Developed a Progressive Web App that shows fitbit user data in a minimalistic and responsive grid UI. Built with React (Context, Hooks, Suspense) and the Fitbit API. Deployed with Netlify.",
-		videoURL: "/fitbit.mp4",
-	},
-];
+import { projects } from "../utils/projects";
 
 // FUNCTIONAL COMPONENT
 const Projects: FC = () => {
 	return (
-		<div className="min-h-screen flex flex-col items-center bg-secondary mt-40 relative">
-			<h2 className="text-6xl text-white mb-24 mt-32 font-thin">My Projects</h2>
+		<div className="min-h-screen flex flex-col items-center bg-secondary mt-32 relative">
+			<Fade top>
+				<h2 className="text-6xl text-white mb-24 mt-32 font-thin">My Projects</h2>
+			</Fade>
 			{projects.map((project) => {
 				<div className="flex justify-around items-center h-96">
 					<h3>{project.name}</h3>
