@@ -25,13 +25,17 @@ const Projects: FC = () => {
 				<h2 className="text-6xl text-white mb-24 mt-32 font-thin">My Projects</h2>
 			</Fade>
 			{projects.map((project) => {
-				<div className="flex justify-around items-center h-96 text-white">
-					<h3>{project.name}</h3>
-					<div className="w-1/2 p-20">
-						<video src={project.videoURL}></video>
+				return (
+					<div className="flex flex-col justify-around text-white p-12">
+						<h2 className="text-3xl font-thin">{project.name}</h2>
+						<div className="flex justify-around items-center h-96 text-white">
+							<div className="w-1/2 p-20">
+								<video src={project.videoURL}></video>
+							</div>
+							<h4 className="w-1/2 text-white p-20 leading-10">{project.description}</h4>
+						</div>
 					</div>
-					<h4 className="w-1/2 text-white m-20 p-20 flex items-center justify-center">{project.description}</h4>
-				</div>;
+				);
 			})}
 		</div>
 	);
