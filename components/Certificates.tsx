@@ -74,13 +74,13 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
 				<h2 className="text-6xl font-thin text-secondary mb-24 mt-8">My Certificates</h2>
 			</Fade>
 
-			<div
-				className="w-full flex justify-around container"
-				onMouseEnter={() => setCertificateHovered(true)}
-				onMouseLeave={() => setCertificateHovered(false)}
-			>
+			<div className="w-full flex justify-around container">
 				<Fade left>
-					<div className="w-8/12 flex flex-col">
+					<div
+						className="w-8/12 flex flex-col"
+						onMouseEnter={() => setCertificateHovered(true)}
+						onMouseLeave={() => setCertificateHovered(false)}
+					>
 						<Carousel
 							plugins={[
 								{
@@ -131,9 +131,11 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
 				<Fade right>
 					<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
 						<img src={certificates[currentSlide].icon} alt={certificates[currentSlide].icon} className="h-28 w-28 mb-2.5" />
-						<p className="font-thin m-16 text-center text-xl text-secondary max-h-full overflow-auto">
-							{certificates[currentSlide].name}
-						</p>
+						<em>
+							<p className="font-thin m-16 text-center text-xl text-secondary max-h-full overflow-auto">
+								"{certificates[currentSlide].name}"
+							</p>
+						</em>
 					</div>
 				</Fade>
 			</div>
