@@ -71,6 +71,10 @@ button.custom-fill:active:after {
 
 /* INPUT FIELD LABEL ANIMATION */
 
+label {
+	user-select: none;
+}
+
 input:not(:placeholder-shown) + label,
 input:focus + label {
 	transition: transform 0.2s ease-out;
