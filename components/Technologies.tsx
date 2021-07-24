@@ -41,7 +41,7 @@ const Technologies: FC = (): JSX.Element => {
 			>
 				{techIcons.map((icon) => {
 					return (
-						<div>
+						<div key={icon.name}>
 							<img src={icon.url} className={`${icon.heightClass} ${icon.widthClass}`} />
 						</div>
 					);

@@ -68,3 +68,21 @@ button.custom-fill:hover:after,
 button.custom-fill:active:after {
 	height: 100%;
 }
+
+/* INPUT FIELD LABEL ANIMATION */
+
+input:not(:placeholder-shown) + label,
+input:focus + label {
+	transition: transform 0.2s ease-out;
+	transform: translateY(-165%);
+	font-size: 0.6em;
+	color: var(--primary-color);
+}
+
+textarea:not(:placeholder-shown) + label,
+textarea:focus + label {
+	transition: transform 0.2s ease-out;
+	transform: translateY(-100%);
+	font-size: 0.6em;
+	color: var(--primary-color);
+}

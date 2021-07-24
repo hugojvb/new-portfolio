@@ -29,7 +29,7 @@ const Projects: FC = (): JSX.Element => {
 				return (
 					<div className="flex flex-col justify-around text-tertiary p-20">
 						<Fade top>
-							<div className="flex items-center mb-2">
+							<div className="flex items-center mb-8">
 								<img src={project.icon} alt={project.name} className="h-12 w-12 mr-2" />
 								<h2 className="text-3xl font-thin">{project.name}</h2>
 							</div>
