@@ -10,7 +10,7 @@ import "@brainhubeu/react-carousel/lib/style.css";
 import { Fade } from "react-reveal";
 
 // FUNCTIONAL COMPONENT
-const Technologies: FC = () => {
+const Technologies: FC = (): JSX.Element => {
 	useEffect(() => {}, []);
 
 	return (

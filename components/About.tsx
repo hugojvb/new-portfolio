@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Fade } from "react-reveal";
 
 // FUNCTIONAL COMPONENT
-const About: FC<{ courseHours: number }> = ({ courseHours }) => {
+const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 	// EXPERIENCE TIME
 	let fullStackExpTime: number = Math.floor((Date.now() - new Date("8/25/2020").getTime()) / 1000 / 60 / 60 / 24 / 30.4);
 	let nearshoreExpTime: number = Math.floor((Date.now() - new Date("12/1/2020").getTime()) / 1000 / 60 / 60 / 24 / 30.4);

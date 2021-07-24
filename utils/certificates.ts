@@ -1,5 +1,12 @@
-// CERTIFICATES
-export const certificates = [
+interface certs {
+	name: string;
+	description: string;
+	url: string;
+	icon: string;
+	duration: number;
+}
+
+export const certificates: certs[] = [
 	{
 		name: "The Complete Web Developer 2020",
 		description: "",

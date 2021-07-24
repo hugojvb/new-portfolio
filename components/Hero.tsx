@@ -2,7 +2,7 @@ import React from "react";
 import { Fade } from "react-reveal";
 
 // FUNCTIONAL COMPONENT
-const Hero = () => {
+const Hero = (): JSX.Element => {
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-center">
 			<Fade top>

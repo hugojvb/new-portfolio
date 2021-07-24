@@ -15,7 +15,7 @@ import { certificates } from "../utils/certificates";
 const courseHours: number = Math.floor(certificates.reduce((sum, cur) => sum + cur.duration, 0) / 10) * 10;
 
 // FUNCTIONAL COMPONENT
-const IndexPage: FC = () => {
+const IndexPage: FC = (): JSX.Element => {
 	return (
 		<Fragment>
 			<Head>

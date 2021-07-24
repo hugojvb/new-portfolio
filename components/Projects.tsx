@@ -1,10 +1,11 @@
 import { FC, Fragment } from "react";
 import { Fade } from "react-reveal";
 
+// UTILS
 import { projects } from "../utils/projects";
 
 // FUNCTIONAL COMPONENT
-const Projects: FC = () => {
+const Projects: FC = (): JSX.Element => {
 	return (
 		<div className="min-h-screen flex flex-col items-center bg-secondary mt-24 relative">
 			<div className="custom-shape-divider-top-1627074170 absolute w-full top-0 left-0 overflow-hidden leading-none rotate-180">
@@ -26,7 +27,7 @@ const Projects: FC = () => {
 			</Fade>
 			{projects.map((project) => {
 				return (
-					<div className="flex flex-col justify-around text-white p-12">
+					<div className="flex flex-col justify-around text-white p-20">
 						<h2 className="text-3xl font-thin">{project.name}</h2>
 						<div className="flex justify-around items-center h-96 text-white">
 							<div className="w-1/2 p-20">

@@ -20,7 +20,7 @@ interface Certs {
 }
 
 // FUNCTIONAL COMPONENT
-const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }) => {
+const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Element => {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const [certificateHovered, setCertificateHovered] = useState(false);
 
