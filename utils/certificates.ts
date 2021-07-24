@@ -10,7 +10,7 @@ interface certs {
 
 export const certificates: certs[] = [
 	{
-		name: "The Complete Web Developer 2020",
+		name: "The Complete Web Developer",
 		description: "",
 		url: "/certificates/cert_completeweb.jpg",
 		icon: techIcons.filter((icon) => icon.name === "react")[0],
