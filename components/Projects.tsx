@@ -7,7 +7,7 @@ import { projects } from "../utils/projects";
 // FUNCTIONAL COMPONENT
 const Projects: FC = (): JSX.Element => {
 	return (
-		<div className="min-h-screen flex flex-col items-center bg-secondary mt-24 pb-20 relative">
+		<div className="min-h-screen flex flex-col items-center bg-secondary mt-24 pb-32 relative">
 			<div className="absolute w-full top-0 rotate-180">
 				<svg
 					className="invert h-20 w-full"
@@ -43,6 +43,18 @@ const Projects: FC = (): JSX.Element => {
 					</div>
 				);
 			})}
+
+			<div className="absolute w-full bottom-0">
+				<svg
+					className="invert h-20 w-full"
+					data-name="Layer 1"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 1200 120"
+					preserveAspectRatio="none"
+				>
+					<path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" className="shape-fill"></path>
+				</svg>
+			</div>
 		</div>
 	);
 };
