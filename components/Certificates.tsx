@@ -15,7 +15,7 @@ interface Certs {
 	name: string;
 	description: string;
 	url: string;
-	icon: string;
+	stack: { name: string; url: string; heightClass: string; widthClass?: string };
 	duration: number;
 }
 
@@ -130,7 +130,11 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Elem
 				</Fade>
 				<Fade right>
 					<div className="w-1/2 flex flex-col justify-center items-center rounded-xl ml-8">
-						<img src={certificates[currentSlide].icon} alt={certificates[currentSlide].icon} className="h-28 w-28 mb-2.5" />
+						<img
+							src={certificates[currentSlide].stack.url}
+							alt={certificates[currentSlide].stack.url}
+							className={`${certificates[currentSlide].stack.heightClass} ${certificates[currentSlide].stack.widthClass} mb-2.5`}
+						/>
 						<em>
 							<p className="m-16 text-center text-xl text-secondary max-h-full overflow-auto">"{certificates[currentSlide].name}"</p>
 						</em>
