@@ -1,11 +1,11 @@
-interface technology {
+interface techIcon {
 	name: string;
 	url: string;
 	heightClass: string;
 	widthClass?: string;
 }
 
-export const techStack: technology[] = [
+export const techIcons: techIcon[] = [
 	{
 		name: "html",
 		url: "/tech-icons/html.svg",

@@ -7,7 +7,7 @@ import { autoplayPlugin, slidesToShowPlugin, arrowsPlugin } from "@brainhubeu/re
 import "@brainhubeu/react-carousel/lib/style.css";
 
 // UTILS
-import { techStack } from "../utils/techstack";
+import { techIcons } from "../utils/techicons";
 
 // ANIMATE ON SCROLL
 import { Fade } from "react-reveal";
@@ -39,10 +39,10 @@ const Technologies: FC = (): JSX.Element => {
 				animationSpeed={1500}
 				draggable={false}
 			>
-				{techStack.map((stack) => {
+				{techIcons.map((icon) => {
 					return (
 						<div>
-							<img src={stack.url} className={`${stack.heightClass} ${stack.widthClass}`} />
+							<img src={icon.url} className={`${icon.heightClass} ${icon.widthClass}`} />
 						</div>
 					);
 				})}
