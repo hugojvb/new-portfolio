@@ -28,7 +28,7 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Elem
 
 	// ADD SLIDES FOR CAROUSEL
 	for (let certificate of certificates) {
-		slides.push(<img src={certificate.url} alt={certificate.name} loading="lazy" />);
+		slides.push(<img src={certificate.url} alt={certificate.name} />);
 	}
 
 	useEffect(() => {
