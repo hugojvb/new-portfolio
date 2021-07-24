@@ -24,7 +24,7 @@ export const projects: projects[] = [
 		videoURL: "/videos/expense.mp4",
 		sourceURL: "https://github.com/hugojvb/expensetracker",
 		liveURL: "https://suspicious-roentgen-805db7.netlify.app/",
-		icon: "/projects-icons/fitbit.svg",
+		icon: "/projects-icons/expense.svg",
 	},
 	{
 		name: "Alexa Skill",
@@ -34,6 +34,6 @@ export const projects: projects[] = [
 		sourceURL: "https://github.com/hugojvb/alexa-skill",
 		liveURL:
 			"https://www.amazon.com/Hugo-Batista-Lisbon-Facts/dp/B08HVNF51H/ref=sr_1_1?dchild=1&keywords=lisbon+facts&qid=1600113652&s=digital-skills&sr=1-1",
-		icon: "/projects-icons/fitbit.svg",
+		icon: "/projects-icons/alexa.svg",
 	},
 ];
