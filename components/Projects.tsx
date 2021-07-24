@@ -38,7 +38,9 @@ const Projects: FC = (): JSX.Element => {
 									<source src={project.videoURL} type="video/mp4" />
 								</video>
 							</div>
-							<h4 className="w-1/2 text-tertiary p-20 leading-10">{project.description}</h4>
+							<h4 className="w-1/2 text-tertiary p-20 leading-10">
+								<em>"{project.description}"</em>
+							</h4>
 						</div>
 					</div>
 				);

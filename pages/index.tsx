@@ -7,6 +7,7 @@ import About from "../components/About";
 import Technologies from "../components/Technologies";
 import Certificates from "../components/Certificates";
 import Projects from "../components/Projects";
+import Socials from "../components/Socials";
 
 // UTILS
 import { certificates } from "../utils/certificates";
@@ -44,6 +45,7 @@ const IndexPage: FC = (): JSX.Element => {
 			<Certificates certificates={certificates} />
 			<Projects />
 			<Technologies />
+			<Socials />
 		</Fragment>
 	);
 };

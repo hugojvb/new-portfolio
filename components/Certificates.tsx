@@ -91,12 +91,12 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Elem
 												onClick={leftArrowClick}
 												className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none"
 											>
-												<img src="/left-arrow.svg" alt="left-arrow" />
+												<img src="/arrows/left-arrow.svg" alt="left-arrow" />
 											</button>
 										),
 										arrowLeftDisabled: (
 											<button className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
-												<img src="/left-arrow.svg" alt="left-arrow" />
+												<img src="/arrows/left-arrow.svg" alt="left-arrow" />
 											</button>
 										),
 										arrowRight: (
@@ -104,12 +104,12 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Elem
 												onClick={rightArrowClick}
 												className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none"
 											>
-												<img src="/right-arrow.svg" alt="right-arrow" />
+												<img src="/arrows/right-arrow.svg" alt="right-arrow" />
 											</button>
 										),
 										arrowRightDisabled: (
 											<button className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
-												<img src="/right-arrow.svg" alt="right-arrow" />
+												<img src="/arrows/right-arrow.svg" alt="right-arrow" />
 											</button>
 										),
 									},
@@ -129,12 +129,10 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Elem
 					</div>
 				</Fade>
 				<Fade right>
-					<div className="w-1/2 flex flex-col justify-center items-center bg-tertiary rounded-xl ml-8">
+					<div className="w-1/2 flex flex-col justify-center items-center rounded-xl ml-8">
 						<img src={certificates[currentSlide].icon} alt={certificates[currentSlide].icon} className="h-28 w-28 mb-2.5" />
 						<em>
-							<p className="font-thin m-16 text-center text-xl text-secondary max-h-full overflow-auto">
-								"{certificates[currentSlide].name}"
-							</p>
+							<p className="m-16 text-center text-xl text-secondary max-h-full overflow-auto">"{certificates[currentSlide].name}"</p>
 						</em>
 					</div>
 				</Fade>
