@@ -4,6 +4,7 @@ interface projects {
 	videoURL: string;
 	sourceURL: string;
 	liveURL: string;
+	icon: string;
 }
 
 export const projects: projects[] = [
@@ -14,6 +15,7 @@ export const projects: projects[] = [
 		videoURL: "/videos/fitbit.mp4",
 		sourceURL: "https://github.com/hugojvb/workouttracker",
 		liveURL: "https://peaceful-darwin-1a89b0.netlify.app/start",
+		icon: "/projects-icons/fitbit.svg",
 	},
 	{
 		name: "Expense Tracker",
@@ -22,6 +24,7 @@ export const projects: projects[] = [
 		videoURL: "/videos/expense.mp4",
 		sourceURL: "https://github.com/hugojvb/expensetracker",
 		liveURL: "https://suspicious-roentgen-805db7.netlify.app/",
+		icon: "/projects-icons/fitbit.svg",
 	},
 	{
 		name: "Alexa Skill",
@@ -31,5 +34,6 @@ export const projects: projects[] = [
 		sourceURL: "https://github.com/hugojvb/alexa-skill",
 		liveURL:
 			"https://www.amazon.com/Hugo-Batista-Lisbon-Facts/dp/B08HVNF51H/ref=sr_1_1?dchild=1&keywords=lisbon+facts&qid=1600113652&s=digital-skills&sr=1-1",
+		icon: "/projects-icons/fitbit.svg",
 	},
 ];

@@ -33,7 +33,7 @@ const Projects: FC = (): JSX.Element => {
 						</Fade>
 
 						<div className="flex justify-around items-center h-96 text-white">
-							<div className="w-1/2 p-20">
+							<div className="w-1/2 p-4">
 								<video controls autoPlay muted loop>
 									<source src={project.videoURL} type="video/mp4" />
 								</video>
