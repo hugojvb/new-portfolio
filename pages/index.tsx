@@ -8,6 +8,7 @@ import Technologies from "../components/Technologies";
 import Certificates from "../components/Certificates";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 // UTILS
 import { certificates } from "../utils/certificates";
@@ -46,6 +47,7 @@ const IndexPage: FC = (): JSX.Element => {
 			<Projects />
 			<Technologies />
 			<Contact />
+			<Footer />
 		</Fragment>
 	);
 };

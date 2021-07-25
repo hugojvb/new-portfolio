@@ -1,23 +1,5 @@
 import { FC, Fragment, useState } from "react";
 
-const contacts: { name: string; url: string; icon: string }[] = [
-	{
-		name: "Github",
-		url: "https://www.github.com/hugojvb",
-		icon: "/contact-icons/github.svg",
-	},
-	{
-		name: "LinkedIn",
-		url: "https://www.linkedin.com/in/hugojvb",
-		icon: "/contact-icons/linkedin.svg",
-	},
-	{
-		name: "Email",
-		url: "https://www.github.com/hugojvb",
-		icon: "/contact-icons/email.svg",
-	},
-];
-
 const Contact: FC = () => {
 	const [nameInput, setNameInput] = useState<string | null>("");
 	const [emailInput, setEmailInput] = useState<string | null>("");
@@ -48,7 +30,7 @@ const Contact: FC = () => {
 							Name *
 						</label>
 					</div>
-					<div className="relative w-1/2 my-4">
+					<div className="relative w-1/2 my-12">
 						<input
 							placeholder=" "
 							className="py-2 border-b-2 border-secondary w-full outline-none"
@@ -84,20 +66,6 @@ const Contact: FC = () => {
 						Submit
 					</button>
 				</form>
-				<div className="h-48 flex justify-evenly items center p-24">
-					{contacts.map((contact) => {
-						return (
-							<a
-								href={contact.url}
-								target="_blank"
-								rel="noopener noreferer"
-								className="flex justify-center items-center bg-gray-100 hover:-translate-y-0.5 duration-100 h-16 w-40 rounded-full bg-white text-secondary"
-							>
-								<img src={contact.icon} alt={contact.name} className="w-6 mr-2" />
-							</a>
-						);
-					})}
-				</div>
 			</div>
 		</Fragment>
 	);

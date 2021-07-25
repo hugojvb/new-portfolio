@@ -27,7 +27,7 @@ const Projects: FC = (): JSX.Element => {
 			</Fade>
 			{projects.map((project) => {
 				return (
-					<div className="flex flex-col justify-around text-tertiary p-20">
+					<div key={project.name} className="flex flex-col justify-around text-tertiary p-20">
 						<Fade top>
 							<div className="flex items-center mb-8">
 								<img src={project.icon} alt={project.name} className="h-12 w-12 mr-2" />
