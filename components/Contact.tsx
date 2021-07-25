@@ -19,7 +19,7 @@ const Contact: FC = () => {
 					<div className="relative w-1/2 my-4">
 						<input
 							placeholder=" "
-							className="py-2 border-b-2 border-secondary w-full outline-none hover:border-primary focus:border-primary"
+							className="py-2 border-b-2 border-secondary w-full outline-none hover:border-primary transition-all duration-300 focus:border-primary"
 							type="text"
 							name="name"
 							value={nameInput}
@@ -33,7 +33,7 @@ const Contact: FC = () => {
 					<div className="relative w-1/2 my-12">
 						<input
 							placeholder=" "
-							className="py-2 border-b-2 border-secondary w-full outline-none hover:border-primary focus:border-primary"
+							className="py-2 border-b-2 border-secondary w-full outline-none hover:border-primary transition-all duration-300 focus:border-primary"
 							type="email"
 							name="email"
 							value={emailInput}
@@ -48,7 +48,7 @@ const Contact: FC = () => {
 						<textarea
 							rows={3}
 							placeholder=" "
-							className="py-2 border-b-2 border-secondary w-full resize-none outline-none hover:border-primary focus:border-primary"
+							className="py-2 border-b-2 border-secondary w-full resize-none outline-none hover:border-primary transition-all duration-300 focus:border-primary"
 							name="message"
 							value={messageInput}
 							onChange={(e) => setMessageInput(e.target.value)}
