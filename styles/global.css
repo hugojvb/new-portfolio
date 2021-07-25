@@ -77,7 +77,7 @@ label {
 
 input:not(:placeholder-shown) + label,
 input:focus + label {
-	transition: transform 0.2s ease-out;
+	transition: all 0.2s ease-out;
 	transform: translateY(-165%);
 	font-size: 0.6em;
 	color: var(--primary-color);
@@ -85,7 +85,7 @@ input:focus + label {
 
 textarea:not(:placeholder-shown) + label,
 textarea:focus + label {
-	transition: transform 0.2s ease-out;
+	transition: all 0.2s ease-out;
 	transform: translateY(-100%);
 	font-size: 0.6em;
 	color: var(--primary-color);
