@@ -14,7 +14,7 @@ const Contact: FC = () => {
 	return (
 		<Fragment>
 			<div className="min-h-full pt-20 pb-20 border-t-2 border-gray-50">
-				<h2 className="text-5xl text-center font-thin text-secondary">Contact</h2>
+				<h2 className="text-5xl text-center font-thin text-secondary mb-14">Contact</h2>
 				<form className="w-full flex flex-col justify-around items-center my-8 h-auto">
 					<div className="relative w-1/2 my-4">
 						<input
