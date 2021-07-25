@@ -15,7 +15,7 @@ interface Certs {
 	name: string;
 	description: string;
 	url: string;
-	icon: { name: string; url: string; heightClass: string; widthClass?: string };
+	icon: { name: string; url: string; size: string };
 	duration: number;
 }
 
@@ -133,7 +133,13 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Elem
 						<img
 							src={certificates[currentSlide].icon.url}
 							alt={certificates[currentSlide].icon.url}
-							className={`${certificates[currentSlide].icon.heightClass} ${certificates[currentSlide].icon.widthClass} mb-2.5`}
+							className={
+								certificates[currentSlide].icon.size == "small"
+									? "h-32"
+									: certificates[currentSlide].icon.size == "medium"
+									? "h-36"
+									: "h-44"
+							}
 						/>
 						<em>
 							<p className="m-16 text-center text-xl text-secondary max-h-full overflow-auto">"{certificates[currentSlide].name}"</p>

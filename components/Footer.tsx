@@ -23,6 +23,7 @@ const Footer: FC = (): JSX.Element => {
 								target="_blank"
 								rel="noopener noreferer"
 								className="hover:-translate-y-0.5 duration-100 my-4 mx-4"
+								title={social.name}
 							>
 								<img src={social.icon} alt={social.name} className="w-8 invert" />
 							</a>

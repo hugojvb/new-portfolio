@@ -4,7 +4,7 @@ interface certs {
 	name: string;
 	description: string;
 	url: string;
-	icon: { name: string; url: string; heightClass: string; widthClass?: string };
+	icon: { name: string; url: string; size: string };
 	duration: number;
 }
 

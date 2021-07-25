@@ -41,9 +41,12 @@ const Technologies: FC = (): JSX.Element => {
 			>
 				{techIcons.map((icon) => {
 					return (
-						<div key={icon.name}>
-							<img src={icon.url} className={`${icon.heightClass} ${icon.widthClass}`} />
-						</div>
+						<img
+							src={icon.url}
+							className={icon.size == "small" ? "h-32" : icon.size == "medium" ? "h-36" : "h-44"}
+							key={icon.name}
+							alt={icon.name}
+						/>
 					);
 				})}
 			</Carousel>
