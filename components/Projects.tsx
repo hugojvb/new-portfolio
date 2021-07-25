@@ -41,9 +41,29 @@ const Projects: FC = (): JSX.Element => {
 									<source src={project.videoURL} type="video/mp4" />
 								</video>
 							</div>
-							<h4 className="w-1/2 text-tertiary p-20 leading-10">
-								<em>"{project.description}"</em>
-							</h4>
+							<div className="w-1/2  flex flex-col justify-around h-full p-20">
+								<h4 className="text-tertiary leading-10">
+									<em>"{project.description}"</em>
+								</h4>
+								<div className="flex">
+									<a
+										href={project.sourceURL}
+										target="_blank"
+										rel="noopener noreferer"
+										className="custom-fill-white border border-tertiary rounded-full w-24 h-10 focus:outline-none flex justify-center items-center"
+									>
+										Source
+									</a>
+									<a
+										href={project.liveURL}
+										target="_blank"
+										rel="noopener noreferer"
+										className="ml-10 hover:text-gray-400 transition-all hover:duration-300 focus:outline-none flex justify-center items-center"
+									>
+										Live
+									</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				);

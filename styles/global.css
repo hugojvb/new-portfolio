@@ -41,16 +41,19 @@ body {
 
 /* BUTTON ANIMATION ON HOVER */
 
-button.custom-fill {
+.custom-fill {
 	overflow: hidden;
 	position: relative;
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	transition: all 0.4s linear;
 }
 
-button.custom-fill:hover {
-	color: var(--secondary-color);
+.custom-fill:hover {
+	color: white;
 }
 
-button.custom-fill:after {
+.custom-fill:after {
 	content: "";
 	position: absolute;
 	z-index: -1;
@@ -64,8 +67,42 @@ button.custom-fill:after {
 	background: var(--primary-color);
 }
 
-button.custom-fill:hover:after,
-button.custom-fill:active:after {
+.custom-fill:hover:after,
+.custom-fill:active:after {
+	height: 100%;
+}
+
+/* WHITE BUTTON ANIMATION ON HOVER */
+
+.custom-fill-white {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+}
+
+.custom-fill-white:hover {
+	color: var(--secondary-color);
+}
+
+.custom-fill-white:after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+	width: 100%;
+	height: 0;
+	top: 0;
+	left: 0;
+	background: white;
+}
+
+.custom-fill-white:hover:after,
+.custom-fill-white:active:after {
 	height: 100%;
 }
 
