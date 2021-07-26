@@ -9,29 +9,8 @@ import "@brainhubeu/react-carousel/lib/style.css";
 // UTILS
 import { techIcons } from "../utils/techicons";
 
-// ANIMATE ON SCROLL
-import { Fade } from "react-reveal";
-
-function getWindowWidth() {
-	const { innerWidth: width } = window;
-	return width;
-}
-
 // FUNCTIONAL COMPONENT
-const Technologies: FC = (): JSX.Element => {
-	const [windowWidth, setWindowWidth] = useState<number | null>(0);
-	const [mounted, setMounted] = useState<boolean | null>(false);
-
-	useEffect(() => {
-		setWindowWidth(window.innerWidth);
-
-		const handleResize = () => setWindowWidth(window.innerWidth);
-
-		window.addEventListener("resize", handleResize);
-
-		return () => window.removeEventListener("resize", handleResize);
-	}, [windowWidth]);
-
+const Technologies: FC<{ windowWidth: number }> = ({ windowWidth }): JSX.Element => {
 	return (
 		<div className="flex-col items-center justify-center my-20">
 			<Carousel

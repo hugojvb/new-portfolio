@@ -18,6 +18,18 @@ const courseHours: number = Math.floor(certificates.reduce((sum, cur) => sum + c
 
 // FUNCTIONAL COMPONENT
 const IndexPage: FC = (): JSX.Element => {
+	const [windowWidth, setWindowWidth] = useState<number | null>(0);
+
+	useEffect(() => {
+		setWindowWidth(window.innerWidth);
+
+		const handleResize = () => setWindowWidth(window.innerWidth);
+
+		window.addEventListener("resize", handleResize);
+
+		return () => window.removeEventListener("resize", handleResize);
+	}, [windowWidth]);
+
 	return (
 		<Fragment>
 			<Head>
@@ -45,7 +57,7 @@ const IndexPage: FC = (): JSX.Element => {
 			<About courseHours={courseHours} />
 			<Certificates certificates={certificates} />
 			<Projects />
-			<Technologies />
+			<Technologies windowWidth={windowWidth} />
 			<Contact />
 			<Footer />
 		</Fragment>
