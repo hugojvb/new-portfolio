@@ -31,7 +31,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 					<h1 className="text-6xl font-thin text-secondary text-center mt-10">About Me</h1>
 				</Fade>
 				<div className="text-2xl text-secondary mt-20 flex flex-col sm:flex-row justify-evenly items-center">
-					<li className="py-4 flex flex-col items-center text-center text-xl mx-8 w-56 ">
+					<li className="py-8 flex flex-col items-center text-center text-xl mx-8 w-56 ">
 						<Fade bottom>
 							<img src="/programming-icons/e-learning.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 						</Fade>
@@ -40,7 +40,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 						</Fade>
 					</li>
 
-					<li className="py-4 flex flex-col items-center text-center text-xl mx-8 w-56">
+					<li className="py-8 flex flex-col items-center text-center text-xl mx-8 w-56">
 						<Fade bottom delay={200}>
 							<img src="/programming-icons/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 						</Fade>
@@ -49,7 +49,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 						</Fade>
 					</li>
 
-					<li className="py-4 flex flex-col items-center text-center text-xl mx-8 w-56">
+					<li className="py-8 flex flex-col items-center text-center text-xl mx-8 w-56">
 						<Fade bottom delay={400}>
 							<img src="/programming-icons/nearshore.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8 " />
 						</Fade>

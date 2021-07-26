@@ -71,13 +71,13 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Elem
 	return (
 		<div className="min-h-screen flex flex-col items-center bg-white mt-12">
 			<Fade top>
-				<h2 className="text-6xl font-thin text-secondary mb-24 mt-8">My Certificates</h2>
+				<h2 className="text-6xl font-thin text-secondary mb-24 mt-8 text-center">My Certificates</h2>
 			</Fade>
 
-			<div className="w-full flex justify-around container">
+			<div className="w-full flex flex-col lg:flex-row justify-around container">
 				<Fade left>
 					<div
-						className="w-8/12 flex flex-col"
+						className="w-full lg:w-8/12 flex flex-col"
 						onMouseEnter={() => setCertificateHovered(true)}
 						onMouseLeave={() => setCertificateHovered(false)}
 					>
@@ -129,7 +129,7 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Elem
 					</div>
 				</Fade>
 				<Fade right>
-					<div className="w-1/2 flex flex-col justify-center items-center rounded-xl ml-8">
+					<div className="w-full lg:w-4/12 flex flex-col justify-center items-center rounded-xl lg:pl-8 pt-16">
 						<img
 							src={certificates[currentSlide].icon.url}
 							alt={certificates[currentSlide].icon.url}
