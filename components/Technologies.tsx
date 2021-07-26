@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 // CAROUSEL IMPORTS
@@ -12,9 +12,25 @@ import { techIcons } from "../utils/techicons";
 // ANIMATE ON SCROLL
 import { Fade } from "react-reveal";
 
+function getWindowWidth() {
+	const { innerWidth: width } = window;
+	return width;
+}
+
 // FUNCTIONAL COMPONENT
 const Technologies: FC = (): JSX.Element => {
-	useEffect(() => {}, []);
+	const [windowWidth, setWindowWidth] = useState<number | null>(0);
+	const [mounted, setMounted] = useState<boolean | null>(false);
+
+	useEffect(() => {
+		setWindowWidth(window.innerWidth);
+
+		const handleResize = () => setWindowWidth(window.innerWidth);
+
+		window.addEventListener("resize", handleResize);
+
+		return () => window.removeEventListener("resize", handleResize);
+	});
 
 	return (
 		<div className="flex-col items-center justify-center my-20">
@@ -32,7 +48,7 @@ const Technologies: FC = (): JSX.Element => {
 					{
 						resolve: slidesToShowPlugin,
 						options: {
-							numberOfSlides: 5,
+							numberOfSlides: windowWidth < 768 ? 1 : windowWidth < 1440 ? 3 : 5,
 						},
 					},
 				]}

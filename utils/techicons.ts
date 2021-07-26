@@ -38,7 +38,7 @@ export const techIcons: techIcon[] = [
 	{
 		name: "mongoDB",
 		url: "/tech-icons/mongoDB.svg",
-		size: "medium",
+		size: "large",
 	},
 	{
 		name: "next",
