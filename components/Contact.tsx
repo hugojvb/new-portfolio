@@ -16,7 +16,7 @@ const Contact: FC = () => {
 			<div className="min-h-full pt-20 pb-20 border-t-2 border-gray-50">
 				<h2 className="text-5xl text-center font-thin text-secondary mb-14">Contact</h2>
 				<form className="w-full flex flex-col justify-around items-center my-8 h-auto">
-					<div className="relative w-1/2 my-4">
+					<div className="relative w-5/6 lg:w-1/2 my-4">
 						<input
 							placeholder=" "
 							className="py-2 border-b-2 border-secondary w-full outline-none hover:border-primary transition-all duration-300 focus:border-primary"
@@ -30,7 +30,7 @@ const Contact: FC = () => {
 							Name *
 						</label>
 					</div>
-					<div className="relative w-1/2 my-12">
+					<div className="relative w-5/6 lg:w-1/2 my-12">
 						<input
 							placeholder=" "
 							className="py-2 border-b-2 border-secondary w-full outline-none hover:border-primary transition-all duration-300 focus:border-primary"
@@ -44,7 +44,7 @@ const Contact: FC = () => {
 							Email *
 						</label>
 					</div>
-					<div className="relative w-1/2 my-4">
+					<div className="relative w-5/6 lg:w-1/2 my-4">
 						<textarea
 							rows={3}
 							placeholder=" "
