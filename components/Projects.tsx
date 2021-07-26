@@ -35,13 +35,13 @@ const Projects: FC = (): JSX.Element => {
 							</div>
 						</Fade>
 
-						<div className="flex flex-col lg:flex-row justify-around items-center h-full text-white">
+						<div className="flex flex-col lg:flex-row justify-around items-center h-full text-white lg:px-1">
 							<div className="w-full lg:w-1/2 p-0">
 								<video controls autoPlay muted loop>
 									<source src={project.videoURL} type="video/mp4" />
 								</video>
 							</div>
-							<div className="lg:w-1/2 w-full flex flex-col justify-around h-full p-4 mt-4 lg:py-8">
+							<div className="lg:w-1/2 w-full flex flex-col justify-around h-full p-4 mt-4 lg:px-8 xl:px-16 lg:py-0">
 								<h4 className="text-tertiary leading-10">
 									<em>"{project.description}"</em>
 								</h4>
