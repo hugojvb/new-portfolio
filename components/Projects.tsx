@@ -23,7 +23,7 @@ const Projects: FC = (): JSX.Element => {
 				</svg>
 			</div>
 			<Fade top>
-				<h2 className="text-6xl text-tertiary mb-24 mt-32 font-thin text-center">My Projects</h2>
+				<h2 className="lg:text-6xl text-5xl text-tertiary mb-24 mt-32 font-thin text-center">My Projects</h2>
 			</Fade>
 			{projects.map((project) => {
 				return (
@@ -31,7 +31,7 @@ const Projects: FC = (): JSX.Element => {
 						<Fade top>
 							<div className="flex items-center mb-4">
 								<img src={project.icon} alt={project.name} className="h-12 w-12 mr-2" />
-								<h2 className="text-3xl font-thin">{project.name}</h2>
+								<h2 className="lg:text-3xl text-2xl font-thin">{project.name}</h2>
 							</div>
 						</Fade>
 
@@ -41,7 +41,7 @@ const Projects: FC = (): JSX.Element => {
 									<source src={project.videoURL} type="video/mp4" />
 								</video>
 							</div>
-							<div className="lg:w-1/2 w-full flex flex-col justify-around h-full p-0 mt-4 lg:py-8">
+							<div className="lg:w-1/2 w-full flex flex-col justify-around h-full p-4 mt-4 lg:py-8">
 								<h4 className="text-tertiary leading-10">
 									<em>"{project.description}"</em>
 								</h4>

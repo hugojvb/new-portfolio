@@ -71,7 +71,7 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Elem
 	return (
 		<div className="min-h-screen flex flex-col items-center bg-white mt-12">
 			<Fade top>
-				<h2 className="text-6xl font-thin text-secondary mb-24 mt-8 text-center">My Certificates</h2>
+				<h2 className="lg:text-6xl text-5xl font-thin text-secondary mb-24 mt-8 text-center">My Certificates</h2>
 			</Fade>
 
 			<div className="w-full flex flex-col lg:flex-row justify-around container">

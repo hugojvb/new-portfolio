@@ -28,7 +28,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 		<div className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
 			<div className="container mb-60">
 				<Fade top>
-					<h1 className="text-6xl font-thin text-secondary text-center mt-10">About Me</h1>
+					<h1 className="lg:text-6xl text-5xl font-thin text-secondary text-center mt-12">About Me</h1>
 				</Fade>
 				<div className="text-2xl text-secondary mt-20 flex flex-col md:flex-row justify-evenly items-center">
 					<li className="py-8 flex flex-col items-center text-center text-xl mx-8 w-56 ">
