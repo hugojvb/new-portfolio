@@ -48,7 +48,7 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Elem
 		return () => {
 			clearInterval(interval);
 		};
-	});
+	}, [certificateHovered, currentSlide]);
 
 	// CAROUSEL LEFT ARROW CLICK
 	const leftArrowClick = () => {
@@ -69,7 +69,7 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Elem
 	};
 
 	return (
-		<div className="min-h-screen flex flex-col items-center bg-white mt-12">
+		<div className="min-h-screen lg:min-h-full flex flex-col items-center bg-white mt-12">
 			<Fade top>
 				<h2 className="lg:text-6xl text-5xl font-thin text-secondary mb-24 mt-8 text-center">My Certificates</h2>
 			</Fade>

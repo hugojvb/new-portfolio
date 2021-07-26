@@ -48,7 +48,7 @@ const Technologies: FC = (): JSX.Element => {
 					{
 						resolve: slidesToShowPlugin,
 						options: {
-							numberOfSlides: windowWidth < 768 ? 1 : windowWidth < 1440 ? 3 : 5,
+							numberOfSlides: windowWidth <= 768 ? 1 : windowWidth <= 1440 ? 3 : 5,
 						},
 					},
 				]}

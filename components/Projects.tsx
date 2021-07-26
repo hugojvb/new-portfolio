@@ -7,7 +7,7 @@ import { projects } from "../utils/projects";
 // FUNCTIONAL COMPONENT
 const Projects: FC = (): JSX.Element => {
 	return (
-		<div className="min-h-screen flex flex-col items-center bg-secondary mt-24 pb-32 relative">
+		<div className="min-h-screen flex flex-col items-center bg-secondary mt-8 lg:mt-24 pb-32 relative">
 			<div className="absolute w-full top-0 rotate-180">
 				<svg
 					className="invert h-20 w-full"
@@ -29,7 +29,7 @@ const Projects: FC = (): JSX.Element => {
 				return (
 					<div key={project.name} className="flex flex-col justify-around text-tertiary p-10">
 						<Fade top>
-							<div className="flex items-center mb-4">
+							<div className="flex items-center mb-6">
 								<img src={project.icon} alt={project.name} className="h-12 w-12 mr-2" />
 								<h2 className="lg:text-3xl text-2xl font-thin">{project.name}</h2>
 							</div>
