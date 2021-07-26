@@ -142,7 +142,7 @@ const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Elem
 							}
 						/>
 						<em>
-							<p className="m-16 text-center text-xl text-secondary max-h-full overflow-auto">"{certificates[currentSlide].name}"</p>
+							<p className="m-8 text-center text-xl text-secondary max-h-full overflow-auto">"{certificates[currentSlide].name}"</p>
 						</em>
 					</div>
 				</Fade>
