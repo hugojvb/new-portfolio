@@ -6,7 +6,7 @@ const Hero = (): JSX.Element => {
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-center">
 			<Fade top>
-				<h1 className="text-7xl text-secondary antialiased font-thin">I am Hugo and I love what I do</h1>
+				<h1 className="text-7xl text-secondary antialiased font-thin text-center">I am Hugo and I love what I do</h1>
 			</Fade>
 			<Fade top delay={500}>
 				<button

@@ -28,10 +28,10 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 		<div className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
 			<div className="container mb-60">
 				<Fade top>
-					<h1 className="text-6xl font-thin text-secondary text-center">About Me</h1>
+					<h1 className="text-6xl font-thin text-secondary text-center mt-10">About Me</h1>
 				</Fade>
 				<div className="text-2xl text-secondary mt-20 flex justify-evenly">
-					<li className="py-4 flex flex-col items-center text-center text-xl mx-8 w-56">
+					<li className="py-4 flex flex-col items-center text-center text-xl mx-8 w-56 ">
 						<Fade bottom>
 							<img src="/programming-icons/e-learning.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 						</Fade>

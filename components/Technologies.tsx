@@ -30,7 +30,7 @@ const Technologies: FC = (): JSX.Element => {
 		window.addEventListener("resize", handleResize);
 
 		return () => window.removeEventListener("resize", handleResize);
-	});
+	}, [windowWidth]);
 
 	return (
 		<div className="flex-col items-center justify-center my-20">
