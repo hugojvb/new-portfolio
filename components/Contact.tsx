@@ -10,17 +10,11 @@ const Contact: FC = () => {
 	const [nameInput, setNameInput] = useState<string | null>("");
 	const [emailInput, setEmailInput] = useState<string | null>("");
 	const [messageInput, setMessageInput] = useState<string | null>("");
-	const [token, setToken] = useState<string | null>("");
 
 	const submitMessage = (e) => {
 		e.preventDefault();
 
 		if (!nameInput || !emailInput || !messageInput) return;
-	};
-
-	const handleVerify = async (token) => {
-		setToken(token);
-		await axios.post("/api/recaptcha", { token });
 	};
 
 	return (
@@ -70,7 +64,6 @@ const Contact: FC = () => {
 							Message *
 						</label>
 					</div>
-					<GoogleReCaptcha onVerify={handleVerify} />
 					<button
 						type="submit"
 						onClick={submitMessage}

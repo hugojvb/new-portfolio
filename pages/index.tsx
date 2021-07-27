@@ -13,9 +13,6 @@ import Footer from "../components/Footer";
 // UTILS
 import { certificates } from "../utils/certificates";
 
-// RECAPTCHA PROVIDER
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
-
 // TOTAL OF COURSE HOURS
 const courseHours: number = Math.floor(certificates.reduce((sum, cur) => sum + cur.duration, 0) / 10) * 10;
 
@@ -62,17 +59,7 @@ const IndexPage: FC = (): JSX.Element => {
 			<Certificates certificates={certificates} />
 			<Projects />
 			<Technologies windowWidth={windowWidth} />
-			<GoogleReCaptchaProvider
-				reCaptchaKey={process.env.RECAPTCHA_SITE_KEY}
-				scriptProps={{
-					async: false, // optional, default to false,
-					defer: false, // optional, default to false
-					appendTo: "head", // optional, default to "head", can be "head" or "body",
-					nonce: undefined, // optional, default undefined
-				}}
-			>
-				<Contact />
-			</GoogleReCaptchaProvider>
+			<Contact />
 			<Footer />
 		</Fragment>
 	);
