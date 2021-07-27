@@ -1,9 +1,15 @@
 import { FC, Fragment, useState } from "react";
 
+// RECAPTCHA COMPONENT
+import { GoogleReCaptcha } from "react-google-recaptcha-v3";
+
+// FUNCTIONAL COMPONENT
 const Contact: FC = () => {
+	// FORM INPUTS CONTROL
 	const [nameInput, setNameInput] = useState<string | null>("");
 	const [emailInput, setEmailInput] = useState<string | null>("");
 	const [messageInput, setMessageInput] = useState<string | null>("");
+	const [token, setToken] = useState<string | null>("");
 
 	const submitMessage = (e) => {
 		e.preventDefault();
@@ -12,7 +18,7 @@ const Contact: FC = () => {
 	};
 
 	return (
-		<Fragment>
+		<section>
 			<div className="min-h-full pt-20 pb-20 border-t-2 border-gray-50">
 				<h2 className="text-5xl text-center font-thin text-secondary mb-14">Contact</h2>
 				<form className="w-full flex flex-col justify-around items-center my-8 h-auto">
@@ -58,6 +64,11 @@ const Contact: FC = () => {
 							Message *
 						</label>
 					</div>
+					<GoogleReCaptcha
+						onVerify={(token) => {
+							setToken(token);
+						}}
+					/>
 					<button
 						type="submit"
 						onClick={submitMessage}
@@ -67,7 +78,7 @@ const Contact: FC = () => {
 					</button>
 				</form>
 			</div>
-		</Fragment>
+		</section>
 	);
 };
 
