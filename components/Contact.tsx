@@ -1,18 +1,46 @@
-import { FC, Fragment, useState } from "react";
+import { FC, useEffect, useState, useCallback } from "react";
+
 import axios from "axios";
 
 // RECAPTCHA COMPONENT IMPORT
-import Recaptcha from "../components/Recaptcha";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 // FUNCTIONAL COMPONENT
 const Contact: FC = () => {
+	// USE GOOGLE RECAPTCHA
+	const { executeRecaptcha } = useGoogleReCaptcha();
+
 	// FORM INPUTS CONTROL
 	const [nameInput, setNameInput] = useState<string | null>("");
 	const [emailInput, setEmailInput] = useState<string | null>("");
 	const [messageInput, setMessageInput] = useState<string | null>("");
 
+	// HANDLE VERIFY RECAPTCHA
+	const handleRecaptchaVerify = useCallback(async () => {
+		if (!executeRecaptcha) {
+			console.log("Execute recaptcha not yet available");
+			return;
+		}
+
+		const token = await executeRecaptcha("home");
+
+		console.log(token);
+
+		const checkToken = await axios.post("/api/recaptcha", { token });
+
+		if (checkToken.data.success) return true;
+
+		return false;
+	}, []);
+
+	useEffect(() => {
+		handleRecaptchaVerify();
+	}, [handleRecaptchaVerify]);
+
 	const submitMessage = (e) => {
 		e.preventDefault();
+
+		handleRecaptchaVerify();
 
 		if (!nameInput || !emailInput || !messageInput) return;
 	};
@@ -64,7 +92,6 @@ const Contact: FC = () => {
 							Message *
 						</label>
 					</div>
-					<Recaptcha />
 					<button
 						type="submit"
 						onClick={submitMessage}

@@ -11,9 +11,9 @@ function MyApp({ Component, pageProps }) {
 		<GoogleReCaptchaProvider
 			reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
 			scriptProps={{
-				async: false, // optional, default to false,
-				defer: false, // optional, default to false
-				appendTo: "head", // optional, default to "head", can be "head" or "body",
+				async: true, // optional, default to false,
+				defer: true, // optional, default to false
+				appendTo: "body", // optional, default to "head", can be "head" or "body",
 				nonce: undefined, // optional, default undefined
 			}}
 		>
