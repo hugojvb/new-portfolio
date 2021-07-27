@@ -1,6 +1,6 @@
 import { techIcons } from "./techicons";
 
-interface certs {
+interface cert {
 	name: string;
 	description: string;
 	url: string;
@@ -8,7 +8,7 @@ interface certs {
 	duration: number;
 }
 
-export const certificates: certs[] = [
+export const certificates: cert[] = [
 	{
 		name: "The Complete Web Developer",
 		description: "",

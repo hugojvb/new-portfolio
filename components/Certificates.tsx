@@ -69,7 +69,7 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 	};
 
 	return (
-		<div className="min-h-screen lg:min-h-full flex flex-col items-center bg-white mt-12">
+		<section className="min-h-screen lg:min-h-full flex flex-col items-center bg-white mt-12">
 			<Fade top>
 				<h2 className="lg:text-6xl text-5xl font-thin text-secondary mb-24 mt-8 text-center">My Certificates</h2>
 			</Fade>
@@ -147,7 +147,7 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 					</div>
 				</Fade>
 			</div>
-		</div>
+		</section>
 	);
 };
 

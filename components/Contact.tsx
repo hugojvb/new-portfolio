@@ -1,4 +1,5 @@
 import { FC, Fragment, useState } from "react";
+import axios from "axios";
 
 // RECAPTCHA COMPONENT
 import { GoogleReCaptcha } from "react-google-recaptcha-v3";
@@ -15,6 +16,11 @@ const Contact: FC = () => {
 		e.preventDefault();
 
 		if (!nameInput || !emailInput || !messageInput) return;
+	};
+
+	const handleVerify = async (token) => {
+		setToken(token);
+		await axios.post("/api/recaptcha", { token });
 	};
 
 	return (
@@ -64,11 +70,7 @@ const Contact: FC = () => {
 							Message *
 						</label>
 					</div>
-					<GoogleReCaptcha
-						onVerify={(token) => {
-							setToken(token);
-						}}
-					/>
+					<GoogleReCaptcha onVerify={handleVerify} />
 					<button
 						type="submit"
 						onClick={submitMessage}

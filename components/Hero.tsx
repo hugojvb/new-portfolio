@@ -4,7 +4,7 @@ import { Fade } from "react-reveal";
 // FUNCTIONAL COMPONENT
 const Hero = (): JSX.Element => {
 	return (
-		<div className="min-h-screen flex flex-col items-center justify-center">
+		<header className="min-h-screen flex flex-col items-center justify-center">
 			<Fade top>
 				<h1 className="text-5xl lg:text-7xl text-secondary antialiased font-thin text-center">I am Hugo and I love what I do</h1>
 			</Fade>
@@ -16,7 +16,7 @@ const Hero = (): JSX.Element => {
 					More About Me
 				</button>
 			</Fade>
-		</div>
+		</header>
 	);
 };
 
