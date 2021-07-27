@@ -1,8 +1,8 @@
 import { FC, Fragment, useState } from "react";
 import axios from "axios";
 
-// RECAPTCHA COMPONENT
-import { GoogleReCaptcha } from "react-google-recaptcha-v3";
+// RECAPTCHA COMPONENT IMPORT
+import Recaptcha from "../components/Recaptcha";
 
 // FUNCTIONAL COMPONENT
 const Contact: FC = () => {
@@ -64,6 +64,7 @@ const Contact: FC = () => {
 							Message *
 						</label>
 					</div>
+					<Recaptcha />
 					<button
 						type="submit"
 						onClick={submitMessage}
