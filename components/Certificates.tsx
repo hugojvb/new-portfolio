@@ -11,7 +11,7 @@ import { arrowsPlugin, slidesToShowPlugin, Dots } from "@brainhubeu/react-carous
 import "@brainhubeu/react-carousel/lib/style.css";
 
 // TYPE OF CERTIFICATES PROPS
-interface Certs {
+interface Cert {
 	name: string;
 	description: string;
 	url: string;
@@ -20,7 +20,7 @@ interface Certs {
 }
 
 // FUNCTIONAL COMPONENT
-const Certificates: FC<{ certificates: Certs[] }> = ({ certificates }): JSX.Element => {
+const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Element => {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const [certificateHovered, setCertificateHovered] = useState(false);
 

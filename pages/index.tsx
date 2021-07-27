@@ -20,6 +20,7 @@ const courseHours: number = Math.floor(certificates.reduce((sum, cur) => sum + c
 const IndexPage: FC = (): JSX.Element => {
 	const [windowWidth, setWindowWidth] = useState<number | null>(0);
 
+	// SET WINDOW WIDTH STATE
 	useEffect(() => {
 		setWindowWidth(window.innerWidth);
 
