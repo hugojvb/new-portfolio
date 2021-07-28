@@ -7,6 +7,7 @@ const recaptcha = async (req: NextApiRequest, res: NextApiResponse) => {
 		let siteverify;
 
 		try {
+			// GRAB THE TOKEN FROM THE REQUEST BODY
 			const { token } = req.body;
 
 			// CHECK IF TOKEN IS VALID
@@ -19,12 +20,11 @@ const recaptcha = async (req: NextApiRequest, res: NextApiResponse) => {
 				}
 			);
 
-			console.log(siteverify);
-
+			// TOKEN IS NOT VALID
 			if (!siteverify.data.success) throw Error;
 
 			// TOKEN IS VALID
-			return res.send({ success: siteverify.data.success });
+			return res.send({ success: true });
 		} catch (e) {
 			// ERROR HANDLING
 			return res.send({ success: false, error: siteverify.data["error-codes"] });

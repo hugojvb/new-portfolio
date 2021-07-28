@@ -20,22 +20,23 @@ const Contact: FC = (): JSX.Element => {
 	const verifyRecaptcha = async () => {
 		const checkToken = await axios.post("/api/recaptcha", { token: recaptchaRef.current.getValue() });
 
-		console.log(checkToken);
 		if (checkToken.data.success) setRecaptchaValidated(true);
 	};
 
 	// SUBMIT CONTACT FORM
 	const submitMessage = async (e) => {
 		e.preventDefault();
-		console.log("didn't pass validation");
 
 		if (!nameInput || !emailInput || !messageInput || !recaptchaValidated) return;
 
-		console.log("passed validation");
+		let response = await axios.post("/api/contactForm", { name: nameInput, email: emailInput, message: messageInput });
 
-		let response = await axios.post("/api/contactform", { name: nameInput, email: emailInput, message: messageInput });
-
-		if (response.data.success) alert("email sent");
+		if (response.data.success) {
+			setNameInput("");
+			setEmailInput("");
+			setMessageInput("");
+			recaptchaRef.current.reset();
+		}
 	};
 
 	return (
