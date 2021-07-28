@@ -25,10 +25,12 @@ const Contact: FC = (): JSX.Element => {
 	};
 
 	// SUBMIT CONTACT FORM
-	const submitMessage = (e) => {
+	const submitMessage = async (e) => {
 		e.preventDefault();
 
 		if (!nameInput || !emailInput || !messageInput || !recaptchaValidated) return;
+
+		let response = axios.post("/api/contactform", { name: nameInput, email: emailInput, message: messageInput });
 	};
 
 	return (
