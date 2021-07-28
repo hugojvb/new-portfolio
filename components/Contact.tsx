@@ -7,6 +7,9 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 // FUNCTIONAL COMPONENT
 const Contact: FC = (): JSX.Element => {
+	// MODAL FOR CONTACT FORM SENT
+	const [showModal, setShowModal] = useState<boolean | null>(false);
+
 	// FORM INPUTS CONTROL
 	const [nameInput, setNameInput] = useState<string | null>("");
 	const [emailInput, setEmailInput] = useState<string | null>("");
@@ -32,6 +35,8 @@ const Contact: FC = (): JSX.Element => {
 		let response = await axios.post("/api/contactForm", { name: nameInput, email: emailInput, message: messageInput });
 
 		if (response.data.success) {
+			setShowModal(true);
+
 			setNameInput("");
 			setEmailInput("");
 			setMessageInput("");
@@ -98,6 +103,39 @@ const Contact: FC = (): JSX.Element => {
 					</button>
 				</form>
 			</div>
+			{!showModal && (
+				<>
+					<div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+						<div className="relative w-auto my-6 mx-auto max-w-3xl">
+							{/*content*/}
+							<div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+								{/*header*/}
+								<div className="flex items-start justify-center p-5 border-b border-solid border-gray-100 rounded-t">
+									<h3 className="text-3xl font-thin">Message sent successfully</h3>
+								</div>
+								{/*body*/}
+								<div className="relative p-6 flex-auto text-center flex flex-col items-center">
+									<img src="/feedback/checkmark.svg" alt="checkmark" className="w-28" />
+									<p className="my-4 text-blueGray-500 text-lg leading-relaxed font-thin">
+										Thank you for your contact. <br /> We'll get back to you as soon as possible!
+									</p>
+								</div>
+								{/*footer*/}
+								<div className="flex items-center justify-end p-2 border-t border-solid border-gray-100 rounded-b">
+									<button
+										className="text-white bg-primary font-bold rounded-full uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:opacity-70"
+										type="button"
+										onClick={() => setShowModal(false)}
+									>
+										Ok
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+				</>
+			)}
 		</section>
 	);
 };

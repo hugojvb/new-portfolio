@@ -9,7 +9,7 @@ const contactForm = async (req: NextApiRequest, res: NextApiResponse) => {
 			// GRAB BODY FROM REQUEST
 			const { name, email, message } = req.body;
 
-			// SMTP TRANSPORTER
+			// SMTP GMAIL TRANSPORTER
 			let transporter = nodemailer.createTransport({
 				service: "Gmail",
 				host: "smtp.gmail",
