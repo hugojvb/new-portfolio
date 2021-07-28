@@ -1,46 +1,29 @@
-import { FC, useEffect, useState, useCallback } from "react";
+import { FC, useEffect, useState, useRef } from "react";
 
 import axios from "axios";
 
-// RECAPTCHA COMPONENT IMPORT
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+// RECAPTCHA V2
+import ReCAPTCHA from "react-google-recaptcha";
+import { Recoverable } from "repl";
 
 // FUNCTIONAL COMPONENT
 const Contact: FC = () => {
-	// USE GOOGLE RECAPTCHA
-	const { executeRecaptcha } = useGoogleReCaptcha();
-
 	// FORM INPUTS CONTROL
 	const [nameInput, setNameInput] = useState<string | null>("");
 	const [emailInput, setEmailInput] = useState<string | null>("");
 	const [messageInput, setMessageInput] = useState<string | null>("");
 
-	// HANDLE VERIFY RECAPTCHA
-	const handleRecaptchaVerify = useCallback(async () => {
-		if (!executeRecaptcha) {
-			console.log("Execute recaptcha not yet available");
-			return;
-		}
+	const recaptchaRef = useRef<any | null>(null);
 
-		const token = await executeRecaptcha("home");
+	const verifyRecaptcha = async () => {
+		const checkToken = await axios.post("/api/recaptcha", { token: recaptchaRef?.current.getValue() });
 
-		console.log(token);
-
-		const checkToken = await axios.post("/api/recaptcha", { token });
-
+		console.log(checkToken);
 		if (checkToken.data.success) return true;
-
-		return false;
-	}, []);
-
-	useEffect(() => {
-		handleRecaptchaVerify();
-	}, [handleRecaptchaVerify]);
+	};
 
 	const submitMessage = (e) => {
 		e.preventDefault();
-
-		handleRecaptchaVerify();
 
 		if (!nameInput || !emailInput || !messageInput) return;
 	};
@@ -92,6 +75,7 @@ const Contact: FC = () => {
 							Message *
 						</label>
 					</div>
+					<ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={verifyRecaptcha} />
 					<button
 						type="submit"
 						onClick={submitMessage}
