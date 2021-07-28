@@ -4,28 +4,31 @@ import axios from "axios";
 
 // RECAPTCHA V2
 import ReCAPTCHA from "react-google-recaptcha";
-import { Recoverable } from "repl";
 
 // FUNCTIONAL COMPONENT
-const Contact: FC = () => {
+const Contact: FC = (): JSX.Element => {
 	// FORM INPUTS CONTROL
 	const [nameInput, setNameInput] = useState<string | null>("");
 	const [emailInput, setEmailInput] = useState<string | null>("");
 	const [messageInput, setMessageInput] = useState<string | null>("");
 
+	// RECAPTCHA HANDLING
+	const [recaptchaValidated, setRecaptchaValidated] = useState<boolean | null>(false);
+
 	const recaptchaRef = useRef<any | null>(null);
 
 	const verifyRecaptcha = async () => {
-		const checkToken = await axios.post("/api/recaptcha", { token: recaptchaRef?.current.getValue() });
+		const checkToken = await axios.post("/api/recaptcha", { token: recaptchaRef.current.getValue() });
 
 		console.log(checkToken);
-		if (checkToken.data.success) return true;
+		if (checkToken.data.success) setRecaptchaValidated(true);
 	};
 
+	// SUBMIT CONTACT FORM
 	const submitMessage = (e) => {
 		e.preventDefault();
 
-		if (!nameInput || !emailInput || !messageInput) return;
+		if (!nameInput || !emailInput || !messageInput || !recaptchaValidated) return;
 	};
 
 	return (
@@ -75,7 +78,9 @@ const Contact: FC = () => {
 							Message *
 						</label>
 					</div>
-					<ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={verifyRecaptcha} />
+					<div className="mt-6">
+						<ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={verifyRecaptcha} hl="en" />
+					</div>
 					<button
 						type="submit"
 						onClick={submitMessage}
