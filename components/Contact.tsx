@@ -27,10 +27,15 @@ const Contact: FC = (): JSX.Element => {
 	// SUBMIT CONTACT FORM
 	const submitMessage = async (e) => {
 		e.preventDefault();
+		console.log("didn't pass validation");
 
 		if (!nameInput || !emailInput || !messageInput || !recaptchaValidated) return;
 
-		let response = axios.post("/api/contactform", { name: nameInput, email: emailInput, message: messageInput });
+		console.log("passed validation");
+
+		let response = await axios.post("/api/contactform", { name: nameInput, email: emailInput, message: messageInput });
+
+		if (response.data.success) alert("email sent");
 	};
 
 	return (

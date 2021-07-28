@@ -21,13 +21,18 @@ const contactForm = async (req: NextApiRequest, res: NextApiResponse) => {
 			});
 
 			// send mail with defined transport object
-			let info = await transporter.sendMail({
-				from: `Contact request from ${name}`,
-				to: process.env.SEND_MAIL_TO,
-				subject: "Received contact from hugojvb.com",
-				text: message,
-				html: `<b>${message}</b>`,
-			});
+			let info = await transporter.sendMail(
+				{
+					from: email,
+					to: process.env.SEND_MAIL_TO,
+					subject: `Received contact from ${name}`,
+					text: message,
+					html: `<b>${message}</b>`,
+				},
+				function (error, response) {
+					if (error) throw Error;
+				}
+			);
 
 			console.log("Message sent: %s", info.messageId);
 
