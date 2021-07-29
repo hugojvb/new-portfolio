@@ -122,7 +122,7 @@ const Contact: FC = (): JSX.Element => {
 								<div className="relative p-6 mb-8 flex-auto text-center flex flex-col items-center">
 									<img src="/feedback/checkmark.svg" alt="checkmark" className="w-28 my-8" />
 									<p className="my-4 text-blueGray-500 text-lg leading-relaxed font-thin">
-										Thank you for your contact. <br /> We'll get back to you as soon as possible!
+										Thank you for your contact. <br /> I'll get back to you as soon as possible!
 									</p>
 								</div>
 								{/*footer*/}
