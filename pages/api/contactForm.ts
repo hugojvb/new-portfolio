@@ -9,6 +9,8 @@ const contactForm = async (req: NextApiRequest, res: NextApiResponse) => {
 			// GRAB BODY FROM REQUEST
 			const { name, email, message } = req.body;
 
+			if (!name || !email || !message) return;
+
 			// SMTP GMAIL TRANSPORTER
 			let transporter = nodemailer.createTransport({
 				service: "Gmail",
@@ -29,8 +31,6 @@ const contactForm = async (req: NextApiRequest, res: NextApiResponse) => {
 				text: message,
 				html: `<b>${message}</b>`,
 			});
-
-			console.log("Message sent: %s", info.messageId);
 
 			return res.send({ success: true });
 		} catch (e) {

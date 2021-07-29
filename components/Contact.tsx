@@ -15,6 +15,11 @@ const Contact: FC = (): JSX.Element => {
 	const [emailInput, setEmailInput] = useState<string | null>("");
 	const [messageInput, setMessageInput] = useState<string | null>("");
 
+	// INPUT ERROR HANDLING
+	const [nameError, setNameError] = useState<boolean | null>(false);
+	const [emailError, setEmailError] = useState<boolean | null>(false);
+	const [messageError, setMessageError] = useState<boolean | null>(false);
+
 	// PROCESSING AFTER SUBMIT
 	const [processing, setProcessing] = useState<boolean | null>(false);
 	const [showModal, setShowModal] = useState<boolean | null>(false);
@@ -35,7 +40,7 @@ const Contact: FC = (): JSX.Element => {
 	const submitMessage = async (e) => {
 		e.preventDefault();
 
-		if (!nameInput || !emailInput || !messageInput || !recaptchaValidated) return;
+		if (!recaptchaValidated) return;
 
 		setProcessing(true);
 
@@ -62,7 +67,7 @@ const Contact: FC = (): JSX.Element => {
 			<div className="min-h-full pt-20 pb-20 border-t-2 border-gray-50">
 				<h2 className="text-5xl text-center font-thin text-secondary mb-14">Contact</h2>
 				<form className="w-full flex flex-col justify-around items-center my-8 h-auto">
-					<div className="relative w-5/6 lg:w-1/2 my-4">
+					<div className="relative w-5/6 lg:w-1/2 mt-12">
 						<input
 							placeholder=" "
 							className="py-2 border-b-2 border-secondary w-full outline-none hover:border-primary transition-all duration-300 focus:border-primary"
@@ -76,7 +81,8 @@ const Contact: FC = (): JSX.Element => {
 							Name *
 						</label>
 					</div>
-					<div className="relative w-5/6 lg:w-1/2 my-12">
+					{nameError && <p className="text-red-400 flex justify-start w-1/2 text-xs mt-1">Please insert your name</p>}
+					<div className="relative w-5/6 lg:w-1/2 mt-12">
 						<input
 							placeholder=" "
 							className="py-2 border-b-2 border-secondary w-full outline-none hover:border-primary transition-all duration-300 focus:border-primary"
@@ -90,7 +96,8 @@ const Contact: FC = (): JSX.Element => {
 							Email *
 						</label>
 					</div>
-					<div className="relative w-5/6 lg:w-1/2 my-4">
+					{emailError && <p className="text-red-400 flex justify-start w-1/2 text-xs mt-1">Please insert a valid email</p>}
+					<div className="relative w-5/6 lg:w-1/2 mt-12">
 						<textarea
 							rows={3}
 							placeholder=" "
@@ -104,7 +111,8 @@ const Contact: FC = (): JSX.Element => {
 							Message *
 						</label>
 					</div>
-					<div className="mt-6">
+					{messageError && <p className="text-red-400 flex justify-start w-1/2 text-xs">Please insert your message</p>}
+					<div className="mt-12">
 						<ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={verifyRecaptcha} hl="en" />
 					</div>
 					<button
