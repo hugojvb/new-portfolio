@@ -24,6 +24,7 @@ interface Props {
 	processing: boolean;
 }
 
+// FUNCTIONAL COMPONENT
 const ContactForm: FC<Props> = ({
 	nameInput,
 	setNameInput,
@@ -56,7 +57,7 @@ const ContactForm: FC<Props> = ({
 					Name *
 				</label>
 			</div>
-			{nameError && <p className="text-red-400 flex justify-start w-1/2 text-xs mt-1">Please insert your name</p>}
+			{nameError && <p className="text-red-400 flex justify-start w-5/6 lg:w-1/2 text-xs mt-1">Please insert your name</p>}
 			<div className="relative w-5/6 lg:w-1/2 mt-12">
 				<input
 					placeholder=" "
@@ -71,7 +72,7 @@ const ContactForm: FC<Props> = ({
 					Email *
 				</label>
 			</div>
-			{emailError && <p className="text-red-400 flex justify-start w-1/2 text-xs mt-1">Please insert a valid email</p>}
+			{emailError && <p className="text-red-400 flex justify-start w-5/6 lg:w-1/2 text-xs mt-1">Please insert a valid email</p>}
 			<div className="relative w-5/6 lg:w-1/2 mt-12">
 				<textarea
 					rows={3}
@@ -87,7 +88,9 @@ const ContactForm: FC<Props> = ({
 					Message *
 				</label>
 			</div>
-			{messageError && <p className="text-red-400 flex justify-start w-1/2 text-xs">Please insert a message of at least 50 characters</p>}
+			{messageError && (
+				<p className="text-red-400 flex justify-start w-5/6 lg:w-1/2 text-xs">Please insert a message of at least 50 characters</p>
+			)}
 			<div className="mt-12">
 				<ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={verifyRecaptcha} hl="en" />
 				{recaptchaError && <p className="text-red-400 flex justify-start text-xs mt-1">Please complete the recaptcha</p>}

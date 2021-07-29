@@ -1,4 +1,4 @@
-import { FC, useEffect, useState, useRef } from "react";
+import { FC, useState, useRef } from "react";
 
 import axios from "axios";
 
