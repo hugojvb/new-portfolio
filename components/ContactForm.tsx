@@ -6,7 +6,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 // TYPE FOR USESTATE SET FUNCTIONS
 type setString = Dispatch<SetStateAction<string>>;
 
-const ContactForm: FC<{
+// PROPS STATE INTERFACE
+interface Props {
 	nameInput: string;
 	setNameInput: setString;
 	nameError: boolean;
@@ -21,7 +22,9 @@ const ContactForm: FC<{
 	recaptchaError: boolean;
 	submitMessage: (e: any) => Promise<void>;
 	processing: boolean;
-}> = ({
+}
+
+const ContactForm: FC<Props> = ({
 	nameInput,
 	setNameInput,
 	nameError,
