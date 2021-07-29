@@ -41,15 +41,33 @@ const Contact: FC = (): JSX.Element => {
 	const submitMessage = async (e) => {
 		e.preventDefault();
 
+		// RESET FORM INPUT ERRORS
+		setNameError(false);
+		setEmailError(false);
+		setMessageError(false);
+		setRecaptchaError(false);
+
+		let errorFound: boolean = false;
+
 		// FORM FIELDS VALIDATION
-		if (!recaptchaValidated) setRecaptchaError(true);
-		if (nameInput.length < 3) setNameError(true);
-		if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput)) setEmailError(true);
-		if (messageInput.length < 50) {
-			setMessageError(true);
-			console.log(messageError);
+		if (!recaptchaValidated) {
+			errorFound = true;
+			setRecaptchaError(true);
 		}
-		if (recaptchaError || nameError || emailError || messageError) return;
+		if (nameInput.length < 3) {
+			errorFound = true;
+			setNameError(true);
+		}
+		if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput)) {
+			errorFound = true;
+			setEmailError(true);
+		}
+		if (messageInput.length < 50) {
+			errorFound = true;
+			setMessageError(true);
+		}
+
+		if (errorFound) return;
 
 		setProcessing(true);
 
