@@ -9,7 +9,7 @@ const contactForm = async (req: NextApiRequest, res: NextApiResponse) => {
 			// GRAB BODY FROM REQUEST
 			const { name, email, message } = req.body;
 
-			if (!name || !email || !message) return;
+			if (name.length < 3 || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) || message.length < 50) return;
 
 			// SMTP GMAIL TRANSPORTER
 			let transporter = nodemailer.createTransport({

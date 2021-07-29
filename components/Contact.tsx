@@ -19,11 +19,12 @@ const Contact: FC = (): JSX.Element => {
 	const [nameError, setNameError] = useState<boolean | null>(false);
 	const [emailError, setEmailError] = useState<boolean | null>(false);
 	const [messageError, setMessageError] = useState<boolean | null>(false);
+	const [recaptchaError, setRecaptchaError] = useState<boolean | null>(false);
 
 	// PROCESSING AFTER SUBMIT
 	const [processing, setProcessing] = useState<boolean | null>(false);
 	const [showModal, setShowModal] = useState<boolean | null>(false);
-	const [sendSuccess, setSendSuccess] = useState<boolean | null>(null);
+	const [sendSuccess, setSendSuccess] = useState<boolean | null>(false);
 
 	// RECAPTCHA HANDLING
 	const [recaptchaValidated, setRecaptchaValidated] = useState<boolean | null>(false);
@@ -40,7 +41,15 @@ const Contact: FC = (): JSX.Element => {
 	const submitMessage = async (e) => {
 		e.preventDefault();
 
-		if (!recaptchaValidated) return;
+		// FORM FIELDS VALIDATION
+		if (!recaptchaValidated) setRecaptchaError(true);
+		if (nameInput.length < 3) setNameError(true);
+		if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput)) setEmailError(true);
+		if (messageInput.length < 50) {
+			setMessageError(true);
+			console.log(messageError);
+		}
+		if (recaptchaError || nameError || emailError || messageError) return;
 
 		setProcessing(true);
 
@@ -100,6 +109,7 @@ const Contact: FC = (): JSX.Element => {
 					<div className="relative w-5/6 lg:w-1/2 mt-12">
 						<textarea
 							rows={3}
+							minLength={50}
 							placeholder=" "
 							className="py-2 border-b-2 border-secondary w-full resize-none outline-none hover:border-primary transition-all duration-300 focus:border-primary"
 							name="message"
@@ -111,9 +121,12 @@ const Contact: FC = (): JSX.Element => {
 							Message *
 						</label>
 					</div>
-					{messageError && <p className="text-red-400 flex justify-start w-1/2 text-xs">Please insert your message</p>}
+					{messageError && (
+						<p className="text-red-400 flex justify-start w-1/2 text-xs">Please insert a message of at least 50 characters</p>
+					)}
 					<div className="mt-12">
 						<ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={verifyRecaptcha} hl="en" />
+						{recaptchaError && <p className="text-red-400 flex justify-start text-xs mt-1">Please complete the recaptcha</p>}
 					</div>
 					<button
 						type="submit"
