@@ -10,10 +10,10 @@ const scrollToNextSection = () => {
 const Hero = (): JSX.Element => {
 	return (
 		<header className="min-h-screen flex flex-col items-center justify-center">
-			<Fade top>
+			<Fade top ssrReveal>
 				<h1 className="text-5xl lg:text-7xl text-secondary antialiased font-thin text-center">I am Hugo and I love what I do</h1>
 			</Fade>
-			<Fade top delay={500}>
+			<Fade top delay={500} ssrReveal>
 				<button
 					onClick={scrollToNextSection}
 					className="custom-fill text-2xl lg:text-3xl rounded-full border-solid border-2 border-primary p-3 font-thin text-secondary mt-10 focus:outline-none"
