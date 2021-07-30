@@ -1,6 +1,11 @@
 import React from "react";
 import { Fade } from "react-reveal";
 
+// SCROLL INTO ABOUT SECTION
+const scrollToNextSection = () => {
+	document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+};
+
 // FUNCTIONAL COMPONENT
 const Hero = (): JSX.Element => {
 	return (
@@ -10,7 +15,7 @@ const Hero = (): JSX.Element => {
 			</Fade>
 			<Fade top delay={500}>
 				<button
-					onClick={(e) => window.scrollTo({ top: window.innerHeight, left: 0, behavior: "smooth" })}
+					onClick={scrollToNextSection}
 					className="custom-fill text-2xl lg:text-3xl rounded-full border-solid border-2 border-primary p-3 font-thin text-secondary mt-10 focus:outline-none"
 				>
 					More About Me

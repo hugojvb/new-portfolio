@@ -25,7 +25,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 	};
 
 	return (
-		<section className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
+		<section id="about" className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
 			<div className="container mb-60">
 				<Fade top>
 					<h1 className="lg:text-6xl text-5xl font-thin text-secondary text-center mt-12">About Me</h1>
