@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Fade } from "react-reveal";
+import { Fade } from "@stahl.luke/react-reveal";
 
 // FUNCTIONAL COMPONENT
 const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {

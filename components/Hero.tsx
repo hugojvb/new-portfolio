@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "react-reveal";
+import { Fade } from "@stahl.luke/react-reveal";
 
 // SCROLL INTO ABOUT SECTION
 const scrollToNextSection = () => {

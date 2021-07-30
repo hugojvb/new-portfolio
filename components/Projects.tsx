@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Fade } from "react-reveal";
+import { Fade } from "@stahl.luke/react-reveal";
 
 // UTILS
 import { projects } from "../utils/projects";

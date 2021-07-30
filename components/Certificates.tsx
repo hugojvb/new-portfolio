@@ -1,6 +1,6 @@
 import { FC, useState, useEffect, useRef } from "react";
 
-import { Fade } from "react-reveal";
+import { Fade } from "@stahl.luke/react-reveal";
 
 import CertificatesCarousel from "./CertificatesCarousel";
 

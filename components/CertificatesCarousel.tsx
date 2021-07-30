@@ -1,7 +1,7 @@
 import { FC, Dispatch, SetStateAction } from "react";
 import dynamic from "next/dynamic";
 
-import { Fade } from "react-reveal";
+import { Fade } from "@stahl.luke/react-reveal";
 
 // CAROUSEL IMPORTS
 const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), { ssr: false });
