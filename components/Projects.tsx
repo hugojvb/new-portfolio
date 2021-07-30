@@ -1,4 +1,4 @@
-import { FC, Fragment } from "react";
+import { FC } from "react";
 import { Fade } from "react-reveal";
 
 // UTILS
@@ -36,38 +36,36 @@ const Projects: FC = (): JSX.Element => {
 						</Fade>
 
 						<div className="flex flex-col lg:flex-row justify-around items-center h-full text-white lg:px-1">
-							<Fade left>
+							<Fade>
 								<div className="w-full lg:w-1/2 p-0">
 									<video controls autoPlay muted loop>
 										<source src={project.videoURL} type="video/mp4" />
 									</video>
 								</div>
 							</Fade>
-							<Fade right>
-								<div className="lg:w-1/2 w-full flex flex-col justify-around h-full p-4 mt-4 lg:px-8 xl:px-16 lg:py-0">
-									<h4 className="text-tertiary leading-10">
-										<em>"{project.description}"</em>
-									</h4>
-									<div className="flex mt-4">
-										<a
-											href={project.sourceURL}
-											target="_blank"
-											rel="noopener noreferer"
-											className="custom-fill-white border border-tertiary rounded-full w-24 h-10 focus:outline-none flex justify-center items-center"
-										>
-											Source
-										</a>
-										<a
-											href={project.liveURL}
-											target="_blank"
-											rel="noopener noreferer"
-											className="ml-10 hover:text-gray-400 transition-all hover:duration-300 focus:outline-none flex justify-center items-center"
-										>
-											Live
-										</a>
-									</div>
+							<div className="lg:w-1/2 w-full flex flex-col justify-around h-full p-4 mt-4 lg:px-8 xl:px-16 lg:py-0">
+								<h4 className="text-tertiary leading-10">
+									<em>"{project.description}"</em>
+								</h4>
+								<div className="flex mt-4">
+									<a
+										href={project.sourceURL}
+										target="_blank"
+										rel="noopener noreferer"
+										className="custom-fill-white border border-tertiary rounded-full w-24 h-10 focus:outline-none flex justify-center items-center"
+									>
+										Source
+									</a>
+									<a
+										href={project.liveURL}
+										target="_blank"
+										rel="noopener noreferer"
+										className="ml-10 hover:text-gray-400 transition-all hover:duration-300 focus:outline-none flex justify-center items-center"
+									>
+										Live
+									</a>
 								</div>
-							</Fade>
+							</div>
 						</div>
 					</div>
 				);

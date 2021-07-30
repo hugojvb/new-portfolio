@@ -75,7 +75,7 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 			</Fade>
 
 			<div className="w-full flex flex-col lg:flex-row lg:p-8 justify-around container">
-				<Fade left>
+				<Fade>
 					<div
 						className="w-full lg:w-8/12 flex flex-col"
 						onMouseEnter={() => setCertificateHovered(true)}
@@ -128,7 +128,7 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 						<Dots value={currentSlide} onChange={(value) => setCurrentSlide(value)} number={slides.length} />
 					</div>
 				</Fade>
-				<Fade right>
+				<Fade>
 					<div className="w-full lg:w-4/12 flex flex-col justify-center items-center rounded-xl lg:pl-8 pt-16">
 						<img
 							src={certificates[currentSlide].icon.url}
