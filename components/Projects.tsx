@@ -10,7 +10,7 @@ const Projects: FC = (): JSX.Element => {
 		<section className="min-h-screen flex flex-col items-center bg-secondary mt-8 lg:mt-24 pb-32 relative">
 			<div className="absolute w-full top-0 rotate-180">
 				<svg
-					className="invert h-20 w-full"
+					className="invert h-10 w-full"
 					data-name="Layer 1"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 1200 120"
