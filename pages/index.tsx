@@ -13,12 +13,18 @@ import Footer from "../components/Footer";
 // UTILS
 import { certificates } from "../utils/certificates";
 
+// REACT REVEAL SSR FADEOUT
+import config from "@stahl.luke/react-reveal/globals";
+
 // TOTAL OF COURSE HOURS
 const courseHours: number = Math.floor(certificates.reduce((sum, cur) => sum + cur.duration, 0) / 10) * 10;
 
 // FUNCTIONAL COMPONENT
 const IndexPage: FC = (): JSX.Element => {
 	const [windowWidth, setWindowWidth] = useState<number | null>(0);
+
+	// AVOID ANIMATION FLICKING
+	config({ ssrFadeout: true });
 
 	// SET WINDOW WIDTH STATE
 	useEffect(() => {
