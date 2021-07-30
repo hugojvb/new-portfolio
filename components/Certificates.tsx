@@ -2,19 +2,13 @@ import { FC, useState, useEffect, useRef } from "react";
 
 import { Fade } from "react-reveal";
 
-import dynamic from "next/dynamic";
-import Image from "next/image";
-
-// CAROUSEL IMPORTS
-const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), { ssr: false });
-import { arrowsPlugin, slidesToShowPlugin, Dots } from "@brainhubeu/react-carousel";
-import "@brainhubeu/react-carousel/lib/style.css";
+import CertificatesCarousel from "./CertificatesCarousel";
 
 // CHECK IF COMPONENT IS VISIBLE HOOK
 import { useOnScreen } from "../utils/useOnScreen";
 
 // TYPE OF CERTIFICATES PROPS
-interface Cert {
+export interface Cert {
 	name: string;
 	description: string;
 	url: string;
@@ -31,7 +25,7 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 	const certificatesRef = useRef();
 	const isVisible = useOnScreen(certificatesRef);
 
-	let slides = [];
+	let slides: JSX.Element[] = [];
 
 	// ADD SLIDES FOR CAROUSEL
 	for (let certificate of certificates) {
@@ -82,77 +76,15 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 			</Fade>
 
 			<div ref={certificatesRef} className="w-full flex flex-col lg:flex-row lg:p-8 justify-around container">
-				<Fade>
-					<div
-						className="w-full lg:w-8/12 flex flex-col"
-						onMouseEnter={() => setCertificateHovered(true)}
-						onMouseLeave={() => setCertificateHovered(false)}
-					>
-						<Carousel
-							plugins={[
-								{
-									resolve: arrowsPlugin,
-									options: {
-										arrowLeft: (
-											<button
-												onClick={leftArrowClick}
-												className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none"
-											>
-												<img src="/arrows/left-arrow.svg" alt="left-arrow" />
-											</button>
-										),
-										arrowLeftDisabled: (
-											<button className="w-8 hover:-translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
-												<img src="/arrows/left-arrow.svg" alt="left-arrow" />
-											</button>
-										),
-										arrowRight: (
-											<button
-												onClick={rightArrowClick}
-												className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none"
-											>
-												<img src="/arrows/right-arrow.svg" alt="right-arrow" />
-											</button>
-										),
-										arrowRightDisabled: (
-											<button className="w-8 hover:translate-x-0.5 hover:duration-300 focus:outline-none outline-none">
-												<img src="/arrows/right-arrow.svg" alt="right-arrow" />
-											</button>
-										),
-									},
-								},
-								{
-									resolve: slidesToShowPlugin,
-									options: {
-										numberOfSlides: 1,
-									},
-								},
-							]}
-							draggable={false}
-							slides={slides}
-							value={currentSlide}
-						></Carousel>
-						<Dots value={currentSlide} onChange={(value) => setCurrentSlide(value)} number={slides.length} />
-					</div>
-				</Fade>
-				<Fade>
-					<div className="w-full lg:w-4/12 flex flex-col justify-center items-center rounded-xl lg:pl-8 pt-16">
-						<img
-							src={certificates[currentSlide].icon.url}
-							alt={certificates[currentSlide].icon.url}
-							className={
-								certificates[currentSlide].icon.size == "small"
-									? "h-32"
-									: certificates[currentSlide].icon.size == "medium"
-									? "h-36"
-									: "h-44"
-							}
-						/>
-						<em>
-							<p className="m-8 text-center text-xl text-secondary max-h-full overflow-auto">"{certificates[currentSlide].name}"</p>
-						</em>
-					</div>
-				</Fade>
+				<CertificatesCarousel
+					setCertificateHovered={setCertificateHovered}
+					leftArrowClick={leftArrowClick}
+					rightArrowClick={rightArrowClick}
+					slides={slides}
+					currentSlide={currentSlide}
+					setCurrentSlide={setCurrentSlide}
+					certificates={certificates}
+				/>
 			</div>
 		</section>
 	);
