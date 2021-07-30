@@ -1,4 +1,4 @@
-import { FC, useState, useEffect, Fragment } from "react";
+import { FC, useState, useEffect, useRef } from "react";
 
 import { Fade } from "react-reveal";
 
@@ -9,6 +9,9 @@ import Image from "next/image";
 const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), { ssr: false });
 import { arrowsPlugin, slidesToShowPlugin, Dots } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
+
+// CHECK IF COMPONENT IS VISIBLE HOOK
+import { useOnScreen } from "../utils/useOnScreen";
 
 // TYPE OF CERTIFICATES PROPS
 interface Cert {
@@ -24,6 +27,10 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const [certificateHovered, setCertificateHovered] = useState(false);
 
+	// IS VISIBLE BASED ON CERTIFICATES REF
+	const certificatesRef = useRef();
+	const isVisible = useOnScreen(certificatesRef);
+
 	let slides = [];
 
 	// ADD SLIDES FOR CAROUSEL
@@ -35,7 +42,7 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 		let interval;
 
 		// CAROUSEL AUTOPLAY ONLY WHEN NOT HOVERED
-		if (!certificateHovered) {
+		if (!certificateHovered && isVisible) {
 			interval = setInterval(() => {
 				if (currentSlide + 1 < slides.length) {
 					setCurrentSlide(currentSlide + 1);
@@ -48,7 +55,7 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 		return () => {
 			clearInterval(interval);
 		};
-	}, [certificateHovered, currentSlide]);
+	}, [certificateHovered, currentSlide, isVisible]);
 
 	// CAROUSEL LEFT ARROW CLICK
 	const leftArrowClick = () => {
@@ -74,7 +81,7 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 				<h2 className="lg:text-6xl text-5xl font-thin text-secondary mb-24 mt-8 text-center">My Certificates</h2>
 			</Fade>
 
-			<div className="w-full flex flex-col lg:flex-row lg:p-8 justify-around container">
+			<div ref={certificatesRef} className="w-full flex flex-col lg:flex-row lg:p-8 justify-around container">
 				<Fade>
 					<div
 						className="w-full lg:w-8/12 flex flex-col"
