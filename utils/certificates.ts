@@ -72,4 +72,11 @@ export const certificates: cert[] = [
 		icon: techIcons.filter((icon) => icon.name === "node")[0],
 		duration: 16,
 	},
+	{
+		name: "Implement High Fidelity Designs with Material-UI and ReactJS",
+		description: "",
+		url: "certificates/cert_material_ui.jpg",
+		icon: techIcons.filter((icon) => icon.name === "material-ui")[0],
+		duration: 40.5,
+	},
 ];
