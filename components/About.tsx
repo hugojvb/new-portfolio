@@ -45,7 +45,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 							<img src="/programming-icons/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 						</Fade>
 						<Fade bottom delay={200}>
-							<p className="font-normal">+{timeParser(fullStackExpTime)} experience in Frontend/Full Stack Development</p>
+							<p className="font-normal">+{timeParser(fullStackExpTime)} in Frontend/Full Stack Development</p>
 						</Fade>
 					</li>
 
@@ -54,7 +54,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 							<img src="/programming-icons/nearshore.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8 " />
 						</Fade>
 						<Fade bottom delay={400}>
-							<p className="font-normal">+{timeParser(nearshoreExpTime)} experience working Nearshore</p>
+							<p className="font-normal">+{timeParser(nearshoreExpTime)} working Nearshore</p>
 						</Fade>
 					</li>
 				</div>
