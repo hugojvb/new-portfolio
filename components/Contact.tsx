@@ -71,6 +71,8 @@ const Contact: FC = (): JSX.Element => {
 
 		let response = await axios.post("/api/contactForm", { name: nameInput, email: emailInput, message: messageInput });
 
+		console.log(response.data);
+
 		if (response.data.success) {
 			setSendSuccess(true);
 			setNameInput("");
