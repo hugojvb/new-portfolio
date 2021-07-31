@@ -15,7 +15,7 @@ const contactForm = async (req: NextApiRequest, res: NextApiResponse) => {
 			let transporter = nodemailer.createTransport({
 				service: "Gmail",
 				host: "smtp.gmail",
-				port: 587,
+				// port: 587,
 				secure: false, // true for 465, false for other ports
 				auth: {
 					user: process.env.EMAIL_USERNAME,
