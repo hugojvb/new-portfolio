@@ -9,10 +9,10 @@
 	},
 	"dependencies": {
 		"@brainhubeu/react-carousel": "^2.0.4",
+		"@sendgrid/mail": "^7.4.5",
 		"@stahl.luke/react-reveal": "^1.2.3",
 		"axios": "^0.21.1",
 		"next": "latest",
-		"nodemailer": "^6.6.3",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-google-recaptcha": "^2.1.0"

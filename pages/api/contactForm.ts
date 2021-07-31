@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-import nodemailer from "nodemailer";
+import sgMail from "@sendgrid/mail";
 
 const contactForm = async (req: NextApiRequest, res: NextApiResponse) => {
 	// POST /api/contactform
@@ -9,28 +9,30 @@ const contactForm = async (req: NextApiRequest, res: NextApiResponse) => {
 			// GRAB BODY FROM REQUEST
 			const { name, email, message } = req.body;
 
+			// VALIDATE INPUT FORM
 			if (name.length < 3 || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) || message.length < 50) return;
 
-			// SMTP GMAIL TRANSPORTER
-			let transporter = nodemailer.createTransport({
-				service: "Gmail",
-				host: "smtp.gmail",
-				// port: 587,
-				secure: false, // true for 465, false for other ports
-				auth: {
-					user: process.env.EMAIL_USERNAME,
-					pass: process.env.EMAIL_PASSWORD,
-				},
-			});
+			// SET API KEY FROM SENDGRID
+			sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-			// SEND MAIL FROM TRANSPORT
-			let info = await transporter.sendMail({
-				from: email,
-				to: process.env.SEND_MAIL_TO,
-				subject: `Received contact from ${name}`,
-				text: message,
-				html: `<b>${message}</b>`,
-			});
+			// SEND EMAIL TO MULTIPLE RECIPIENTS
+			try {
+				await sgMail.send({
+					to: process.env.SEND_MAIL_TO, // Change to your recipient
+					from: "hugo.j.v.batista@outlook.com", // Change to your verified sender
+					subject: `Received contact from ${name}`,
+					text: message,
+					html: `<b>${message}</b>`,
+				});
+			} catch (error) {
+				console.error(error);
+
+				if (error.response) {
+					console.error(error.response.body);
+				}
+
+				throw Error(error);
+			}
 
 			return res.send({ success: true });
 		} catch (e) {
