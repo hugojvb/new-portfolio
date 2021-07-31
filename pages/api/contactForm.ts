@@ -19,7 +19,7 @@ const contactForm = async (req: NextApiRequest, res: NextApiResponse) => {
 			try {
 				await sgMail.send({
 					to: process.env.SEND_MAIL_TO, // Change to your recipient
-					from: "hugo.j.v.batista@outlook.com", // Change to your verified sender
+					from: process.env.SEND_MAIL_FROM, // Change to your verified sender
 					subject: `Received contact from ${name}`,
 					text: message,
 					html: `<b>${message}</b>`,
