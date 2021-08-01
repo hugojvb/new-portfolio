@@ -30,33 +30,33 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 	return (
 		<section id="about" className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
 			<div className="container mb-60">
-				<ScrollAnimation animateIn="animate__fadeInDown">
+				<ScrollAnimation animateOnce animateIn="animate__fadeInDown">
 					<h1 className="lg:text-6xl text-5xl font-thin text-secondary text-center mt-12">About Me</h1>
 				</ScrollAnimation>
 				<div className="text-2xl text-secondary mt-20 flex flex-col md:flex-row justify-evenly items-center">
 					<li className="py-8 flex flex-col items-center text-center text-xl mx-8 w-56 ">
-						<ScrollAnimation animateIn="animate__fadeInUp">
+						<ScrollAnimation animateOnce animateIn="animate__fadeInUp">
 							<img src="/programming-icons/e-learning.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 						</ScrollAnimation>
-						<ScrollAnimation animateIn="animate__fadeInUp">
+						<ScrollAnimation animateOnce animateIn="animate__fadeInUp">
 							<p className="font-normal">+{courseHours} Hours in Targeted Courses</p>
 						</ScrollAnimation>
 					</li>
 
 					<li className="py-8 flex flex-col items-center text-center text-xl mx-8 w-56">
-						<ScrollAnimation animateIn="animate__fadeInUp" delay={200}>
+						<ScrollAnimation animateOnce animateIn="animate__fadeInUp" delay={200}>
 							<img src="/programming-icons/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 						</ScrollAnimation>
-						<ScrollAnimation animateIn="animate__fadeInUp" delay={200}>
+						<ScrollAnimation animateOnce animateIn="animate__fadeInUp" delay={200}>
 							<p className="font-normal">+{timeParser(fullStackExpTime)} in Frontend/Full Stack Development</p>
 						</ScrollAnimation>
 					</li>
 
 					<li className="py-8 flex flex-col items-center text-center text-xl mx-8 w-56">
-						<ScrollAnimation animateIn="animate__fadeInUp" delay={400}>
+						<ScrollAnimation animateOnce animateIn="animate__fadeInUp" delay={400}>
 							<img src="/programming-icons/nearshore.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8 " />
 						</ScrollAnimation>
-						<ScrollAnimation animateIn="animate__fadeInUp" delay={400}>
+						<ScrollAnimation animateOnce animateIn="animate__fadeInUp" delay={400}>
 							<p className="font-normal">+{timeParser(nearshoreExpTime)} working Nearshore</p>
 						</ScrollAnimation>
 					</li>

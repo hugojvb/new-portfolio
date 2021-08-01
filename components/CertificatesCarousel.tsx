@@ -42,7 +42,7 @@ const CertificatesCarousel: FC<Props> = ({
 				onMouseEnter={() => setCertificateHovered(true)}
 				onMouseLeave={() => setCertificateHovered(false)}
 			>
-				<ScrollAnimation animateIn="animate__fadeIn">
+				<ScrollAnimation animateOnce animateIn="animate__fadeIn">
 					<Carousel
 						plugins={[
 							{
@@ -91,6 +91,7 @@ const CertificatesCarousel: FC<Props> = ({
 				</ScrollAnimation>
 			</div>
 			<ScrollAnimation
+				animateOnce
 				animateIn="animate__fadeIn"
 				className="w-full lg:w-4/12 flex flex-col justify-center items-center rounded-xl lg:pl-8 pt-16"
 			>
