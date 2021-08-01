@@ -1,7 +1,10 @@
 import { FC, useState, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
 
-import { Fade } from "@stahl.luke/react-reveal";
+// ANIMATE ON SCROLL
+const ScrollAnimation = dynamic(() => import("react-animate-on-scroll"), { ssr: false });
 
+// CAROUSEL FOR ALL CERTIFICATES
 import CertificatesCarousel from "./CertificatesCarousel";
 
 // CHECK IF COMPONENT IS VISIBLE HOOK
@@ -71,9 +74,9 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 
 	return (
 		<section className="min-h-screen lg:min-h-full flex flex-col items-center bg-white mt-12">
-			<Fade top>
+			<ScrollAnimation animateIn="animate__fadeInDown">
 				<h2 className="lg:text-6xl text-5xl font-thin text-secondary mb-24 mt-8 text-center">My Certificates</h2>
-			</Fade>
+			</ScrollAnimation>
 
 			<div ref={certificatesRef} className="w-full flex flex-col lg:flex-row lg:p-8 justify-around container">
 				<CertificatesCarousel

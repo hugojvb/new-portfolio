@@ -1,11 +1,15 @@
 import { FC, Dispatch, SetStateAction } from "react";
+import dynamic from "next/dynamic";
+
+// ANIMATE ON SCROLL
+const ScrollAnimation = dynamic(() => import("react-animate-on-scroll"), { ssr: false });
 
 const ContactSentModal: FC<{ setShowModal: Dispatch<SetStateAction<boolean>>; sendSuccess: boolean }> = ({
 	setShowModal,
 	sendSuccess,
 }): JSX.Element => {
 	return sendSuccess ? (
-		<>
+		<ScrollAnimation animateIn="animate__fadeInDown">
 			<div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ease-linear transition-all duration-150">
 				<div className="relative w-5/6 md:w-auto my-6 mx-auto max-w-3xl">
 					<div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -31,9 +35,9 @@ const ContactSentModal: FC<{ setShowModal: Dispatch<SetStateAction<boolean>>; se
 				</div>
 			</div>
 			<div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-		</>
+		</ScrollAnimation>
 	) : (
-		<>
+		<ScrollAnimation animateIn="animate__fadeInDown">
 			<div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ease-linear transition-all duration-150">
 				<div className="relative w-5/6 md:w-auto my-6 mx-auto max-w-3xl">
 					<div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -59,7 +63,7 @@ const ContactSentModal: FC<{ setShowModal: Dispatch<SetStateAction<boolean>>; se
 				</div>
 			</div>
 			<div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-		</>
+		</ScrollAnimation>
 	);
 };
 

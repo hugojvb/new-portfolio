@@ -1,7 +1,8 @@
 import { FC, Dispatch, SetStateAction } from "react";
 import dynamic from "next/dynamic";
 
-import { Fade } from "@stahl.luke/react-reveal";
+// ANIMATE ON SCROLL
+const ScrollAnimation = dynamic(() => import("react-animate-on-scroll"), { ssr: false });
 
 // CAROUSEL IMPORTS
 const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), { ssr: false });
@@ -36,12 +37,12 @@ const CertificatesCarousel: FC<Props> = ({
 }): JSX.Element => {
 	return (
 		<>
-			<Fade>
-				<div
-					className="w-full lg:w-8/12 flex flex-col"
-					onMouseEnter={() => setCertificateHovered(true)}
-					onMouseLeave={() => setCertificateHovered(false)}
-				>
+			<div
+				className="w-full lg:w-8/12 flex flex-col"
+				onMouseEnter={() => setCertificateHovered(true)}
+				onMouseLeave={() => setCertificateHovered(false)}
+			>
+				<ScrollAnimation animateIn="animate__fadeIn">
 					<Carousel
 						plugins={[
 							{
@@ -87,26 +88,23 @@ const CertificatesCarousel: FC<Props> = ({
 						value={currentSlide}
 					></Carousel>
 					<Dots value={currentSlide} onChange={(value) => setCurrentSlide(value)} number={slides.length} />
-				</div>
-			</Fade>
-			<Fade>
-				<div className="w-full lg:w-4/12 flex flex-col justify-center items-center rounded-xl lg:pl-8 pt-16">
-					<img
-						src={certificates[currentSlide].icon.url}
-						alt={certificates[currentSlide].icon.url}
-						className={
-							certificates[currentSlide].icon.size == "small"
-								? "h-32"
-								: certificates[currentSlide].icon.size == "medium"
-								? "h-36"
-								: "h-44"
-						}
-					/>
-					<em>
-						<p className="m-8 text-center text-xl text-secondary max-h-full overflow-auto">"{certificates[currentSlide].name}"</p>
-					</em>
-				</div>
-			</Fade>
+				</ScrollAnimation>
+			</div>
+			<ScrollAnimation
+				animateIn="animate__fadeIn"
+				className="w-full lg:w-4/12 flex flex-col justify-center items-center rounded-xl lg:pl-8 pt-16"
+			>
+				<img
+					src={certificates[currentSlide].icon.url}
+					alt={certificates[currentSlide].icon.url}
+					className={
+						certificates[currentSlide].icon.size == "small" ? "h-32" : certificates[currentSlide].icon.size == "medium" ? "h-36" : "h-44"
+					}
+				/>
+				<em>
+					<p className="m-8 text-center text-xl text-secondary max-h-full overflow-auto">"{certificates[currentSlide].name}"</p>
+				</em>
+			</ScrollAnimation>
 		</>
 	);
 };

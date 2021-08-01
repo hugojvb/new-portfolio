@@ -1,5 +1,8 @@
 import { FC } from "react";
-import { Fade } from "@stahl.luke/react-reveal";
+import dynamic from "next/dynamic";
+
+// ANIMATE ON SCROLL
+const ScrollAnimation = dynamic(() => import("react-animate-on-scroll"), { ssr: false });
 
 // UTILS
 import { projects } from "../utils/projects";
@@ -22,27 +25,26 @@ const Projects: FC = (): JSX.Element => {
 					></path>
 				</svg>
 			</div>
-			<Fade top>
+			<ScrollAnimation animateIn="animate__fadeInDown">
 				<h2 className="lg:text-6xl text-5xl text-tertiary mb-24 mt-32 font-thin text-center">My Projects</h2>
-			</Fade>
+			</ScrollAnimation>
 			{projects.map((project) => {
 				return (
 					<div key={project.name} className="flex flex-col justify-around text-tertiary p-10">
-						<Fade top>
+						<ScrollAnimation animateIn="animate__fadeInDown">
 							<div className="flex items-center mb-6">
 								<img src={project.icon} alt={project.name} className="h-12 w-12 mr-2" />
 								<h2 className="lg:text-3xl text-2xl font-thin">{project.name}</h2>
 							</div>
-						</Fade>
-
+						</ScrollAnimation>
 						<div className="flex flex-col lg:flex-row justify-around items-center h-full text-white lg:px-1">
-							<Fade>
-								<div className="w-full lg:w-1/2 p-0">
+							<ScrollAnimation animateIn="animate__fadeIn" className="w-full lg:w-1/2 p-0">
+								<div>
 									<video controls autoPlay muted loop>
 										<source src={project.videoURL} type="video/mp4" />
 									</video>
 								</div>
-							</Fade>
+							</ScrollAnimation>
 							<div className="lg:w-1/2 w-full flex flex-col justify-around h-full p-4 mt-4 lg:px-8 xl:px-16 lg:py-0">
 								<h4 className="text-tertiary leading-10">
 									<em>"{project.description}"</em>

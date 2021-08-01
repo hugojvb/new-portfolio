@@ -1,5 +1,8 @@
 import { FC } from "react";
-import { Fade } from "@stahl.luke/react-reveal";
+import dynamic from "next/dynamic";
+
+// ANIMATE ON SCROLL
+const ScrollAnimation = dynamic(() => import("react-animate-on-scroll"), { ssr: false });
 
 // FUNCTIONAL COMPONENT
 const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
@@ -27,35 +30,35 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 	return (
 		<section id="about" className="min-h-screen flex flex-col items-center justify-evenly bg-primary relative">
 			<div className="container mb-60">
-				<Fade top>
+				<ScrollAnimation animateIn="animate__fadeInDown">
 					<h1 className="lg:text-6xl text-5xl font-thin text-secondary text-center mt-12">About Me</h1>
-				</Fade>
+				</ScrollAnimation>
 				<div className="text-2xl text-secondary mt-20 flex flex-col md:flex-row justify-evenly items-center">
 					<li className="py-8 flex flex-col items-center text-center text-xl mx-8 w-56 ">
-						<Fade bottom>
+						<ScrollAnimation animateIn="animate__fadeInUp">
 							<img src="/programming-icons/e-learning.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
-						</Fade>
-						<Fade bottom>
+						</ScrollAnimation>
+						<ScrollAnimation animateIn="animate__fadeInUp">
 							<p className="font-normal">+{courseHours} Hours in Targeted Courses</p>
-						</Fade>
+						</ScrollAnimation>
 					</li>
 
 					<li className="py-8 flex flex-col items-center text-center text-xl mx-8 w-56">
-						<Fade bottom delay={200}>
+						<ScrollAnimation animateIn="animate__fadeInUp" delay={200}>
 							<img src="/programming-icons/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
-						</Fade>
-						<Fade bottom delay={200}>
+						</ScrollAnimation>
+						<ScrollAnimation animateIn="animate__fadeInUp" delay={200}>
 							<p className="font-normal">+{timeParser(fullStackExpTime)} in Frontend/Full Stack Development</p>
-						</Fade>
+						</ScrollAnimation>
 					</li>
 
 					<li className="py-8 flex flex-col items-center text-center text-xl mx-8 w-56">
-						<Fade bottom delay={400}>
+						<ScrollAnimation animateIn="animate__fadeInUp" delay={400}>
 							<img src="/programming-icons/nearshore.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8 " />
-						</Fade>
-						<Fade bottom delay={400}>
+						</ScrollAnimation>
+						<ScrollAnimation animateIn="animate__fadeInUp" delay={400}>
 							<p className="font-normal">+{timeParser(nearshoreExpTime)} working Nearshore</p>
-						</Fade>
+						</ScrollAnimation>
 					</li>
 				</div>
 			</div>
