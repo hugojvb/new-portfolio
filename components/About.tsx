@@ -15,14 +15,14 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 		if (months < 12) {
 			return months + " months ";
 		} else if (months % 12 === 0) {
-			return Math.floor(months / 12) + (Math.floor(months / 12) === 1 ? " year " : " years ");
+			return Math.floor(months / 12) + (Math.floor(months / 12) === 1 ? " Year " : " Years ");
 		} else if (months > 12) {
 			return (
 				Math.floor(months / 12) +
-				(Math.floor(months / 12) === 1 ? " year" : " years") +
+				(Math.floor(months / 12) === 1 ? " Year" : " Years") +
 				" and " +
 				(months % 12) +
-				(months % 12 === 1 ? " month " : " months ")
+				(months % 12 === 1 ? " Month " : " Months ")
 			);
 		}
 	};
