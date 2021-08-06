@@ -13,7 +13,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 	// TIME PARSER
 	const timeParser = (months: number): string => {
 		if (months < 12) {
-			return months + " months ";
+			return months + " Months ";
 		} else if (months % 12 === 0) {
 			return Math.floor(months / 12) + (Math.floor(months / 12) === 1 ? " Year " : " Years ");
 		} else if (months > 12) {
