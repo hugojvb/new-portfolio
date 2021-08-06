@@ -52,6 +52,10 @@ const IndexPage: FC = (): JSX.Element => {
 				<meta name="msapplication-TileColor" content="#ffffff" />
 				<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png" />
 				<meta name="theme-color" content="#ffffff" />
+				<meta
+					name="description"
+					content="Hugo Batista is a passionate Software Developer who specializes in Frontend/FullStack Development working with Typescript, React, Node and many other technologies."
+				/>
 			</Head>
 
 			<Hero />
