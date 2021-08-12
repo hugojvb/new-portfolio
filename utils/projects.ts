@@ -36,4 +36,13 @@ export const projects: projects[] = [
 			"https://www.amazon.com/Hugo-Batista-Lisbon-Facts/dp/B08HVNF51H/ref=sr_1_1?dchild=1&keywords=lisbon+facts&qid=1600113652&s=digital-skills&sr=1-1",
 		icon: "/projects-icons/alexa.svg",
 	},
+	{
+		name: "EDP Price Simulator",
+		description:
+			"Built a simulator to calculate the monthly electricity bill based on three different plans, each with different prices and specificities.",
+		videoURL: "/videos/edp_simulador.mp4",
+		sourceURL: "https://github.com/hugojvb/simulador-edp",
+		liveURL: "https://hardcore-davinci-078170.netlify.app/",
+		icon: "/projects-icons/edp.svg",
+	},
 ];
