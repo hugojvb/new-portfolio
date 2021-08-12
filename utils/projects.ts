@@ -39,7 +39,7 @@ export const projects: projects[] = [
 	{
 		name: "EDP Price Simulator",
 		description:
-			"Built a simulator to calculate the monthly electricity bill based on three different plans, each with different prices and specificities.",
+			"Built a simulator to calculate the monthly electricity bill based on three different plans, each with different prices and specificities. Made with HTML, CSS and vanilla Javascript. Deployed with Netlify.",
 		videoURL: "/videos/edp_simulador.mp4",
 		sourceURL: "https://github.com/hugojvb/simulador-edp",
 		liveURL: "https://hardcore-davinci-078170.netlify.app/",
