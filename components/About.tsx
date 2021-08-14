@@ -48,7 +48,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 							<img src="/programming-icons/programmer.svg" alt="checkmark" className="filter invert h-40 w-40 mb-8" />
 						</ScrollAnimation>
 						<ScrollAnimation animateOnce animateIn="animate__fadeInUp" delay={200}>
-							<p className="font-normal">+{timeParser(fullStackExpTime)} in Frontend/Full Stack Development</p>
+							<p className="font-normal">+{timeParser(fullStackExpTime)} in Full Stack Development</p>
 						</ScrollAnimation>
 					</li>
 

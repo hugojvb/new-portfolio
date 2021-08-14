@@ -108,8 +108,14 @@ body {
 
 /* INPUT FIELD LABEL ANIMATION */
 
+input,
+textarea {
+	background: transparent;
+}
+
 label {
 	user-select: none;
+	z-index: -1;
 }
 
 input:not(:placeholder-shown) + label,
