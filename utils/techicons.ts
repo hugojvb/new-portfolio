@@ -31,6 +31,11 @@ export const techIcons: techIcon[] = [
 		size: "large",
 	},
 	{
+		name: "redux",
+		url: "/tech-icons/redux.svg",
+		size: "small",
+	},
+	{
 		name: "node",
 		url: "/tech-icons/node.svg",
 		size: "medium",

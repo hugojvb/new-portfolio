@@ -83,7 +83,7 @@ export const certificates: cert[] = [
 		name: "Advanced React and Redux",
 		description: "",
 		url: "certificates/cert_advancedreact",
-		icon: techIcons.filter((icon) => icon.name === "react")[0],
+		icon: techIcons.filter((icon) => icon.name === "redux")[0],
 		duration: 21,
 	},
 ];
