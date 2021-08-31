@@ -14,15 +14,9 @@ const scrollToNextSection = () => {
 const Hero = (): JSX.Element => {
 	return (
 		<header className="min-h-screen flex flex-col items-center justify-center">
-			<ScrollAnimation
-				animateOnce
-				animateIn="animate__fadeInDown"
-				initiallyVisible
-			>
-				<h1 className="text-5xl lg:text-7xl text-secondary antialiased font-thin text-center">
-					I am Hugo and I love what I do
-				</h1>
-			</ScrollAnimation>
+			<h1 className="text-5xl lg:text-7xl text-secondary antialiased font-thin text-center">
+				I am Hugo and I love what I do
+			</h1>
 			<ScrollAnimation
 				animateOnce
 				animateIn="animate__fadeInDown"

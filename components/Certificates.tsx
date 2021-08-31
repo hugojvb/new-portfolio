@@ -2,7 +2,9 @@ import { FC, useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 
 // ANIMATE ON SCROLL
-const ScrollAnimation = dynamic(() => import("react-animate-on-scroll"), { ssr: false });
+const ScrollAnimation = dynamic(() => import("react-animate-on-scroll"), {
+	ssr: false,
+});
 
 // CAROUSEL FOR ALL CERTIFICATES
 import CertificatesCarousel from "./CertificatesCarousel";
@@ -20,7 +22,9 @@ export interface Cert {
 }
 
 // FUNCTIONAL COMPONENT
-const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Element => {
+const Certificates: FC<{ certificates: Cert[] }> = ({
+	certificates,
+}): JSX.Element => {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const [certificateHovered, setCertificateHovered] = useState(false);
 
@@ -46,7 +50,7 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 				} else {
 					setCurrentSlide(currentSlide - slides.length + 1);
 				}
-			}, 2000);
+			}, 1000);
 		}
 
 		return () => {
@@ -75,10 +79,15 @@ const Certificates: FC<{ certificates: Cert[] }> = ({ certificates }): JSX.Eleme
 	return (
 		<section className="min-h-screen lg:min-h-full flex flex-col items-center bg-white mt-12">
 			<ScrollAnimation animateOnce animateIn="animate__fadeInDown">
-				<h2 className="lg:text-6xl text-5xl font-thin text-secondary mb-24 mt-8 text-center">My Certificates</h2>
+				<h2 className="lg:text-6xl text-5xl font-thin text-secondary mb-24 mt-8 text-center">
+					My Certificates
+				</h2>
 			</ScrollAnimation>
 
-			<div ref={certificatesRef} className="w-full flex flex-col lg:flex-row lg:p-8 justify-around container">
+			<div
+				ref={certificatesRef}
+				className="w-full flex flex-col lg:flex-row lg:p-8 justify-around container"
+			>
 				<CertificatesCarousel
 					setCertificateHovered={setCertificateHovered}
 					leftArrowClick={leftArrowClick}
