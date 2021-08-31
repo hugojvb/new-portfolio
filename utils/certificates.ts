@@ -13,7 +13,7 @@ export const certificates: cert[] = [
 		name: "The Complete Web Developer",
 		description: "",
 		url: "/certificates/cert_completeweb.jpg",
-		icon: techIcons.filter((icon) => icon.name === "react")[0],
+		icon: techIcons.filter((icon) => icon.name === "node")[0],
 		duration: 35,
 	},
 	{
