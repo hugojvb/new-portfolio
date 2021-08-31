@@ -48,7 +48,7 @@ export const certificates: cert[] = [
 		name: "Node.js API Masterclass with Express and MongoDB",
 		description: "",
 		url: "/certificates/cert_node.jpg",
-		icon: techIcons.filter((icon) => icon.name === "node")[0],
+		icon: techIcons.filter((icon) => icon.name === "mongoDB")[0],
 		duration: 12,
 	},
 	{
@@ -69,7 +69,7 @@ export const certificates: cert[] = [
 		name: "Nodejs: Advanced Concepts",
 		description: "",
 		url: "/certificates/cert_advancednode.jpg",
-		icon: techIcons.filter((icon) => icon.name === "mongoDB")[0],
+		icon: techIcons.filter((icon) => icon.name === "node")[0],
 		duration: 16,
 	},
 	{
