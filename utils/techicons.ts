@@ -36,6 +36,11 @@ export const techIcons: techIcon[] = [
 		size: "small",
 	},
 	{
+		name: "webpack",
+		url: "/tech-icons/webpack.svg",
+		size: "small",
+	},
+	{
 		name: "node",
 		url: "/tech-icons/node.svg",
 		size: "medium",
