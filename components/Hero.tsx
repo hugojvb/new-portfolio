@@ -17,7 +17,6 @@ const Hero = (): JSX.Element => {
 			<ScrollAnimation
 				animateOnce
 				animateIn="animate__fadeInDown"
-				delay={250}
 				initiallyVisible
 			>
 				<h1 className="text-5xl lg:text-7xl text-secondary antialiased font-thin text-center">
