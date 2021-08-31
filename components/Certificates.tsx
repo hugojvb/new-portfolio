@@ -50,7 +50,7 @@ const Certificates: FC<{ certificates: Cert[] }> = ({
 				} else {
 					setCurrentSlide(currentSlide - slides.length + 1);
 				}
-			}, 1000);
+			}, 1500);
 		}
 
 		return () => {
