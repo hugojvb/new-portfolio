@@ -62,14 +62,14 @@ export const certificates: cert[] = [
 		name: "Microfrontends with React: A complete developer's guide",
 		description: "",
 		url: "/certificates/cert_microreact.jpg",
-		icon: techIcons.filter((icon) => icon.name === "react")[0],
+		icon: techIcons.filter((icon) => icon.name === "webpack")[0],
 		duration: 9,
 	},
 	{
 		name: "Nodejs: Advanced Concepts",
 		description: "",
 		url: "/certificates/cert_advancednode.jpg",
-		icon: techIcons.filter((icon) => icon.name === "node")[0],
+		icon: techIcons.filter((icon) => icon.name === "mongoDB")[0],
 		duration: 16,
 	},
 	{
