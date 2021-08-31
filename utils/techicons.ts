@@ -38,7 +38,7 @@ export const techIcons: techIcon[] = [
 	{
 		name: "webpack",
 		url: "/tech-icons/webpack.svg",
-		size: "small",
+		size: "medium",
 	},
 	{
 		name: "node",
