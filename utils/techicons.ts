@@ -88,7 +88,7 @@ export const techIcons: techIcon[] = [
 	{
 		name: "postgres",
 		url: "/tech-icons/postgres.svg",
-		size: "small",
+		size: "medium",
 	},
 	{
 		name: "java",
@@ -103,7 +103,7 @@ export const techIcons: techIcon[] = [
 	{
 		name: "hibernate",
 		url: "/tech-icons/hibernate.svg",
-		size: "medium",
+		size: "small",
 	},
 	{
 		name: "angular",
