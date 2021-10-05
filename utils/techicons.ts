@@ -96,6 +96,11 @@ export const techIcons: techIcon[] = [
 		size: "large",
 	},
 	{
+		name: "maven",
+		url: "/tech-icons/maven.svg",
+		size: "medium",
+	},
+	{
 		name: "spring",
 		url: "/tech-icons/spring.svg",
 		size: "small",
