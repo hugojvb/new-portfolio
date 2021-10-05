@@ -2,7 +2,9 @@ import { FC } from "react";
 import dynamic from "next/dynamic";
 
 // ANIMATE ON SCROLL
-const ScrollAnimation = dynamic(() => import("react-animate-on-scroll"), { ssr: false });
+const ScrollAnimation = dynamic(() => import("react-animate-on-scroll"), {
+	ssr: false,
+});
 
 // UTILS
 import { projects } from "../utils/projects";
@@ -26,22 +28,43 @@ const Projects: FC = (): JSX.Element => {
 				</svg>
 			</div>
 			<ScrollAnimation animateOnce animateIn="animate__fadeInDown">
-				<h2 className="lg:text-6xl text-5xl text-tertiary mb-24 mt-32 font-thin text-center">My Projects</h2>
+				<h2 className="lg:text-6xl text-5xl text-tertiary mb-24 mt-32 font-thin text-center">
+					My Projects
+				</h2>
 			</ScrollAnimation>
 			{projects.map((project) => {
 				return (
-					<div key={project.name} className="flex flex-col justify-around text-tertiary p-10">
-						<ScrollAnimation animateOnce animateIn="animate__fadeInDown">
+					<div
+						key={project.name}
+						className="flex flex-col justify-around text-tertiary p-10"
+					>
+						<ScrollAnimation
+							animateOnce
+							animateIn="animate__fadeInDown"
+						>
 							<div className="flex items-center mb-6">
-								<img src={project.icon} alt={project.name} className="h-12 w-12 mr-2" />
-								<h2 className="lg:text-3xl text-2xl font-thin">{project.name}</h2>
+								<img
+									src={project.icon}
+									alt={project.name}
+									className="h-12 w-12 mr-2"
+								/>
+								<h2 className="lg:text-3xl text-2xl font-thin">
+									{project.name}
+								</h2>
 							</div>
 						</ScrollAnimation>
 						<div className="flex flex-col lg:flex-row justify-around items-center h-full text-white lg:px-1">
-							<ScrollAnimation animateOnce animateIn="animate__fadeIn" className="w-full lg:w-1/2 p-0">
+							<ScrollAnimation
+								animateOnce
+								animateIn="animate__fadeIn"
+								className="w-full lg:w-1/2 p-0"
+							>
 								<div>
 									<video controls autoPlay muted loop>
-										<source src={project.videoURL} type="video/mp4" />
+										<source
+											src={project.videoURL}
+											type="video/mp4"
+										/>
 									</video>
 								</div>
 							</ScrollAnimation>
@@ -81,7 +104,10 @@ const Projects: FC = (): JSX.Element => {
 					viewBox="0 0 1200 120"
 					preserveAspectRatio="none"
 				>
-					<path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" className="shape-fill"></path>
+					<path
+						d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z"
+						className="shape-fill"
+					></path>
 				</svg>
 			</div>
 		</section>
