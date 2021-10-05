@@ -45,4 +45,13 @@ export const projects: projects[] = [
 		liveURL: "https://hardcore-davinci-078170.netlify.app/",
 		icon: "/projects-icons/edp.svg",
 	},
+	{
+		name: "Patient Management",
+		description:
+			"Built a management system for patients, with CRUD functionality of patients and observations/notes for each patient. Built with Spring Boot with Spring Data Jpa, Spring MVC, Spring Security, Thymeleaf, Bulma and PostgreSQL. Deployed with Heroku.",
+		videoURL: "/videos/registo_utentes.mp4",
+		sourceURL: "https://github.com/hugojvb/patient-management",
+		liveURL: "https://registo-de-utentes.herokuapp.com/",
+		icon: "/projects-icons/psi.png",
+	},
 ];
