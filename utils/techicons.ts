@@ -86,9 +86,24 @@ export const techIcons: techIcon[] = [
 		size: "small",
 	},
 	{
+		name: "postgres",
+		url: "/tech-icons/postgres.svg",
+		size: "small",
+	},
+	{
 		name: "java",
 		url: "/tech-icons/java.svg",
 		size: "large",
+	},
+	{
+		name: "spring",
+		url: "/tech-icons/spring.svg",
+		size: "small",
+	},
+	{
+		name: "hibernate",
+		url: "/tech-icons/hibernate.svg",
+		size: "medium",
 	},
 	{
 		name: "angular",
