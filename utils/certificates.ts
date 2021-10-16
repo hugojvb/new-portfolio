@@ -80,10 +80,10 @@ export const certificates: cert[] = [
 		duration: 40.5,
 	},
 	{
-		name: "Advanced React and Redux",
+		name: "Spring & Hibernate for Beginners (includes Spring Boot)",
 		description: "",
-		url: "certificates/cert_advancedreact.jpg",
-		icon: techIcons.filter((icon) => icon.name === "redux")[0],
-		duration: 21,
+		url: "certificates/cert_spring.jpg",
+		icon: techIcons.filter((icon) => icon.name === "spring")[0],
+		duration: 42.5,
 	},
 ];
