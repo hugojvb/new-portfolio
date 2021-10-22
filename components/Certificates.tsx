@@ -27,13 +27,11 @@ const Certificates: FC<{ certificates: Cert[] }> = ({
 }): JSX.Element => {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const [certificateHovered, setCertificateHovered] = useState(false);
-	const [renderCertificates, setRenderCertificates] = useState(false);
 
 	// IS VISIBLE BASED ON CERTIFICATES REF
 	const certificatesRef = useRef();
 	const certificatesSectionRef = useRef();
 	const isVisible = useOnScreen(certificatesRef);
-	const isSectionVisible = useOnScreen(certificatesSectionRef);
 
 	let slides: JSX.Element[] = [];
 
@@ -44,8 +42,6 @@ const Certificates: FC<{ certificates: Cert[] }> = ({
 
 	useEffect(() => {
 		let interval;
-
-		if (isSectionVisible) setRenderCertificates(true);
 
 		// CAROUSEL AUTOPLAY ONLY WHEN NOT HOVERED
 		if (!certificateHovered && isVisible) {
@@ -82,10 +78,7 @@ const Certificates: FC<{ certificates: Cert[] }> = ({
 	};
 
 	return (
-		<section
-			className="min-h-screen lg:min-h-full flex flex-col items-center bg-white mt-12"
-			ref={certificatesSectionRef}
-		>
+		<section className="min-h-screen lg:min-h-full flex flex-col items-center bg-white mt-12">
 			<ScrollAnimation animateOnce animateIn="animate__fadeInDown">
 				<h2 className="lg:text-6xl text-5xl font-thin text-secondary mb-24 mt-8 text-center">
 					My Certificates
@@ -96,17 +89,15 @@ const Certificates: FC<{ certificates: Cert[] }> = ({
 				className="w-full flex flex-col lg:flex-row lg:p-8 justify-around container"
 				ref={certificatesRef}
 			>
-				{renderCertificates && (
-					<CertificatesCarousel
-						setCertificateHovered={setCertificateHovered}
-						leftArrowClick={leftArrowClick}
-						rightArrowClick={rightArrowClick}
-						slides={slides}
-						currentSlide={currentSlide}
-						setCurrentSlide={setCurrentSlide}
-						certificates={certificates}
-					/>
-				)}
+				<CertificatesCarousel
+					setCertificateHovered={setCertificateHovered}
+					leftArrowClick={leftArrowClick}
+					rightArrowClick={rightArrowClick}
+					slides={slides}
+					currentSlide={currentSlide}
+					setCurrentSlide={setCurrentSlide}
+					certificates={certificates}
+				/>
 			</div>
 		</section>
 	);
