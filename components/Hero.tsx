@@ -17,7 +17,7 @@ const Hero = (): JSX.Element => {
 			<ScrollAnimation
 				animateOnce
 				animateIn="animate__fadeInDown"
-				delay={250}
+				delay={0}
 			>
 				<h1 className="text-5xl lg:text-7xl text-secondary antialiased font-thin text-center">
 					I am Hugo and I love what I do
@@ -26,7 +26,7 @@ const Hero = (): JSX.Element => {
 			<ScrollAnimation
 				animateOnce
 				animateIn="animate__fadeInDown"
-				delay={500}
+				delay={350}
 			>
 				<button
 					onClick={scrollToNextSection}

@@ -45,7 +45,7 @@ const Technologies: FC<{ windowWidth: number }> = ({
 					},
 				]}
 				animationSpeed={1500}
-				draggable={true}
+				draggable={false}
 			>
 				{techIcons.map((icon) => {
 					return (
