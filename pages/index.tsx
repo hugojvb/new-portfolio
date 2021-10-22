@@ -117,7 +117,7 @@ const IndexPage: FC = (): JSX.Element => {
 				<meta name="theme-color" content="#ffffff" />
 				<meta
 					name="description"
-					content="Hugo Batista is a passionate Software Developer who specializes in Frontend/FullStack Development working with Typescript, React, Node and many other technologies."
+					content="Hugo Batista is a passionate Software Developer who specializes in Full Stack Development working with Typescript, React, Node, Spring and many other technologies."
 				/>
 			</Head>
 
