@@ -28,8 +28,8 @@ const Technologies: FC<{ windowWidth: number }> = ({
 					{
 						resolve: autoplayPlugin,
 						options: {
-							interval: 1500,
-							stopAutoPlayOnHover: false,
+							interval: 1000,
+							stopAutoPlayOnHover: true,
 						},
 					},
 					{
@@ -45,7 +45,7 @@ const Technologies: FC<{ windowWidth: number }> = ({
 					},
 				]}
 				animationSpeed={1500}
-				draggable={false}
+				draggable={true}
 			>
 				{techIcons.map((icon) => {
 					return (
