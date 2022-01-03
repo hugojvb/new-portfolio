@@ -10,9 +10,7 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
 	let fullStackExpTime: number = Math.floor(
 		(Date.now() - new Date("8/25/2020").getTime()) / 1000 / 60 / 60 / 24 / 30.4
 	);
-	let remoteExpTime: number = Math.floor(
-		(new Date("1/1/2022").getTime() - new Date("12/1/2020").getTime()) / 1000 / 60 / 60 / 24 / 30.4
-	);
+	let remoteExpTime: number = Math.floor((Date.now() - new Date("12/1/2020").getTime()) / 1000 / 60 / 60 / 24 / 30.4);
 
 	// TIME PARSER
 	const timeParser = (months: number): string => {
