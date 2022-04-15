@@ -1,16 +1,12 @@
 import { FC, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-
-// ANIMATE ON SCROLL
 const ScrollAnimation = dynamic(() => import("react-animate-on-scroll"), {
   ssr: false,
 });
 
-// UTILS
 import { projects } from "../data/projects";
 import { useOnScreen } from "../utils/useOnScreen";
 
-// FUNCTIONAL COMPONENT
 const Projects: FC = (): JSX.Element => {
   const projectsRef = useRef();
   const isVisible = useOnScreen(projectsRef);

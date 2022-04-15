@@ -1,18 +1,14 @@
 import { FC, useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 
-// ANIMATE ON SCROLL
 const ScrollAnimation = dynamic(() => import("react-animate-on-scroll"), {
   ssr: false,
 });
 
-// CAROUSEL FOR ALL CERTIFICATES
 import CertificatesCarousel from "./CertificatesCarousel";
 
-// CHECK IF COMPONENT IS VISIBLE HOOK
 import { useOnScreen } from "../utils/useOnScreen";
 
-// TYPE OF CERTIFICATES PROPS
 export interface Cert {
   name: string;
   description: string;
@@ -21,21 +17,17 @@ export interface Cert {
   duration: number;
 }
 
-// FUNCTIONAL COMPONENT
 const Certificates: FC<{ certificates: Cert[] }> = ({
   certificates,
 }): JSX.Element => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [certificateHovered, setCertificateHovered] = useState(false);
 
-  // IS VISIBLE BASED ON CERTIFICATES REF
   const certificatesRef = useRef();
-  const certificatesSectionRef = useRef();
   const isVisible = useOnScreen(certificatesRef);
 
   let slides: JSX.Element[] = [];
 
-  // ADD SLIDES FOR CAROUSEL
   for (let certificate of certificates) {
     slides.push(<img src={certificate.url} alt={certificate.name} />);
   }
@@ -43,7 +35,6 @@ const Certificates: FC<{ certificates: Cert[] }> = ({
   useEffect(() => {
     let interval;
 
-    // CAROUSEL AUTOPLAY ONLY WHEN NOT HOVERED
     if (!certificateHovered && isVisible) {
       interval = setInterval(() => {
         if (currentSlide + 1 < slides.length) {
@@ -59,7 +50,6 @@ const Certificates: FC<{ certificates: Cert[] }> = ({
     };
   }, [certificateHovered, currentSlide, isVisible]);
 
-  // CAROUSEL LEFT ARROW CLICK
   const leftArrowClick = () => {
     if (currentSlide > 0) {
       setCurrentSlide(currentSlide - 1);
@@ -68,7 +58,6 @@ const Certificates: FC<{ certificates: Cert[] }> = ({
     }
   };
 
-  // CAROUSEL RIGHT ARROW CLICK
   const rightArrowClick = () => {
     if (currentSlide + 1 < slides.length) {
       setCurrentSlide(currentSlide + 1);

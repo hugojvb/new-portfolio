@@ -1,6 +1,5 @@
 import { FC } from "react";
 
-// UTILS
 import { socials } from "../data/socials";
 
 const Footer: FC = (): JSX.Element => {

@@ -1,14 +1,11 @@
 import { FC } from "react";
 import dynamic from "next/dynamic";
 
-// ANIMATE ON SCROLL
 const ScrollAnimation = dynamic(() => import("react-animate-on-scroll"), {
   ssr: false,
 });
 
-// FUNCTIONAL COMPONENT
 const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
-  // EXPERIENCE TIME
   let fullStackExpTime: number = Math.floor(
     (Date.now() - new Date("8/25/2020").getTime()) / 1000 / 60 / 60 / 24 / 30.4
   );
@@ -16,7 +13,6 @@ const About: FC<{ courseHours: number }> = ({ courseHours }): JSX.Element => {
     (Date.now() - new Date("12/1/2020").getTime()) / 1000 / 60 / 60 / 24 / 30.4
   );
 
-  // TIME PARSER
   const timeParser = (months: number): string => {
     if (months < 12) {
       return months + " Months ";

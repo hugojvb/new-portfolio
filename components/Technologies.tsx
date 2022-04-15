@@ -1,21 +1,13 @@
 import { FC } from "react";
 import dynamic from "next/dynamic";
-
-// CAROUSEL IMPORTS
 const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), {
   ssr: false,
 });
-import {
-  autoplayPlugin,
-  slidesToShowPlugin,
-  arrowsPlugin,
-} from "@brainhubeu/react-carousel";
+import { autoplayPlugin, slidesToShowPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
-// UTILS
 import { techIcons } from "../data/techicons";
 
-// FUNCTIONAL COMPONENT
 const Technologies: FC<{ windowWidth: number }> = ({
   windowWidth,
 }): JSX.Element => {
