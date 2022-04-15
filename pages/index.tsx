@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { Fragment, FC, useEffect, useState } from "react";
 
-// COMPONENTS
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Technologies from "../components/Technologies";
@@ -10,19 +9,15 @@ import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
-// UTILS
 import { certificates } from "../data/certificates";
 
-// TOTAL OF COURSE HOURS
 const courseHours: number =
   Math.floor(certificates.reduce((sum, cur) => sum + cur.duration, 0) / 10) *
   10;
 
-// FUNCTIONAL COMPONENT
 const IndexPage: FC = (): JSX.Element => {
   const [windowWidth, setWindowWidth] = useState<number | null>(0);
 
-  // SET WINDOW WIDTH STATE
   useEffect(() => {
     setWindowWidth(window.innerWidth);
 
@@ -117,7 +112,7 @@ const IndexPage: FC = (): JSX.Element => {
         <meta name="theme-color" content="#ffffff" />
         <meta
           name="description"
-          content="Hugo Batista is a passionate Software Developer who specializes in Full Stack Development working with Typescript, React, Node, Spring and many other technologies."
+          content="Hugo Batista is a passionate Software Developer who works with Typescript, React, Node, Golang and many other technologies."
         />
       </Head>
 

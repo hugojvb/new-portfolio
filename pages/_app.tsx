@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-// GLOBAL STYLING
 import "../styles/global.css";
 
 function MyApp({ Component, pageProps }) {
