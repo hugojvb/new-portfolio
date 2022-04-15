@@ -20,11 +20,9 @@ const IndexPage: FC = (): JSX.Element => {
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
-
     const handleResize = () => setWindowWidth(window.innerWidth);
 
     window.addEventListener("resize", handleResize);
-
     window.scrollTo(0, 0);
 
     return () => window.removeEventListener("resize", handleResize);

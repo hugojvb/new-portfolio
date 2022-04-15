@@ -12,8 +12,6 @@ body {
 	overflow: overlay; /* Keep the scrollbar always visible */
 }
 
-/* SELECTION */
-
 ::selection {
 	color: var(--secondary-color);
 	background-color: #eee;
