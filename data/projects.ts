@@ -20,7 +20,7 @@ export const projects: projects[] = [
   {
     name: "Expense Tracker",
     description:
-      "Created a Full Stack Web App that allows any registered user to add and remove their expenses and spending goals and track them in a monthly basis. Built with the MEAN stack and Bootstrap. Deployed with Heroku and Netlify.",
+      "Created a Full Stack Web App that allows any registered user to add and remove their expenses and spending goals and track them in a monthly basis. Built with the MERN stack and Material-UI. Deployed with Heroku (Serverless).",
     videoURL: "/videos/expense.mp4",
     sourceURL: "https://github.com/hugojvb/expensetracker",
     liveURL: "https://suspicious-roentgen-805db7.netlify.app/",
