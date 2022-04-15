@@ -57,7 +57,7 @@ const Projects: FC = (): JSX.Element => {
                   <img
                     src={project.icon}
                     alt={project.name}
-                    className="h-12 w-12 mr-2"
+                    className="h-12 mr-2"
                   />
                   <h2 className="lg:text-3xl text-2xl font-thin">
                     {project.name}
